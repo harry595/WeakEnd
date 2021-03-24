@@ -3560,6 +3560,7 @@
 		#detect:hover {
 			cursor: pointer;
 			background-color: transparent;
+			filter: brightness(0.1);
 		}
 		#detect:focus{ 	
 			border: none;
@@ -4058,8 +4059,118 @@
 			margin-top: 0;
 			padding-top: 0;
 		}
-.container{
+
+		
+.detectcontainer{
 	display:flex;
 	justify-content: space-around;
 	flex-shrink: 1; /* 기본값 */
+}
+.detectcontainer .item2{
+	text-align: center;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 980px) {
+
+	.hidden_img{
+		display:none;
+		max-height: 200px;
+	}
+	.detectcontainer {
+		margin: 0 0 2em 0;
+		width: 100%;
+	}
+
+		.detectcontainer .item2 {
+			margin: 0 0 3em 0;
+			width: 100%;
+		}
+
+			.detectcontainer .item2:nth-child(2n - 1) {
+				margin-right: 0;
+			}
+
+			.detectcontainer .item2:nth-child(2n) {
+				margin-left: 0;
+			}
+
+			.detectcontainer .item2:nth-last-child(1), .detectcontainer .item2:nth-last-child(2) {
+				margin-bottom: 3em;
+			}
+
+			.detectcontainer .item2:last-child {
+				margin-bottom: 0;
+			}
+
+			.detectcontainer .item2 .diag {
+				height: 8em;
+				line-height: 8em;
+				width: 8em;
+			}
+
+				.detectcontainer .item2 .diag:before {
+					font-size: 2.25rem;
+				}
+
+				.detectcontainer .item2 .diag:after {
+					height: 6em;
+					margin: -3em 0 0 -3em;
+					width: 6em;
+				}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	.detectcontainer .item2 {
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-align-items: -moz-flex-start;
+		-webkit-align-items: -webkit-flex-start;
+		-ms-align-items: -ms-flex-start;
+		align-items: flex-start;
+	}
+
+		.detectcontainer .item2 .diag {
+			height: 6em;
+			line-height: 6em;
+			margin: 0 0 1.5em 0;
+			width: 6em;
+		}
+
+			.detectcontainer .item2 .diag:before {
+				font-size: 1.5rem;
+			}
+
+			.detectcontainer .item2 .diag:after {
+				height: 4em;
+				margin: -2em 0 0 -2em;
+				width: 4em;
+			}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	.detectcontainer .item2 .diag:before {
+		font-size: 1.25rem;
+	}
+	.hidden_img{
+		display:none;
+		max-height: 200px;
+	}
+
+}
+.hidden_img{
+	visibility: hidden;
+}
+
+.diag{
+	max-width: 200px; 
+	height: 200px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
