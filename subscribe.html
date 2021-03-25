@@ -29,63 +29,53 @@
 								</header>
 
 							<!-- Banner -->
-								<section>
+								<section style="margin-bottom: 10%;">
 									<header class="main">
-										<h1 style="text-align: center; margin-bottom: 1em;">Vuln Patcher</h1>
-										<section style="margin: 0 5% 0 5%; height: 800px;">
-										<div style="width: 40%; height: 700px; padding: 5px; float:left; border: 1px black solid; border-radius: 0.375em;">
-											<h2 style="text-align: center;">Before Patch</h2>
-
-											<div class="select-wrapper" style="width: 40%; float:left; margin: 0 5% 5% 5%;">
-												<select name="VulnType" id="VulnType">
-													<option value="">Vulnerability type</option>
-													<option value="1">SQL injection</option>
-													<option value="1">Cross-site Scripting</option>
-													<option value="1">Local/Remote file inclusion</option>
-													<option value="1">Command injection</option>
-												</select>
+									<h1 style="text-align: center; margin-bottom: 2em;margin-top: 1em;">Subscribe WeakEnd</h1>
+									<section id="search" class="alt" style="width: 60%; margin: 0 auto; text-align: center;">
+										<form method="post" action="#">
+											<input type="text" name="query" id="query" placeholder="Enter Your E-mail address" style="margin-bottom: 20px;"/>
+											<input type="text" name="query" id="query" placeholder="Enter Your Target URL" style="margin-bottom: 40px;"/>
+											<div style="text-align: center; height: 20px;">
+												<h2 style="display: inline-block; margin-right:1%;">One time for </h2> 
+												<div class="select-wrapper" style="display:inline-block; width:12%; margin-right:1%;">
+													<select name="term" id="term" style="font-weight: bold; color:black;">
+														<option value="1">One</option>
+														<option value="2">Two</option>
+														<option value="3">Three</option>
+														<option value="4">Four</option>
+														<option value="5">Five</option>
+														<option value="6">Six</option>
+														<option value="7">Seven</option>
+														<option value="8">Eight</option>
+														<option value="9">Nine</option>
+														<option value="10">Ten</option>
+													</select>
+												</div>
+												<div class="select-wrapper" style="display:inline-block; width:12%;">
+													<select name="term" id="term" style="font-weight: bold; color:black;">
+														<option value="1">Week</option>
+														<option value="1">Month</option>
+														<option value="1">Year</option>
+													</select>
+												</div>
 											</div>
-
-											<div class="select-wrapper" style="width: 40%; float:left;">
-												<select name="BackType" id="BackType">
-													<option value="">Backend Type</option>
-													<option value="1">PHP</option>
-													<option value="1">ASP.NET</option>
-													<option value="1">Ruby</option>
-													<option value="1">Java</option>
-													<option value="1">Scala</option>
-													<option value="1">Static Files</option>
-													<option value="1">Python</option>
-													<option value="1">Javascript</option>
-													<option value="1">Perl</option>
-												</select>
-											</div>
-											<textarea id="beforecode" placeholder="Enter your vulnerable Backend code.&#13;&#10;&#13;&#10;&#13;&#10;example) &#13;&#10;&#13;&#10;                <h1>XSS Sample</h1>&#13;&#10;                <%&#13;&#10;                    String name = request.getParameter(“name“);&#13;&#10;                %>&#13;&#10;                <p>&#13;&#10;                    NAME:<%=name%>&#13;&#10;                </p>" style="resize: none; height: 530px;"></textarea>	
-										
-										</div>
-										<button style="width: 10%; height: 50px; margin: 350px 5% 0 5%; float:left;  text-align: center;">
-											<a>patch</a>	
-										</button>
-										<div style="width: 40%; height: 700px; padding: 5px; float:left; border: 1px black solid; border-radius: 0.375em;">
-											<h2 style="text-align: center;">After Patch</h2>
-											<textarea id="aftercode" placeholder="After Patch" style="resize: none; height: 610px;"></textarea>
-										</div>
-										</section>
+											<br>
+											<br>
+											<br>
+											<button type="submit" style="margin: 0 auto; box-shadow: none; background-color: inherit;"><img src="images/subscribe.png" style="width: 200px;"></button>
+										</form>
+									</section>
 									</header>
 								</section>
-
 								<section>
-									<h3 style="text-align: center;">How to use</h3>
+									<h3 style="text-align: center;">If you subscribe We Provide...</h3>
 									<br/>
 									<div class="detectcontainer">
-										<div class="item2">1. Check your Vulnerability type and Backend Type<br>2. Enter your vulnerable Backend code<br>3. Press the Patch Button<br>4. Change Your Backend Code with our new Code</div>
+										<div class="item2">1. We Detect vuln part of your Web site.<br>2. We will Send the vulnerability report to the email you entered.<br>3. You can choose the term of the email we send.<br>4. You can cancel the subscribe on My page<br>5. Only one subscribe on one E-mail or account<br>6. The Subscribe will be provided for 3 times.<br>7. After 3 times, subscribe service will be end</div>
 									</div>
 									<br/><br/>
-									<h3 style="text-align: center;">Caution</h3>
 									<br/>
-									<div class="detectcontainer">
-										<div class="item2">For more accurative vuln code patch, We prefer to enter the Core part of your vuln code.<br>Your vuln code can be a transaction with Database.<br>We highlighted the Vuln part of your WEB page. You can guess your vuln code with that function.</div>
-									</div>
 									<div style="text-align: center; font-size:20px; padding-top: 50px; padding-bottom: 50px;">
 										<a href="javascript:topFunction();"><i class="fas fa-arrow-alt-circle-up"> Back to top</i></a>
 									</div>

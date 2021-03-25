@@ -4060,7 +4060,13 @@
 			padding-top: 0;
 		}
 
-		
+
+#mypage{
+	border: solid #3d4449 3px; 
+	margin:0 200px 0 200px;
+	border-radius: 30px; 
+	padding: 50px 0 50px 0;
+}		
 .detectcontainer{
 	display:flex;
 	justify-content: space-around;
@@ -4072,7 +4078,9 @@
 }
 
 @media screen and (max-width: 980px) {
-
+	#mypage{
+		margin: 0 100px 0 100px;
+	}
 	.hidden_img{
 		display:none;
 		max-height: 200px;
@@ -4153,6 +4161,12 @@
 
 }
 
+@media screen and (max-width: 680px) {
+	#mypage{
+		margin:0px;
+	}
+
+}
 @media screen and (max-width: 480px) {
 
 	.detectcontainer .item2 .diag:before {
