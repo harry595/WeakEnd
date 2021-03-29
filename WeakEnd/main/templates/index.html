@@ -1,0 +1,116 @@
+{% extends "base.html" %} 
+{% block content %}
+{% load static %}
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+			<h1>WeakEnd</h1>
+			<p>Free Security Vulnerability Assessment Tool</p>
+		</header>
+		<p>WeakEnd is a free tool which provides vulnerability detection and source code semi-automatic patches for small businesses, private developers and start-ups. Most of these websites do not consider secure coding. And It causes Data bleaches or other serious problems. Thus, We offer Detection of SQL injection, Cross-site Scripting, Local(Remote) file Inclusion, command injection and other useful functions. WeakEnd will protect user’s data from security issues.</p>
+		<ul class="actions">
+			<li><a href="#" class="button big">Use WeakEnd</a></li>
+		</ul>
+	</div>
+	<span class="image object">
+		<img src="{% static 'img/main-img.jpg' %}" alt="" />
+	</span>
+</section>
+<!-- Section -->
+<section>
+	<header class="major">
+		<h2>Vuln Lists</h2>
+	</header>
+	<div class="features">
+		<article>
+			<span class="icon fa-diamond"></span>
+			<div class="content">
+				<h3>Sql Injection</h3>
+				<p>SQL injection is a code injection technique, used to attack data-driven applications, in which malicious SQL statements are inserted into an entry field for execution (e.g. to dump the database contents to the attacker)</p>
+			</div>
+		</article>
+		<article>
+			<span class="icon fa-paper-plane"></span>
+			<div class="content">
+				<h3>Cross-site Scripting</h3>
+				<p>Cross-site scripting (XSS) is a type of security vulnerability typically found in web applications. XSS attacks enable attackers to inject client-side scripts into web pages viewed by other users.</p>
+			</div>
+		</article>
+		<article>
+			<span class="icon fa-rocket"></span>
+			<div class="content">
+				<h3>Local/Remote File Inclusion</h3>
+				<p>A file inclusion vulnerability is a type of web vulnerability that is most commonly found to affect web applications that rely on a scripting run time. This issue is caused when an application builds a path to executable code.</p>
+			</div>
+		</article>
+		<article>
+			<span class="icon fa-signal"></span>
+			<div class="content">
+				<h3>Command Injection</h3>
+				<p>Command injection is the exploitation of a computer bug that is caused by processing invalid data. Injection is used by an attacker to introduce (or "inject") code into a vulnerable computer program and change the course of execution. </p>
+			</div>
+		</article>
+	</div>
+</section>
+<!-- Section -->
+<section>
+	<header class="major">
+		<h2>Function</h2>
+	</header>
+	<div class="posts">
+		<article>
+			<a href="#" class="image"><img src="{% static 'img/pic01.jpg' %}" alt="" /></a>
+			<h3>Vuln Detector</h3>
+			<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+			<ul class="actions">
+				<li><a href="#" class="button">Try</a></li>
+			</ul>
+		</article>
+		<article>
+			<a href="#" class="image"><img src="{% static 'img/pic02.jpg' %}" alt="" /></a>
+			<h3>HighLight Vuln Points</h3>
+			<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+			<ul class="actions">
+				<li><a href="#" class="button">Try</a></li>
+			</ul>
+		</article>
+		<article>
+			<a href="#" class="image"><img src="{% static 'img/pic03.jpg' %}" alt="" /></a>
+			<h3>Provide Vuln Reports</h3>
+			<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+			<ul class="actions">
+				<li><a href="#" class="button">Try</a></li>
+			</ul>
+		</article>
+		<article>
+			<a href="#" class="image"><img src="{% static 'img/pic04.jpg' %}" alt="" /></a>
+			<h3>Vuln Semi-Automatic Patches</h3>
+			<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+			<ul class="actions">
+				<li><a href="#" class="button">Try</a></li>
+			</ul>
+		</article>
+		<article>
+			<a href="#" class="image"><img src="{% static 'img/pic05.jpg' %}" alt="" /></a>
+			<h3>Subscribe Vuln Detector </h3>
+			<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+			<ul class="actions">
+				<li><a href="#" class="button">Try</a></li>
+			</ul>
+		</article>
+		<article>
+			<a href="#" class="image"><img src="{% static 'img/pic06.jpg' %}" alt="" /></a>
+			<h3>Hidden Directory Scanning</h3>
+			<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+			<ul class="actions">
+				<li><a href="#" class="button">Try</a></li>
+			</ul>
+		</article>
+	</div>
+	<!-- top button-->
+	<div style="text-align: center; font-size:20px; padding-top: 50px;">
+		<a href="javascript:topFunction();"><i class="fas fa-arrow-alt-circle-up"> Back to top</i></a>
+	</div>
+</section>
+{% endblock content %}

@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>WeakEnd</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="/" class="logo" style="flex:0; ">
+										<ul class="icons">
+											<img src="{% static 'img/rec_logo.png' %}" alt="" style="float: right;cursor:pointer; "/>
+										</ul>
+									</a>
+								</header>
+
+                                {% block content %}
+                                {% endblock %}
+                                
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar" class="inactive">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<a href="/signin" class="button big" style="width: 80%; margin:0 30px 0 30px;">Sign In <i class="fas fa-sign-in-alt"></i></a>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="/">Main Page</a></li>
+										<li><a href="/mypage">My Page</a></li>
+										<li><a href="/detect">Vuln Detector</a></li>
+										<li><a href="/directory">Hidden Directory Scanning</a></li>
+										<li><a href="/patch">Vuln Patches</a></li>
+										<li><a href="/subscribe">Subscribe WeakEnd</a></li>
+										<li>
+											<span class="opener">Vuln Lists</span>
+											<ul>
+												<li><a href="#">Sql Injection</a></li>
+												<li><a href="#">Cross-site Scripting</a></li>
+												<li><a href="#">Local/Remote File Inclusion</a></li>
+												<li><a href="#">Command Injection</a></li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Ajou University Capstone Design Project </br> Made by) Senior at Cyber Security </p>
+									<ul class="contact">
+										<li class="fa-envelope-o">harry919@ajou.ac.kr</li>
+										<li class="fa-phone">+82) 010-3163-1768</li>
+										<li class="fa-home">Gyeonggi-do Suwon-si<br />
+										Yeongtong-gu, 16499</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">COPYRIGHT 2020 Ajou University. </br>All Rights Reserved.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+
+			<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/skel.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

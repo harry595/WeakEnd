@@ -1,0 +1,62 @@
+{% extends "base.html" %} 
+{% block content %}
+{% load static %}
+<!-- Banner -->
+<section>
+	<header class="main">
+		<h1 style="text-align: center; margin-bottom: 1em;">Vuln Patcher</h1>
+		<section style="margin: 0 5% 0 5%; height: 800px;">
+		<div style="width: 40%; height: 700px; padding: 5px; float:left; border: 1px black solid; border-radius: 0.375em;">
+			<h2 style="text-align: center;">Before Patch</h2>
+			<div class="select-wrapper" style="width: 40%; float:left; margin: 0 5% 5% 5%;">
+				<select name="VulnType" id="VulnType">
+					<option value="">Vulnerability type</option>
+					<option value="1">SQL injection</option>
+					<option value="1">Cross-site Scripting</option>
+					<option value="1">Local/Remote file inclusion</option>
+					<option value="1">Command injection</option>
+				</select>
+			</div>
+			<div class="select-wrapper" style="width: 40%; float:left;">
+				<select name="BackType" id="BackType">
+					<option value="">Backend Type</option>
+					<option value="1">PHP</option>
+					<option value="1">ASP.NET</option>
+					<option value="1">Ruby</option>
+					<option value="1">Java</option>
+					<option value="1">Scala</option>
+					<option value="1">Static Files</option>
+					<option value="1">Python</option>
+					<option value="1">Javascript</option>
+					<option value="1">Perl</option>
+				</select>
+			</div>
+			<textarea id="beforecode" placeholder="Enter your vulnerable Backend code.&#13;&#10;&#13;&#10;&#13;&#10;example) &#13;&#10;&#13;&#10;                <h1>XSS Sample</h1>&#13;&#10;                <%&#13;&#10;                    String name = request.getParameter(“name“);&#13;&#10;                %>&#13;&#10;                <p>&#13;&#10;                    NAME:<%=name%>&#13;&#10;                </p>" style="resize: none; height: 530px;"></textarea>	
+		</div>
+		<button style="width: 10%; height: 50px; margin: 350px 5% 0 5%; float:left;  text-align: center;">
+			<a>patch</a>	
+		</button>
+		<div style="width: 40%; height: 700px; padding: 5px; float:left; border: 1px black solid; border-radius: 0.375em;">
+			<h2 style="text-align: center;">After Patch</h2>
+			<textarea id="aftercode" placeholder="After Patch" style="resize: none; height: 610px;"></textarea>
+		</div>
+		</section>
+	</header>
+</section>
+<section>
+	<h3 style="text-align: center;">How to use</h3>
+	<br/>
+	<div class="detectcontainer">
+		<div class="item2">1. Check your Vulnerability type and Backend Type<br>2. Enter your vulnerable Backend code<br>3. Press the Patch Button<br>4. Change Your Backend Code with our new Code</div>
+	</div>
+	<br/><br/>
+	<h3 style="text-align: center;">Caution</h3>
+	<br/>
+	<div class="detectcontainer">
+		<div class="item2">For more accurative vuln code patch, We prefer to enter the Core part of your vuln code.<br>Your vuln code can be a transaction with Database.<br>We highlighted the Vuln part of your WEB page. You can guess your vuln code with that function.</div>
+	</div>
+	<div style="text-align: center; font-size:20px; padding-top: 50px; padding-bottom: 50px;">
+		<a href="javascript:topFunction();"><i class="fas fa-arrow-alt-circle-up"> Back to top</i></a>
+	</div>
+</section>
+{% endblock content %}

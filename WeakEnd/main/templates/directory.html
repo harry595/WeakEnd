@@ -1,0 +1,56 @@
+{% extends "base.html" %} 
+{% block content %}
+{% load static %}
+<!-- Banner -->
+<section style="margin-bottom: 10%;">
+	<header class="main">
+	<h1 style="text-align: center; margin-bottom: 2em;margin-top: 1em;">Hidden Directory / File Scanning</h1>
+	<section id="search" class="alt" style="width: 60%; margin: 0 auto;">
+		<form method="post" action="#">
+			<input type="text" name="query" id="query" placeholder="Enter Your Target URL" />
+			<button id="detect" type="submit"><i class="fas fa-search"></i></button>
+		</form>
+	</section>
+	</header>
+</section>
+<section>
+	<h3 style="text-align: center;">Hidden Directory / File List</h3>
+	<br/>
+	<div class="detectcontainer">
+		<img src="{% static 'img/hidden.png' %}" class="hidden_img"/>
+		<div class="item2">In computing, a hidden folder (sometimes hidden directory) or hidden file is a folder or file which filesystem utilities do not display by default when showing a directory listing. They are commonly used for storing user preferences or preserving the state of a utility, and are frequently created implicitly by using various utilities. They are not a security mechanism because access is not restricted - usually the intent is simply to not "clutter" the display of the contents of a directory listing with files the user did not directly create.
+			<br><br>For example) 
+			/passwd#
+			/passwd.adjunct#
+			/passwd.bak#
+			/passwd.txt#
+			/passWD.txt#/admin.php#
+			/admin.asp#
+			/admin.jsp#
+			/adminop.php#
+			/icons#
+			/board.php#
+			/free.php#
+			/web/1/http/0#
+			/manager/html#
+			/zlk/index.jsp#
+			/indexlis.jsp#
+			/api.php#
+			/login.php#
+			/login.asp#
+			/login.jsp#
+			/login.html#
+			/cmd.php#
+			/info/index#
+			/user/pwd.htm#
+			/install/index.php#
+			/config.php#
+			/config.jsp#
+			/config.asp#</div>
+			<img src="{% static 'img/hidden.png' %}" alt=""  class="hidden_img"/>
+	</div>
+	<div style="text-align: center; font-size:20px; padding-top: 50px; padding-bottom: 50px;">
+		<a href="javascript:topFunction();"><i class="fas fa-arrow-alt-circle-up"> Back to top</i></a>
+	</div>
+</section>
+{% endblock %}
