@@ -7,7 +7,7 @@
 	<h1 style="text-align: center; margin-bottom: 2em;margin-top: 1em;">Subscribe WeakEnd</h1>
 	<section id="search" class="alt" style="width: 60%; margin: 0 auto; text-align: center;">
 		<form method="post" action="#">
-			<input type="text" name="query" id="query" placeholder="Enter Your E-mail address" style="margin-bottom: 20px;"/>
+			<input type="text" name="query" id="query" placeholder="{{ user.email }}" value="{{ user.email }}" style="margin-bottom: 20px;"/>
 			<input type="text" name="query" id="query" placeholder="Enter Your Target URL" style="margin-bottom: 40px;"/>
 			<div style="text-align: center; height: 20px;">
 				<h2 style="display: inline-block; margin-right:1%;">One time for </h2> 

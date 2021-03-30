@@ -9,6 +9,7 @@ class Profile(models.Model):
     job = models.CharField(max_length=50, blank=True)
     gender = models.CharField(max_length=10, blank=True)
     purpose = models.CharField(max_length=200, blank=True)
+    sub_url= models.CharField(max_length=200, null=True)
     sub_first= models.DateTimeField(null=True)
     sub_second= models.DateTimeField(null=True)
     sub_third= models.DateTimeField(null=True)

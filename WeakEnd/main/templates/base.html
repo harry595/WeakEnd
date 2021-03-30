@@ -41,7 +41,11 @@
 
 							<!-- Search -->
 								<section id="search" class="alt">
-									<a href="/signin" class="button big" style="width: 80%; margin:0 30px 0 30px;">Sign In <i class="fas fa-sign-in-alt"></i></a>
+									{% if user.is_authenticated %}
+										<a href="/signout" class="button big" style="width: 80%; margin:0 30px 0 30px;">Sign Out <i class="fas fa-sign-out-alt"></i></a>
+									{% else %}
+										<a href="/signin" class="button big" style="width: 80%; margin:0 30px 0 30px;">Sign In <i class="fas fa-sign-in-alt"></i></a>
+									{% endif %}
 								</section>
 
 							<!-- Menu -->

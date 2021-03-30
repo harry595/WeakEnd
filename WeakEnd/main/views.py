@@ -28,22 +28,53 @@ from django.contrib.auth.models import User
 from django.db import models
 from .models import Profile
 from django.contrib import auth
-
+from django.contrib.auth import authenticate, login
 # Create your views here.
 def index(request):
     return render(request,'index.html')
 
+@login_required 
 def detect(request):
     return render(request,'detect.html')
 
+@login_required 
 def directory(request):
     return render(request,'directory.html')
 
+@login_required 
 def mypage(request):
     return render(request,'mypage.html')
 
+@login_required 
+def changeUserInfo(request):
+    if request.method == 'POST':
+        user = request.user
+        profile=user.profile
+
+        profile.age = request.POST["age"]
+        profile.job = request.POST["job"]
+        profile.gender = request.POST["gender"]
+        user.first_name = request.POST["first_name"]
+        user.last_name = request.POST["last_name"]
+        user.email = request.POST["email"]
+
+        user.save()
+        profile.save()
+        return redirect('/')
+    return render(request,'changeUserInfo.html')
+
+@login_required 
 def patch(request):
     return render(request,'patch.html')
+
+@login_required 
+def subscribe(request):
+    return render(request,'subscribe.html')
+
+@login_required 
+def vulndetected(request):
+    return render(request,'vulndetected.html')
+
 
 def signup(request):
     if request.method == 'POST':
@@ -66,10 +97,15 @@ def signup(request):
     return render(request, 'signup.html')
 
 def signin(request):
-    return render(request,'signin.html')
+    if request.method == 'POST':
+        username = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/')
+        else:
+            return render(request, 'signin.html')
+    else:
+        return render(request, 'signin.html')
 
-def subscribe(request):
-    return render(request,'subscribe.html')
-
-def vulndetected(request):
-    return render(request,'vulndetected.html')

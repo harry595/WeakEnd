@@ -12,7 +12,8 @@
 						<img src="{% static 'img/img-01.png' %}" alt="IMG">
 					</div>
 	
-					<form class="login100-form validate-form">
+					<form class="login100-form validate-form" method="POST">
+						{% csrf_token %}
 						<span class="login100-form-title">
 							Member Login
 						</span>
@@ -26,7 +27,7 @@
 						</div>
 	
 						<div class="wrap-input100 validate-input" data-validate = "Password is required">
-							<input class="input100" style="padding: 0 30px 0 68px" type="password" name="pass" placeholder="Password">
+							<input class="input100" style="padding: 0 30px 0 68px" type="password" name="password" placeholder="Password">
 							<span class="focus-input100"></span>
 							<span class="symbol-input100">
 								<i class="fa fa-lock" aria-hidden="true"></i>
