@@ -29,6 +29,10 @@ from django.db import models
 from .models import Profile
 from django.contrib import auth
 from django.contrib.auth import authenticate, login
+import os
+import requests
+import time
+
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -38,7 +42,30 @@ def detect(request):
     return render(request,'detect.html')
 
 @login_required 
+def reports(request):
+    return render(request,'reports.html')
+
+@login_required 
 def directory(request):
+    if request.method == 'POST':
+        session = requests.Session() 
+        session.verify = False
+        url = request.POST["url"]
+        result=[]
+        if url == "":
+            return render(request,'directory.html')
+        else:
+            f = open(os.path.dirname(os.path.realpath(__file__)) + '/dataset/dir_scan_list.txt', "r")
+            while True:
+                data = f.readline()
+                r = session.get(url+data)
+                if r.status_code == 200:
+                    print(url+data)
+                    result.append("Connect → " + r.url)
+                if not data: break
+            result.append("")
+            print(result)
+            f.close()
     return render(request,'directory.html')
 
 @login_required 

@@ -14,6 +14,7 @@ app_name = 'main'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('reports/', views.reports, name='reports'), 
     path('detect/', views.detect, name='detect'), 
     path('directory/', views.directory, name='directory'), 
     path('mypage/', views.mypage, name='mypage'), 
