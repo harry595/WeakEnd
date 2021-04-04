@@ -24,5 +24,6 @@ urlpatterns = [
     path('signin/', views.signin, name='signin'), 
     path('signout/', auth_views.LogoutView.as_view(), name="signout"),
     path('subscribe/', views.subscribe, name='subscribe'), 
-    path('vulndetected/', views.vulndetected, name='vulndetected'), 
+    path('vulndetecting/', views.vulndetecting, name='vulndetecting'), 
+    path('vulndetected/<int:new_id>', views.vulndetected, name='vulndetected'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

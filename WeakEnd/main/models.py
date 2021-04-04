@@ -14,3 +14,6 @@ class Profile(models.Model):
     sub_second= models.DateTimeField(null=True)
     sub_third= models.DateTimeField(null=True)
 
+class Vulnlist(models.Model):
+    vuln_id = models.AutoField(primary_key=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, db_column="user_id")

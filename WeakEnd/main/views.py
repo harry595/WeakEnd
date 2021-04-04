@@ -26,13 +26,13 @@ from django.contrib import messages as msgs
 from .forms import UserForm, ProfileForm
 from django.contrib.auth.models import User
 from django.db import models
-from .models import Profile
+from .models import Profile, Vulnlist
 from django.contrib import auth
 from django.contrib.auth import authenticate, login
 import os
 import requests
 import time
-
+from .vuln_detect.vuln_code import attack_all
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -98,9 +98,34 @@ def patch(request):
 def subscribe(request):
     return render(request,'subscribe.html')
 
+
 @login_required 
-def vulndetected(request):
-    return render(request,'vulndetected.html')
+def vulngive(request,new_id):
+    return HttpResponse(json.dumps(context), content_type="application/json")
+
+@login_required 
+def vulndetected(request,new_id):
+    check_user=Vulnlist.objects.values().filter(vuln_id=new_id).last()['user_id_id']
+    if(check_user!=request.user.id):
+        return redirect('/')
+    file_path = os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json'
+    with open(file_path, "r") as json_file:
+        json_data = json.load(json_file)
+    return render(request,'vulndetected.html',{'json_data':json_data})
+
+@login_required 
+def vulndetecting(request):
+    url=request.GET["url"]
+    detected_vuln=attack_all.checkvuln(url)
+    new_id=Vulnlist.objects.all().values('vuln_id').last()['vuln_id']+1
+    new_vuln = Vulnlist(
+        vuln_id=new_id,
+        user_id=request.user
+    )
+    new_vuln.save()
+    with open(os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json', 'w') as outfile:
+        json.dump(detected_vuln, outfile, indent=4)
+    return HttpResponseRedirect('/vulndetected/{}'.format(new_id))
 
 
 def signup(request):
