@@ -14,7 +14,7 @@ app_name = 'main'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('reports/', views.reports, name='reports'), 
+    path('reports/<int:new_id>', views.reports, name='reports'), 
     path('detect/', views.detect, name='detect'), 
     path('directory/', views.directory, name='directory'), 
     path('mypage/', views.mypage, name='mypage'), 
@@ -26,4 +26,6 @@ urlpatterns = [
     path('subscribe/', views.subscribe, name='subscribe'), 
     path('vulndetecting/', views.vulndetecting, name='vulndetecting'), 
     path('vulndetected/<int:new_id>', views.vulndetected, name='vulndetected'),
+    path('vulndetected/vulngive/', views.vulngive, name="vulngive"),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

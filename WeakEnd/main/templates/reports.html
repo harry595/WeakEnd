@@ -1,108 +1,61 @@
+{% extends "base.html" %} 
+{% block content %}
 {% load static %}
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>WeakEnd</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-  <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
-	</head>
-	<body>
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+<!-- Banner -->
+<section>
+	<header class="main">
+		<h1 style="text-align: center; margin-bottom: 1em;">Vuln Diagnostics Reports </h1>
 
-							<!-- Header -->
-								<header id="header">
-									<a href="/" class="logo" style="flex:0; ">
-										<ul class="icons">
-											<img src="{% static 'img/rec_logo.png' %}" alt="" style="float: right;cursor:pointer; "/>
-										</ul>
-									</a>
-								</header>
+		{% if 'LFI' in outputs or 'RFI' in outputs %}
+		<section style="margin: 0 20% 0 20%; color: black !important; margin-bottom: 30px;" >
+			<h2>Target URL: {{target_url}}<br>Detect Date: {{detect_date}}</h2>
+			<br><div class="reportbigfont">취약점 명</div> Local, Remote File Inclusion <br>
+			<br><div class="reportbigfont">해당 사이트 취약점</div>
+			<div style="font-size:20px; font-weight:bold; margin: 20px 0 5px 0;">Local File Inclusion Vuln Points</div> {{ json_data.LFI }}
+			<div style="font-size:20px; font-weight:bold; margin: 20px 0 5px 0;">Remote File Inclusion Vuln Points</div> {{ json_data.RFI }}<br>
+			<br><div class="reportbigfont">취약점 요약</div> PHP에서 include라는 함수 등을 이용하여 다른 파일을 소스코드에 포함시켜 원하는 정보를 유출시키는 공격할 수 있는 취약점이다.<br>
+			<br><div class="reportbigfont">취약점 설명</div> 주로 PHP 애플리케이션을 대상으로 include라는 함수를 사용하여 다른 파일을 소스코드에 직접 포함시킬 수 있는 취약점이다. include 할 수 있는 파일의 위치가 호스트 내부/외부인지에 따라 Local File Inclusion/Remote File Inclusion으로 구분된다. 호스트 외부의 파일을 포함시킬 수 있는 RFI가 더 심각한 공격으로 여겨진다.<br>
+			
+			<img style="margin:20px 60px 20px 60px;"src="{% static 'img/reportlfi1.jpg' %}" alt="IMG">
+			<img style="margin:20px 0 20px 0;" src="{% static 'img/reportlfi2.jpg' %}" alt="IMG">
+			공격은 http://localhost/dvwa/vulnerabilities/fi/?page=bad.php 와 같이 get 방식으로 파일을 불러오거나 post 방식으로 파일을 불러올 때 파라미터를 호스트 내/외부에 존재하는 다른 파일로 지정하여 발생한다.<br>
+			<br><div class="reportbigfont">해결 방안</div> -	외부 사용자가 입력한 파일 이름을 include에 사용하지 않는다.<br>
+			-	블랙리스트 방식을 사용하여 파일 경로를 입력 받을 때 “http://”, “https://”, “../” 등의 문자열을 필터링하여 RFI, LFI 공격을 대비한다.<br>
+			-	화이트리스트 방식을 사용하여 존재하는 파일을 리스트로 만들어 해당 파일들만 허용한다.<br>
+			
+		</section>
+		{% endif %}
 
-                                {% block content %}
-                                {% endblock %}
-                                
-						</div>
-					</div>
+		{% if 'CI' in outputs %}
 
-				<!-- Sidebar -->
-					<div id="sidebar" class="inactive">
-						<div class="inner">
+		<section style="margin: 0 20% 0 20%; color: black !important; border-top: solid 2px rgba(210, 215, 217, 0.75);"  >
+			<br><div class="reportbigfont">취약점 명</div> Command Injection <br>
+			<br><div class="reportbigfont">해당 사이트 취약점</div>
+			<div style="font-size:20px; font-weight:bold; margin: 20px 0 5px 0;">Command Injection Vuln Points</div> {{ json_data.CI}}
+			<br>
+			<br><div class="reportbigfont">취약점 요약</div> 시스템 명령어를 쿼리문에 주입하여 취약한 변수를 통해 서버 운영체제에 접근하는 공격을 할 수 있는 취약점이다.<br>
+			<br><div class="reportbigfont">취약점 설명</div> 웹 애플리케이션에서 사용자가 입력한 값을 입력 값 검증 없이 시스템 명령어의 일부분으로 전달하여 발생한다. 공격자는 이 필드에 “&”, “&&”, “;”, “|”, “||” 등을 사용하여 “& netstat -an” 등의 원하는 시스템 명령어를 실행할 수 있다. 공격에 성공한다면 매우 큰 피해를 입힐 수 있다.<br>
+			<div style="text-align: center;"><img src="{% static 'img/reportci.png' %}" alt="IMG"></div>
+			<div style="font-size:20px; font-weight:bold;">취약 함수 목록</div>
+			Java: System.*, 특히 System.runtime 취약, Runtime.exec()<br>
+			C/C++: system(), exec(), ShellExecute()<br>
+			python: exec(), eval(), os.system(), os.popen(), subprocess.popen(), subprocess.call()<br>
+			Perl: open(), sysopen(), system(), glob()<br>
+			php: exec(), system(), passthru(), popen(), rquire(), include(), eval(), preg_replace(), shell_exec(), proc_open(), eval()<br>
+			<br><div class="reportbigfont">해결 방안</div> 
+			-	직접적으로 시스템 명령어를 호출하지 않는다.<br>
+			&nbsp;&nbsp;예) system(“mkdir $dir_name”) -> mkdir($dir_name)<br>
+			&nbsp;&nbsp;system("cat /$something") -> system("cat", "/$something")<br>
+			-	시스템 명령어를 사용할 수밖에 없다면 입력 값 검증을 거친다.<br>
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									{% if user.is_authenticated %}
-										<a href="/signout" class="button big" style="width: 80%; margin:0 30px 0 30px;">Sign Out <i class="fas fa-sign-out-alt"></i></a>
-									{% else %}
-										<a href="/signin" class="button big" style="width: 80%; margin:0 30px 0 30px;">Sign In <i class="fas fa-sign-in-alt"></i></a>
-									{% endif %}
-								</section>
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="/">Main Page</a></li>
-										<li><a href="/mypage">My Page</a></li>
-										<li><a href="/detect">Vuln Detector</a></li>
-										<li><a href="/directory">Hidden Directory Scanning</a></li>
-										<li><a href="/patch">Vuln Patches</a></li>
-										<li><a href="/subscribe">Subscribe WeakEnd</a></li>
-										<li>
-											<span class="opener">Vuln Lists</span>
-											<ul>
-												<li><a href="#">Sql Injection</a></li>
-												<li><a href="#">Cross-site Scripting</a></li>
-												<li><a href="#">Local/Remote File Inclusion</a></li>
-												<li><a href="#">Command Injection</a></li>
-											</ul>
-										</li>
-									</ul>
-								</nav>
-
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Ajou University Capstone Design Project </br> Made by) Senior at Cyber Security </p>
-									<ul class="contact">
-										<li class="fa-envelope-o">harry919@ajou.ac.kr</li>
-										<li class="fa-phone">+82) 010-3163-1768</li>
-										<li class="fa-home">Gyeonggi-do Suwon-si<br />
-										Yeongtong-gu, 16499</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">COPYRIGHT 2020 Ajou University. </br>All Rights Reserved.</p>
-								</footer>
-
-						</div>
-					</div>
-
-			</div>
-
-
-			<!-- Scripts -->
-			<script src="{% static 'js/jquery.min.js' %}"></script>
-			<script src="{% static 'js/skel.min.js' %}"></script>
-			<script src="{% static 'js/util.js' %}"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="{% static 'js/main.js' %}"></script>
-
-	</body>
-</html>
+			
+		</section>
+		{% endif %}
+	</header>
+</section>
+<section>
+	<div style="text-align: center; font-size:20px; padding-top: 50px; padding-bottom: 50px;">
+		<a href="javascript:topFunction();"><i class="fas fa-arrow-alt-circle-up"> Back to top</i></a>
+	</div>
+</section>
+{% endblock content %}

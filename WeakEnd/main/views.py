@@ -42,8 +42,21 @@ def detect(request):
     return render(request,'detect.html')
 
 @login_required 
-def reports(request):
-    return render(request,'reports.html')
+def reports(request,new_id):
+    #user check
+    check_user=Vulnlist.objects.values().filter(vuln_id=new_id)[0]['user_id_id']
+    target_url=Vulnlist.objects.values().filter(vuln_id=new_id)[0]['target_url']
+    detect_date=Vulnlist.objects.values().filter(vuln_id=new_id)[0]['detect_date']
+    if(check_user!=request.user.id):
+        return redirect('/')
+    #json file create
+    file_path = os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json'
+    with open(file_path, "r") as json_file:
+        json_data = json.load(json_file)
+    # make form to jinja ex) {'LFI':2,'RFI':1,'CI':1}
+    outputs=list(json_data.keys())
+    print(json_data[outputs[0]])
+    return render(request,'reports.html',{'json_data':json_data,'outputs':outputs,'new_id':new_id,'target_url':target_url,'detect_date':detect_date})
 
 @login_required 
 def directory(request):
@@ -61,11 +74,11 @@ def directory(request):
                 r = session.get(url+data)
                 if r.status_code == 200:
                     print(url+data)
-                    result.append("Connect → " + r.url)
+                    result.append(r.url)
                 if not data: break
-            result.append("")
-            print(result)
             f.close()
+        print(result)
+        return render(request,'directoryresult.html',{'result':result})
     return render(request,'directory.html')
 
 @login_required 
@@ -99,19 +112,43 @@ def subscribe(request):
     return render(request,'subscribe.html')
 
 
+# get data by ajax
 @login_required 
-def vulngive(request,new_id):
+def vulngive(request):
+    # get inform that clicked
+    search_key = int(request.GET['search_key'])
+    search_id = request.GET['search_id']
+    new_id = request.GET['new_id']
+    #check user
+    check_user=Vulnlist.objects.values().filter(vuln_id=new_id).last()['user_id_id']
+    if(check_user!=request.user.id):
+        return redirect('/')
+    # read json file
+    file_path = os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json'
+    with open(file_path, "r") as json_file:
+        json_data = json.load(json_file)
+    # return value of json
+    output_data=json_data[search_id][search_key]
+    context = {'output_data':output_data}
     return HttpResponse(json.dumps(context), content_type="application/json")
 
 @login_required 
 def vulndetected(request,new_id):
+    #user check
     check_user=Vulnlist.objects.values().filter(vuln_id=new_id).last()['user_id_id']
     if(check_user!=request.user.id):
         return redirect('/')
+    #json file create
     file_path = os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json'
     with open(file_path, "r") as json_file:
         json_data = json.load(json_file)
-    return render(request,'vulndetected.html',{'json_data':json_data})
+    # make form to jinja ex) {'LFI':2,'RFI':1,'CI':1}
+    outputs={}
+    forjinja='0'*100
+    for vuln_keys in json_data.keys():
+        outputs[vuln_keys]=forjinja[0:len(json_data[vuln_keys])]
+    print(outputs)
+    return render(request,'vulndetected.html',{'outputs':outputs,'new_id':new_id})
 
 @login_required 
 def vulndetecting(request):
@@ -120,7 +157,8 @@ def vulndetecting(request):
     new_id=Vulnlist.objects.all().values('vuln_id').last()['vuln_id']+1
     new_vuln = Vulnlist(
         vuln_id=new_id,
-        user_id=request.user
+        user_id=request.user,
+        target_url=url
     )
     new_vuln.save()
     with open(os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json', 'w') as outfile:

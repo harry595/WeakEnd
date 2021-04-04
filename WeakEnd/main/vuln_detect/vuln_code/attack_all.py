@@ -20,7 +20,7 @@ def checkvuln(url):
                 })
             else:
                 result_data[vuln_element['vuln']].append({
-                    "method": "GET",
+                    "method": "POST",
                     "url": vuln_element['url'],
                     "data":vuln_element['data']
                 })

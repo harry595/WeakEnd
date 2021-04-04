@@ -92,7 +92,7 @@ def scan_lfi(url, method):
                             for file_name in f:
                                 file_name = file_name.replace("\n", "")
                                 scan_addr_path = scan_addr + file_name
-                                cookies = {'PHPSESSID': 'ulhd1o6b1jbpopi1e4okrc0gn7', 'security': 'low'}
+                                cookies = {'PHPSESSID': '6tbpf4ph6d6hqa548etm0oijo1', 'security': 'low'}
                                 res_path = requests.get(scan_addr_path, cookies=cookies)
                                 #print(res_path.status_code)
                                 if res_path.status_code == 200:

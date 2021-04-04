@@ -87,7 +87,7 @@ def scan(url):
                 #print(payload)
                 #print(input_tag)
                 print(input_tag[2])
-                cookies = {'PHPSESSID': 'ulhd1o6b1jbpopi1e4okrc0gn7', 'security': 'low'}
+                cookies = {'PHPSESSID': '6tbpf4ph6d6hqa548etm0oijo1', 'security': 'low'}
                 test_res = requests.post(url, data=input_tag[2], cookies=cookies)
                 if check_success(test_res.text):
                     print("Find Vulnerability with " + payload + " in " + str(input_tag))

@@ -1,11 +1,4 @@
 /robots.txt#
-/index.htm#
-/index.html#
-/index.asp#
-/index.jsp#
-/index.php#
-/index.do#
-/index.action#
 /admin.php#
 /admin.asp#
 /admin.jsp#
@@ -18,10 +11,6 @@
 /zlk/index.jsp#
 /indexlis.jsp#
 /api.php#
-/login.php#
-/login.asp#
-/login.jsp#
-/login.html#
 /cmd.php#
 /info/index#
 /user/pwd.htm#
@@ -29,10 +18,6 @@
 /config.php#
 /config.jsp#
 /config.asp#
-/logout.php#
-/logout.asp#
-/logout.jsp#
-/logout.html#
 /word#
 /manage#
 /manager#

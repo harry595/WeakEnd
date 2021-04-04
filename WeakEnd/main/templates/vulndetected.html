@@ -8,23 +8,26 @@
 		<section style="margin: 0 5% 0 5%; height: 800px;">
 		<div style="width: 45%; position:relative; height: 700px; padding: 5px; margin-right: 10%; float:left; border: 1px black solid; border-radius: 0.375em;">
 			<h2 style="text-align: center;">Vuln Lists</h2>
-			<div style="border: solid 3px rgb(0, 161, 0); border-radius: 0.375rem; padding:10px; margin: 20px;">
-				<h3 style="margin:0px; display:inline-block">SQL Injection</h3>
-				<button style="float:right; line-height:0; height:2.5em; padding: 0 1em 0 1em;" class="search_button" value=1>View</button>
-			</div>
-			<div style="border: solid 3px rgb(0, 161, 0); border-radius: 0.375rem; padding:10px; margin: 20px;">
-				<h3 style="margin:0px; display:inline-block">Cross-site Scripting</h3>
-				<button style="float:right; line-height:0; height:2.5em; padding: 0 1em 0 1em;" class="search_button" value=2>View</button>
-			</div>
-			<div style="border: solid 3px rgb(0, 161, 0); border-radius: 0.375rem; padding:10px; margin: 20px;">
-				<h3 style="margin:0px; display:inline-block">Command Injection</h3>
-				<button style="float:right; line-height:0; height:2.5em; padding: 0 1em 0 1em;" class="search_button" value=3>View</button>
-			</div>
-			<button style="position: absolute; left: 50%; transform:translate(-50%, -50%); bottom:0px;">View Vulnerability Diagnostics Report</button>
+			{% for key, value in outputs.items %}
+				{% for i in value %}
+					<div class="vulnlist">
+						{% if key == 'LFI' %}
+							<h3>Local File Inclusion #{{forloop.counter}}</h3>
+						{% elif key == 'RFI' %}
+							<h3>Remote File Inclusion #{{forloop.counter}}</h3>
+						{% elif key == 'CI' %}
+							<h3>Command Injection #{{forloop.counter}}</h3>
+						{% endif %}
+						<button class="search_button" id={{key}} value= {{forloop.counter0}}>View</button>
+					</div>
+				{% endfor %}
+			{% endfor %}
+			<button onclick="location.href='/reports/{{new_id}}';" style="position: absolute; left: 50%; transform:translate(-50%, -50%); bottom:0px;">View Vulnerability Diagnostics Report</button>
 		</div>
-		<div style="width: 45%; height: 700px; padding: 5px; float:left; border: 1px black solid; border-radius: 0.375em;">
+		<div style="width: 45%; position:relative; height: 700px; padding: 5px; float:left; border: 1px black solid; border-radius: 0.375em;">
 			<h2 style="text-align: center;">Vuln Points</h2>
-			<textarea id="aftercode" placeholder="After Patch" style="resize: none; height: 610px;">{{json_data}}</textarea>
+			<textarea id="aftercode" style="resize: none; height: 520px;">Vuln Points</textarea>
+			<button onclick="location.href='/patch';" id="patch_button"style="position: absolute; left: 50%; display: none; transform:translate(-50%, -50%); bottom:0px;" >Patch Vuln Points</button>
 		</div>
 		</section>
 	</header>
@@ -45,18 +48,33 @@
 		<a href="javascript:topFunction();"><i class="fas fa-arrow-alt-circle-up"> Back to top</i></a>
 	</div>
 </section>
+<input type="hidden" id="new_id" name="new_id" value={{new_id}}>
+<input type="hidden" id="patch_id" name="patch_id" value='LFI'>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
 	$('.search_button').click(function(){
 		var search_key = this.value
-		alert(search_key)
+		var search_id = this.id
+		var new_id = document.getElementById('new_id').value
+
 		$.ajax({
 			url:'vulngive/',
-			data : { 'search_key':search_key},
-			success:function(data){
-				$('.aftercode').html(data)
+			data : { 'search_key':search_key,'search_id':search_id,'new_id':new_id},
+			success:function(output_data){
+				var method=JSON.stringify(output_data['output_data']['method']);
+				var url=JSON.stringify(output_data['output_data']['url']);
+				var data=JSON.stringify(output_data['output_data']['data']);
+				$("#patch_id").val(search_id);
+				$("#patch_button").show();
+				//if data=GET method
+				if(data == null){
+					$('#aftercode').html("method : "+method+"\npayload: " + url );
+				}
+				else{
+					$('#aftercode').html("method : "+method+"\naction URL: " + url + "\nparameter: "+ data);
+				}
 			}
 		})
 	})
