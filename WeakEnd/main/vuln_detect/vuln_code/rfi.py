@@ -5,11 +5,12 @@ from urllib.error import HTTPError
 import requests
 from urllib import parse
 from urllib.parse import urlparse
-
+import time
 def make_GET_form(url):
     dic={}
     dic['vuln']='RFI'
     dic['method']='GET'
+    time.sleep(2)
     dic['url']=url
     return dic
 
@@ -42,7 +43,7 @@ def scan_rfi_GET(url):
             split_url = url.split("=")[0]
             scan_addr = split_url + "=" + exploit[0]
             print(scan_addr)
-            cookies = {'PHPSESSID': '6tbpf4ph6d6hqa548etm0oijo1', 'security': 'low'}
+            cookies = {'PHPSESSID': 'qd6jtoo5o81dc6qgmtd7tej1a4', 'security': 'low'}
             res_rfi = requests.get(scan_addr,cookies=cookies,verify=False)
             requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
             if res_rfi.status_code == 200 and rfi_txt in res_rfi.text:

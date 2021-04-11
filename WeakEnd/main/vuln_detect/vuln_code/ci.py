@@ -17,6 +17,7 @@ def make_POST_form(url,data):
     dic['method']='POST'
     dic['url']=url
     dic['data']=data
+    time.sleep(2)
     return dic
 
 def complete_url(input_url):
@@ -86,8 +87,7 @@ def scan(url):
                 input_tag[2][key_list[input_tag[3]]] = payload
                 #print(payload)
                 #print(input_tag)
-                print(input_tag[2])
-                cookies = {'PHPSESSID': '6tbpf4ph6d6hqa548etm0oijo1', 'security': 'low'}
+                cookies = {'PHPSESSID': 'qd6jtoo5o81dc6qgmtd7tej1a4', 'security': 'low'}
                 test_res = requests.post(url, data=input_tag[2], cookies=cookies)
                 if check_success(test_res.text):
                     print("Find Vulnerability with " + payload + " in " + str(input_tag))

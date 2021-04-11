@@ -2,6 +2,19 @@
 {% block content %}
 {% load static %}
 <!-- Banner -->
+<style>
+	.progress {
+	 width:50%;
+	 background:yellow;
+	}
+	.bar {
+	 height:15px;
+	 width:0%;
+	 background:tomato;
+	 text-align:right;
+	}
+</style>
+  
 <section>
 	<header class="main">
 		<h1 style="text-align: center; margin-bottom: 1em;">Vuln Detected</h1>
@@ -30,7 +43,15 @@
 			<button onclick="location.href='/patch';" id="patch_button"style="position: absolute; left: 50%; display: none; transform:translate(-50%, -50%); bottom:0px;" >Patch Vuln Points</button>
 		</div>
 		</section>
+		
 	</header>
+	{% if task_id != 0 %}
+	<div class="status"></div>
+    <div class="progress">
+    	<div class="bar"></div>
+    </div>
+	</div>
+   {% endif %}
 </section>
 <section>
 	<h3 style="text-align: center;">How to use</h3>
@@ -53,6 +74,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<!-- View Button -->
 <script>
 	$('.search_button').click(function(){
 		var search_key = this.value
@@ -80,5 +103,51 @@
 	})
 	
 </script>
+
+<!-- progress bar -->
+<script type="text/javascript">
+   var poll_xhr;
+   var willstop = 0;
+  (function(){
+    var poll = function(){
+      var json_dump = "{{ data }}";
+      var task_id = "{{task_id}}";
+
+      console.log(task_id);
+      poll_xhr = $.ajax({
+        url:'progress',
+        type: 'POST',
+        data: {
+            task_id: task_id,
+            csrfmiddlewaretoken: "{{csrf_token}}",
+        },
+        success: function(result) {
+					console.log("0000000000")
+					console.log(result)
+					console.log(result.process_percent)
+					console.log("0000000000")
+                    if (result.process_percent == null || result.process_percent == undefined) {
+                        willstop = 1;
+                        jQuery('.bar').css({'width': 100 + '%'});
+                        jQuery('.bar').html(100 + '%');
+
+                       } else {
+                         jQuery('.bar').css({'width': result.process_percent + '%'});
+                         jQuery('.bar').html(result.process_percent + '%');
+                       };
+                    }
+      });
+    };
+
+    var refreshIntervalId = setInterval(function() {
+      poll();
+      if(willstop == 1){
+        clearInterval(refreshIntervalId);
+      }
+    },500);
+
+
+  })();
+ </script>
 
 {% endblock content %}

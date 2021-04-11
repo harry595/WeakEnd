@@ -32,7 +32,11 @@ from django.contrib.auth import authenticate, login
 import os
 import requests
 import time
-from .vuln_detect.vuln_code import attack_all
+#from .vuln_detect.vuln_code import attack_all
+from .tasks import checkvuln
+from celery.result import AsyncResult
+from celery.states import state, PENDING, SUCCESS
+
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -135,6 +139,10 @@ def vulngive(request):
 @login_required 
 def vulndetected(request,new_id):
     #user check
+    try:
+        task_id=request.GET['task_id']
+    except:
+        task_id=0
     check_user=Vulnlist.objects.values().filter(vuln_id=new_id).last()['user_id_id']
     if(check_user!=request.user.id):
         return redirect('/')
@@ -148,12 +156,11 @@ def vulndetected(request,new_id):
     for vuln_keys in json_data.keys():
         outputs[vuln_keys]=forjinja[0:len(json_data[vuln_keys])]
     print(outputs)
-    return render(request,'vulndetected.html',{'outputs':outputs,'new_id':new_id})
+    return render(request,'vulndetected.html',{'outputs':outputs,'new_id':new_id,'task_id':task_id})
 
 @login_required 
 def vulndetecting(request):
     url=request.GET["url"]
-    detected_vuln=attack_all.checkvuln(url)
     new_id=Vulnlist.objects.all().values('vuln_id').last()['vuln_id']+1
     new_vuln = Vulnlist(
         vuln_id=new_id,
@@ -161,9 +168,11 @@ def vulndetecting(request):
         target_url=url
     )
     new_vuln.save()
-    with open(os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json', 'w') as outfile:
-        json.dump(detected_vuln, outfile, indent=4)
-    return HttpResponseRedirect('/vulndetected/{}'.format(new_id))
+    detected_vuln=checkvuln.delay(url,new_id)
+    f = open(os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json', 'w')
+    f.write("{}")
+    f.close()
+    return HttpResponseRedirect('/vulndetected/'+str(new_id)+'?task_id='+detected_vuln.id)
 
 
 def signup(request):
@@ -199,3 +208,21 @@ def signin(request):
     else:
         return render(request, 'signin.html')
 
+
+# Create your views here.
+def progress(request):
+    """ A view to report the progress to the user """
+    data = 'Fail'
+    if request.is_ajax():
+        if 'task_id' in request.POST.keys() and request.POST['task_id']:
+            task_id = request.POST['task_id']
+            task = AsyncResult(task_id)
+            data = task.result or task.state
+        else:
+            data = 'No task_id in the request'
+    else:
+        data = 'This is not an ajax request'
+
+    json_data = json.dumps(data)
+    print(json_data)
+    return HttpResponse(json_data, content_type='application/json')

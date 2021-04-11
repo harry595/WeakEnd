@@ -3,13 +3,13 @@ import urllib.request
 import base64
 from urllib import parse
 from urllib.parse import urlparse, parse_qs, parse_qsl
-from time import sleep
 from requests_toolbelt.utils import dump
-
+import time
 def make_GET_form(url):
     dic={}
     dic['vuln']='LFI'
     dic['method']='GET'
+    time.sleep(2)
     dic['url']=url
     return dic
 
@@ -92,7 +92,7 @@ def scan_lfi(url, method):
                             for file_name in f:
                                 file_name = file_name.replace("\n", "")
                                 scan_addr_path = scan_addr + file_name
-                                cookies = {'PHPSESSID': '6tbpf4ph6d6hqa548etm0oijo1', 'security': 'low'}
+                                cookies = {'PHPSESSID': 'qd6jtoo5o81dc6qgmtd7tej1a4', 'security': 'low'}
                                 res_path = requests.get(scan_addr_path, cookies=cookies)
                                 #print(res_path.status_code)
                                 if res_path.status_code == 200:
@@ -404,6 +404,7 @@ def check_success(res_text):
 
 def lfi_attack(raw_url,method):
     url = complete_url(raw_url)
+    print(url)
     if method == "GET":
         if check_url_get(url) == True:
             return scan_lfi(url,"GET")

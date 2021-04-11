@@ -26,6 +26,7 @@ urlpatterns = [
     path('subscribe/', views.subscribe, name='subscribe'), 
     path('vulndetecting/', views.vulndetecting, name='vulndetecting'), 
     path('vulndetected/<int:new_id>', views.vulndetected, name='vulndetected'),
+    path('vulndetected/progress', views.progress, name='progress'),
     path('vulndetected/vulngive/', views.vulngive, name="vulngive"),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
