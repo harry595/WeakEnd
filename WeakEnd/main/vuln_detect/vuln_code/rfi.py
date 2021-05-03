@@ -43,7 +43,7 @@ def scan_rfi_GET(url):
             split_url = url.split("=")[0]
             scan_addr = split_url + "=" + exploit[0]
             print(scan_addr)
-            cookies = {'PHPSESSID': 'qd6jtoo5o81dc6qgmtd7tej1a4', 'security': 'low'}
+            cookies = {'PHPSESSID': 'd4d7698dp95b76jmbhtb3t2am6', 'security': 'low'}
             res_rfi = requests.get(scan_addr,cookies=cookies,verify=False)
             requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
             if res_rfi.status_code == 200 and rfi_txt in res_rfi.text:

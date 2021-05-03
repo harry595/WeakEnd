@@ -17,9 +17,9 @@ def checkvuln(url,new_id):
     current_task.update_state(state='PROGRESS',meta={'process_percent': 50})
     result_data={}
     vuln_list=[]
-    vuln_list.append(rfi_attack('http://192.168.190.159/vulnerabilities/fi/?page=include.php'))
-    vuln_list.append(ci_attack('http://192.168.190.159/vulnerabilities/exec/'))
-    vuln_list.append(lfi_attack('http://192.168.190.159/vulnerabilities/fi/?page=include.php','GET'))
+    vuln_list.append(rfi_attack('http://192.168.112.130/vulnerabilities/fi/?page=include.php'))
+    vuln_list.append(ci_attack('http://192.168.112.130/vulnerabilities/exec/'))
+    vuln_list.append(lfi_attack('http://192.168.112.130/vulnerabilities/fi/?page=include.php','GET'))
     
 
     for vuln_element in vuln_list:

