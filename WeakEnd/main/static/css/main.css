@@ -2367,7 +2367,7 @@
 		}
 
 		.select-wrapper:before {
-			color: rgba(210, 215, 217, 0.75);
+			color: #f56a6a;
 			content: '\f078';
 			display: block;
 			height: 2.75em;

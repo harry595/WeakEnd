@@ -46,3 +46,28 @@ def zetanize(response):  ####form parser
                 forms[num]['inputs'].append(inpDict)
         num += 1
     return forms
+
+
+cookies = {'PHPSESSID': '6ur3g995en5ocvhhpa53lbf0g2', 'security': 'low'}
+url='192.168.112.130_80'
+with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/'+url+'/'+url+'-dynamic-unique.txt', 'r') as f:
+    geturls=f.readlines()
+
+get_list=[]
+for geturl in geturls:
+    get_list.append(["get",geturl.rstrip()])
+print(get_list)
+
+with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/'+url+'/'+url+'-forms-sorted.txt', 'r') as f:
+    posturls=f.readlines()
+print()
+print()
+zetanize_list=[]
+for posturl in posturls:
+    res = requests.get(posturl.rstrip(),cookies=cookies,verify=False)
+    tmp_zetanize=list(zetanize(res.text).values())
+    if(tmp_zetanize!={}):
+        for i in tmp_zetanize:
+            if(i['method'].lower()=='post'):
+                zetanize_list.append([posturl.rstrip(),{0:i}])
+print(zetanize_list)

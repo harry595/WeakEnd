@@ -1,133 +1,134 @@
 import requests
-import time
-from bs4 import BeautifulSoup
 import os
-success = False
+import re
+import time
+cookies = {'PHPSESSID': 'vrh7ihvkgcrfl1s5tjasg9epg4', 'security': 'low'}
 
-def make_GET_form(url):
-    dic={}
-    dic['vuln']='CI'
-    dic['method']='GET'
-    dic['url']=url
+
+def make_GET_form(url: str):
+    dic = {}
+    dic['vuln'] = ' CI'
+    dic['method'] = 'GET'
+    dic['url'] = url
+    print("CI GET FIND" )
     return dic
 
-def make_POST_form(url,data):
-    dic={}
-    dic['vuln']='CI'
-    dic['method']='POST'
-    dic['url']=url
-    dic['data']=data
-    time.sleep(2)
+
+def make_POST_form(url: str, data: dict):
+    dic = {}
+    dic['vuln'] = 'CI'
+    dic['method'] = 'POST'
+    dic['url'] = url
+    dic['data'] = data
+    print("CI POST FIND")
     return dic
 
-def complete_url(input_url):
-    if not input_url.startswith("http"):
-        url = "http://" + input_url
-    else:
-        url = input_url
-    return url
 
-
-def check_url(url):
-    res = requests.get(url)
-    if res.status_code == 200:
-        print("Valid")
-        return True
-    else:
-        print("Invalid")
-        # print(res.status_code)
-        return False
-
-
-# 해당 태그의 부모 태그를 재귀적으로 탐색하며 post인지 get인지 판별
-def find_in_parent(tag):
-    try:
-        if 'post' in tag.parent['method'] or 'POST' in tag.parent['method']:
-            return 'post'
-        elif 'get' in tag.parent['method'] or 'GET' in tag.parent['method']:
-            return 'get'
-        else:
-            return find_in_parent(tag.parent)
-    except KeyError as e:
-        return find_in_parent(tag.parent)
-    except TypeError as e:
-        return 'other'
-
-
-def find_parameters():
-    #param_list = {'ip': '', 'Submit': 'Submit'}
-    param_list = {'ip': '', 'submit': 'submit'}
-    input_location = 0
-    print("구현 중")
-    return param_list, input_location
-
-
-def scan(url):
-    global success
-    tmp = []
-    input_list = []
-    res = requests.get(url)
-    soup = BeautifulSoup(res.text, 'html.parser')
-    for input_tag in soup.find_all('input', {'type': 'text'}):
-        tmp.append(input_tag)
-
-    for tag in tmp:
-        method_type = find_in_parent(tag)
-        params, loc = find_parameters()
-        input_list.append([tag, method_type, params, loc])
-
-    with  open(os.path.dirname(os.path.realpath(__file__)) + '/ci.txt', "r") as f:
-        data = f.readlines()
-
-    for input_tag in input_list:
-        key_list = list(input_tag[2].keys())
-        if input_tag[1] == 'post':
-            for payload in data:
-                payload = payload.strip()
-                input_tag[2][key_list[input_tag[3]]] = payload
-                #print(payload)
-                #print(input_tag)
-                cookies = {'PHPSESSID': 'd4d7698dp95b76jmbhtb3t2am6', 'security': 'low'}
-                test_res = requests.post(url, data=input_tag[2], cookies=cookies)
-                if check_success(test_res.text):
-                    print("Find Vulnerability with " + payload + " in " + str(input_tag))
-                    success = True
-                    return make_POST_form(url,input_tag[2])
-        elif input_tag[1] == 'get':
-            for payload in data:
-                payload = payload.replace(" ", "+").strip()
-                input_tag[2][key_list[input_tag[3]]] = payload
-                #print(input_tag)
-                test_res = requests.get(url, params=input_tag[2])
-                if check_success(test_res.text):
-                    print("Find Vulnerability with " + payload + " in " + str(input_tag))
-                    success = True
-                    return payload+str(input_tag)
-        else:
-            continue
-
-def check_success(res):
-    #print(res)
-    if ("root" in res or
-            "daemon" in res or
-            ("groups" in res and "gid" in res) or
-            "x86_64" in res or
-            "127.0.0.1" in res or
-            'commex' in res):
-        return True
+def get_request(data, dic, target):
+    global cookies
+    key_list = list(dic.keys())
+    for payload_name in key_list:
+        tmp = dic
+        tmp[payload_name] = '@@@@@@'
+        middle_form = target
+        key_list_tmp = list(tmp.keys())
+        for idx, key in enumerate(key_list_tmp):
+            if idx == 0:
+                middle_form = middle_form + '?' + key + '=' + tmp[key]
+            else:
+                middle_form = middle_form + '&' + key + '=' + tmp[key]
+        for payload in data:
+            final_form = middle_form.replace('@@@@@@', payload.strip().replace(' ', '+'))
+            try:
+                test_res = requests.get(final_form, cookies=cookies)
+            except:
+                print("ERROR on CI" + target)
+                time.sleep(2)
+                return False
+                test_res = requests.get(final_form, cookies=cookies)
+            if check_success(test_res.text):
+                return make_GET_form(final_form)
     return False
 
 
-def ci_attack(from_usr_url):
-    url = complete_url(from_usr_url)
-    if check_url(url):
-        print("Start test")
-        return scan(url)
-    else:
-        print("Start Failed: Connection Failed")
+def scan_type1(url: str, params: dict):
+    global cookies
+    with open(os.path.dirname(os.path.realpath(__file__)) + '/ci.txt', "r") as f:
+        data = f.readlines()
 
-    if success:
-        print("Vulnerability Detected")
+    for items in params.values():
+        target = url + items['action']
+        method = items['method']
+        dic = {}
+        for ipt in items['inputs']:
+            dic[ipt['name']] = ipt['value']
+
+        if method == 'post':
+            key_list = list(dic.keys())
+            for payload_name in key_list:
+                tmp = dic
+                for payload in data:
+                    tmp[payload_name] = payload.strip()
+                    try:
+                        test_res = requests.post(target, data=tmp, cookies=cookies)
+                    except:
+                        print("ERROR on CI " + target)
+                        time.sleep(2)
+                        return False
+                        test_res = requests.post(target, data=tmp, cookies=cookies)
+                    if check_success(test_res.text):
+                        return make_POST_form(target, tmp)
+        elif method == 'get':
+            return get_request(data, dic, target)
+        else:
+            print('Error in ' + target + ', method type must be assigned')
+            return False
+    return False
+
+
+def scan_type2(url: str):
+    with open(os.path.dirname(os.path.realpath(__file__)) + '/ci.txt', "r") as f:
+        data = f.readlines()
+
+    params = re.split('=&?', url)
+    target = params[0]
+    del (params[0])
+    key = ''
+    dic = {}
+    for i in range(len(params)):
+        if i % 2 == 0:
+            key = params[i]
+        else:
+            dic[key] = params[i]
+
+    return get_request(data, dic, target)
+
+
+def check_success(res):
+    if re.search(r'uid=[\d]*(.*)gid=[\d]*(.*)groups=33(.*)', res):  # check id result
+        return True
+    if re.search(r'\w*:x:\d*:\d*:\w*:\/.*:\/.*', res):  # check /etc/passwd result
+        return True
+    if re.search(r'\w+\s+\d+\s+\[[\w\s]+]\s+[a-zA-Z]+\s+[A-Z]*\s*\d+[ \t]+[^\n]+',
+                 res):  # check netstat -an linux/UNIX result
+        return True
+    if re.search(r'[A-Z]+\s+\d+.\d+.\d+.\d+:\d+\s+\d+.\d+.\d+.\d+:\d+\s+[A-Z]+',
+                 res):  # check netstat -an windows result
+        return True
+    if re.search(r'\d+[^\w]\d+[^\w]\d+[^\n\d]{1,8}\d+:\d+[^\n\d]{1,10}(<DIR>)\s+[^\n]+', res):  # check dir result
+        return True
+    if re.search(r'[drwxs-]{10,12}\s+\d+\s+\w+\s+\w+\s+\d{1,7}\s[^\n]{4,15}\s+[^\n]+',
+                 res):  # check ls something result
+        return True
+
+    return False
+
+
+def ci_attack(arg1: str, arg2):
+    if arg1.startswith('http'):
+        return scan_type1(arg1, arg2)
+    elif arg1 == 'get':
+        return scan_type2(arg2)
     else:
-        print("vulnerability Undetected")
-    print("The test is complete.")
+        print('Error in ci_attack')
+        return False

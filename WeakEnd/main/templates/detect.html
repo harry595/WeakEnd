@@ -8,6 +8,20 @@
 	<section id="search" class="alt" style="width: 60%; margin: 0 auto;">
 		<form action="/vulndetecting">
 			<input type="text" name="url" id="url" placeholder="Enter Your Target URL" />
+			<br>
+			<h2 style="float:left">option: </h2>
+			<input type="text" name="cookie" id="cookie" placeholder="Cookies to send ex) PHPSESSID=QWFbiqq " style="width: 40%; float:left; margin-left:4%"/>
+			
+			<div class="select-wrapper">
+			<select name="level" style="width: 40%; float: right;">
+				<option value="">Level of depth to traverse (default:2)</option>
+				<option value="1">level 1</option>
+				<option value="2">level 2</option>
+				<option value="3">level 3</option>
+				<option value="4">level 4</option>
+				<option value="5">level 5</option>
+			</select>
+			</div>
 			<button id="detect" type="submit"><i class="fas fa-search"></i></button>
 		</form>
 	</section>
@@ -22,8 +36,23 @@
 		<div class="item2"><img src="{% static 'img/lfi.png' %}"  class="diag"/><br>Local/Remote File Inclusion</div>
 		<div class="item2"><img src="{% static 'img/ci.png' %}"  class="diag"/><br>Command Injection</div>
 	</div>
+</section>
+<section>
+	<h3>Vulnerability Diagnosis List</h3>
+	<br/><br/>
+	<div class="detectcontainer">
+		<div class="item2"><img src="{% static 'img/injection.png' %}" class="diag"/><br>SQL Injection</div>
+		<div class="item2"><img src="{% static 'img/xss.png' %}" class="diag"/><br>Cross-site Scripting</div>
+		<div class="item2"><img src="{% static 'img/lfi.png' %}"  class="diag"/><br>Local/Remote File Inclusion</div>
+		<div class="item2"><img src="{% static 'img/ci.png' %}"  class="diag"/><br>Command Injection</div>
+	</div>
 	<div style="text-align: center; font-size:20px; padding-top: 50px; padding-bottom: 50px;">
 		<a href="javascript:topFunction();"><i class="fas fa-arrow-alt-circle-up"> Back to top</i></a>
-	</div>
+	</div>	
 </section>
 {% endblock %}
+<script>
+$(document).ready(function() {
+    $('[data-toggle="popover"]').popover({container: "data-content"});
+});
+</script>

