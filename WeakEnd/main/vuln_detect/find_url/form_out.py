@@ -28,6 +28,7 @@ def zetanize(response):  ####form parser
         forms[num]['inputs'] = []
         if(forms[num]['method']==''):forms[num]['method']='get'
         inputs = re.findall(r'(?i)(?s)<input.*?>', match)
+        inputs += re.findall(r'(?i)(?s)<textarea.*?>', match)
         for inp in inputs:
             inpName = re.search(r'(?i)name=[\'"](.*?)[\'"]', inp)
             if inpName:
@@ -35,7 +36,9 @@ def zetanize(response):  ####form parser
                 inpValue = re.search(r'(?i)value=[\'"](.*?)[\'"]', inp)
                 inpName = d(e(inpName.group(1)))
                 inpType = d(e(inpType.group(1)) )if inpType else ''
-                inpValue = d(e(inpValue.group(1))) if inpValue else ''
+                inpValue = d(e(inpValue.group(1))) if inpValue else 'vulnch'
+                if inpValue =='': 
+                    inpValue='vulnch'
                 if inpType.lower() == 'submit' and inpValue == '':
                     inpValue = 'Submit Query'
                 inpDict = {

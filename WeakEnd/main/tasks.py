@@ -26,7 +26,7 @@ def checkvuln(url,cookie,level,new_id):
 
 
     # zetanize + making input
-    cookies = {'PHPSESSID': 'vrh7ihvkgcrfl1s5tjasg9epg4', 'security': 'low'}
+    cookies = {'PHPSESSID': '9vktd0gnopikdnbb2ggl5p0d86', 'security': 'low'}
     url='192.168.112.130_80'
     with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/'+url+'/'+url+'-dynamic-unique.txt', 'r') as f:
         geturls=f.readlines()
