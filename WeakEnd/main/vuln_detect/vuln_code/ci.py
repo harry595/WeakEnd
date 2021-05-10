@@ -2,7 +2,7 @@ import requests
 import os
 import re
 import time
-cookies = {'PHPSESSID': '9vktd0gnopikdnbb2ggl5p0d86', 'security': 'low'}
+cookies = {'PHPSESSID': 'n5p04ib16hs5q9o14bsdrutnr7', 'security': 'low'}
 
 
 def make_GET_form(url: str):
@@ -40,12 +40,12 @@ def get_request(data, dic, target):
         for payload in data:
             final_form = middle_form.replace('@@@@@@', payload.strip().replace(' ', '+'))
             try:
-                test_res = requests.get(final_form, cookies=cookies)
+                test_res = requests.get(final_form, cookies=cookies,verify=False)
+                print(final_form)
             except:
                 print("ERROR on CI" + target)
-                time.sleep(2)
-                return False
-                test_res = requests.get(final_form, cookies=cookies)
+                time.sleep(5)
+                test_res = requests.get(final_form, cookies=cookies,verify=False)
             if check_success(test_res.text):
                 return make_GET_form(final_form)
     return False
@@ -70,12 +70,12 @@ def scan_type1(url: str, params: dict):
                 for payload in data:
                     tmp[payload_name] = payload.strip()
                     try:
-                        test_res = requests.post(target, data=tmp, cookies=cookies)
+                        test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
+                        print(target)
                     except:
                         print("ERROR on CI " + target)
-                        time.sleep(2)
-                        return False
-                        test_res = requests.post(target, data=tmp, cookies=cookies)
+                        time.sleep(5)
+                        test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
                     if check_success(test_res.text):
                         return make_POST_form(target, tmp)
         elif method == 'get':
