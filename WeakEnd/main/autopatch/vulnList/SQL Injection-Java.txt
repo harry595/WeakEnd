@@ -1,0 +1,15 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below code and patch manually
+
+In Spring,
+Prepared Statement used by default
+when making SQL query in mybatis, Use #{ } rather than ${ }. #{ } convert parameter to string.
+example: " select * from  tblUserInfo where userid = '#{userid}' and userpw = '#{userpw}' "
+
+In JSP,
+Prepared Statement is not default, So write code like below.
+PreparedStatement stmt = conn.prepareStatement("select count(*) from member where userid=? and password=?");
+stmt.setString(1, userid);
+stmt.setString(2, password);
+ResultSet rs = stmt.executeQuery();
+%%%%%%%%%%PRNT

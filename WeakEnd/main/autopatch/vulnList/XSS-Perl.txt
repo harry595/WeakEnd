@@ -1,0 +1,18 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+Make a blacklist about some special characters, 
+Then delete those characters or substitute those characters with safe character.
+Or get module from CPAN and use that to escape string
+
+Example:
+    $text =~ s/[^A-Za-z0-9 ]*/ /g;
+OR
+    use Apache::Util;
+    use Apache::Request;
+    my $apr = Apache::Request->new(Apache->request);
+    my $text = $apr->param('text');
+    $r->content_type("text/html");
+    $r->send_http_header;
+    $r->print("You entered ", Apache::Util::html_encode($text));
+%%%%%%%%%%PRNT

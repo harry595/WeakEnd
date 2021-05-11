@@ -1,0 +1,23 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+Restrict User's input like below code to intended actions only.
+
+var valDesc = new Regex(@"[a-zA-Z0-9\x20.-()[]'&^$#@!~]+$");
+if (!valDesc.IsMatch(description))
+{ 
+    return new HttpStatusCodeResult(HttpStatusCode.NoContent, "No valid description given, unable to generate report.");
+}
+
+Or make a blacklist about some special characters, Then delete those characters or substitute those characters with safe character.
+Or make a whitelist about existing files, Then allow to use those files only.
+
+%%%%%%%%%%PRNT
+
+%%%%%%%%%%REGE
+()(Request.Form\["[\w]+"\])%func_list2
+%%%%%%%%%%REGE
+
+%%%%%%%%%%LIST
+Regex.Replace(
+, "[^\/\w-_. ]", "")
+%%%%%%%%%%LIST

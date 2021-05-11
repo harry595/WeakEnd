@@ -1,0 +1,51 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+Create a custom method below
+public static String escapeHTML(String s) {
+    StringBuilder out = new StringBuilder(Math.max(16, s.length()));
+    for (int i = 0; i < s.length(); i++) {
+        char c = s.charAt(i);
+        if (c > 127 || c == '"' || c == '\'' || c == '<' || c == '>' || c == '&') {
+            out.append("&#");
+            out.append((int) c);
+            out.append(';');
+        } else {
+            out.append(c);
+        }
+    }
+    return out.toString();
+}
+This method will substitute dangerous character to safe character.
+And apply this method to user's input string.
+
+Or make a blacklist about some special characters, Then delete those characters or substitute those characters with safe character.
+Or make a whitelist about some special characters, Then allow to use those characters only.
+%%%%%%%%%%PRNT
+
+%%%%%%%%%%FUNC
+public static String escapeHTML(String s) {
+    StringBuilder out = new StringBuilder(Math.max(16, s.length()));
+    for (int i = 0; i < s.length(); i++) {
+        char c = s.charAt(i);
+        if (c > 127 || c == '"' || c == '\'' || c == '<' || c == '>' || c == '&') {
+            out.append("&#");
+            out.append((int) c);
+            out.append(';');
+        } else {
+            out.append(c);
+        }
+    }
+    return out.toString();
+}
+
+%%%%%%%%%%FUNC
+
+%%%%%%%%%%REGE
+()(getParameter\("[\w]+"\))%func_list2
+%%%%%%%%%%REGE
+
+%%%%%%%%%%LIST
+escapeHTML(
+)
+%%%%%%%%%%LIST

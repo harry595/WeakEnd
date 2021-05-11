@@ -20,6 +20,7 @@ urlpatterns = [
     path('mypage/', views.mypage, name='mypage'), 
     path('changeUserInfo/', views.changeUserInfo, name='changeUserInfo'), 
     path('patch/', views.patch, name='patch'), 
+    path('patch/patching/', views.patching, name='patching'),
     path('signup/', views.signup, name='signup'), 
     path('signin/', views.signin, name='signin'), 
     path('signout/', auth_views.LogoutView.as_view(), name="signout"),

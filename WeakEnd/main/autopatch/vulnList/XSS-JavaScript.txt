@@ -1,0 +1,11 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+Make a blacklist about some special characters, 
+Then delete those characters or substitute those characters with safe character.
+
+Example:
+text = text.replace("<", "&lt;").replace(">", "&gt;");
+text = text.replace("'", "&quot;").replace('"', '&#39;'); 
+
+%%%%%%%%%%PRNT

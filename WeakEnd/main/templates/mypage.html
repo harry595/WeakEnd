@@ -6,12 +6,16 @@
 	<header class="main" id="mypage" >
 	<h1 style="text-align: center; margin-bottom: 2em;margin-top: 1em;">My Page</h1>
 	<section id="search" class="alt" style="text-align: center;">
-		<div >
+		<div>
 			<h3> First Name: {{ user.first_name }} / Last Name: {{ user.last_name }}</h3>
 			<h3> E-mail Address: {{ user.email }} </h3>
 			<h3> Age: {{ user.profile.age }} / Gender: {{ user.profile.gender }} / Job: {{ user.profile.job }}</h3>
-			<h3> SubScribe: {{ user.profile.sub_url }}</h3> 
-			<h3> SubScribe Term: {{ user.profile.sub_first }} </h3>
+			{% if user.profile.sub_url != None %}
+				<h3> SubScribe URL: {{ user.profile.sub_url }}</h3> 
+				<h3> First Mail Arrive: {{ user.profile.sub_first }} </h3>
+				<h3> Second Mail Arrive: {{ user.profile.sub_second }} </h3>
+				<h3> Third Mail Arrive: {{ user.profile.sub_third }} </h3>
+			{% endif %}
 			<button onclick="location.href='/changeUserInfo' " style="margin-top: 50px; margin-bottom: 10px; width:220px;  box-shadow: inset 0 0 0 2px green; color: green !important;"> Change UserInfo</button><br>
 			<button style="margin-bottom: 50px; width:220px;"> Cancel Subscribe</button>
 		</div>

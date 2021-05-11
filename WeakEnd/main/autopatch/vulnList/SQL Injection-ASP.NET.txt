@@ -1,0 +1,14 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below code and patch manually
+
+Write the code like below when make a SQL query
+
+        conn.Open();
+        string sql = "SELECT title FROM book WHERE author=@author";
+        SqlCommand cmd = new SqlCommand(sql, conn);
+        var p1 = new SqlParameter("@author", query);    //here
+        cmd.Parameters.Add(p1);                              //here
+        SqlDataReader reader = cmd.ExecuteReader();
+
+Using SqlParameter and Parameter.Add is point. Using those method prevent unintended action
+%%%%%%%%%%PRNT

@@ -1,0 +1,12 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below code and patch manually
+
+Write the code like below when make a SQL query
+
+my $sql = 'select * from table1 where key1 = ?';
+my $sth = $dbh->prepare($sql);
+$sth->bind_param(1, $var);
+$sth->execute();
+
+Using Prepared Statement prevent SQL Injection
+%%%%%%%%%%PRNT

@@ -1,0 +1,18 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+In Django,
+Django Template escape specific characters which ar particularly dangerous to HTML.
+But if you use safe template tag like below
+{{ text | safe }}
+And use autoescape off like below, It doesn't escape string.
+{% autoescape off %}
+    {{ text }}
+{% endautoescape %}
+It will cause XSS, So don't use safe tag or autoescape off/false when you display user's input
+more information : https://docs.djangoproject.com/en/3.1/topics/security/
+
+In Flask,
+If you want to display user's input on web, Use render_template(), NOT render_template_string()
+more information : https://semgrep.dev/docs/cheat-sheets/flask-xss/
+%%%%%%%%%%PRNT

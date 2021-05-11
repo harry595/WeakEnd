@@ -1,18 +1,1 @@
-{
-    " LFI": [
-        {
-            "method": "GET",
-            "url": "http://192.168.112.130/vulnerabilities/fi/?page=/etc/passwd"
-        }
-    ],
-    "CI": [
-        {
-            "method": "POST",
-            "url": "http://192.168.112.130/vulnerabilities/exec/#",
-            "data": {
-                "ip": ";/bin/cat /etc/passwd",
-                "submit": "submit"
-            }
-        }
-    ]
-}
+{}

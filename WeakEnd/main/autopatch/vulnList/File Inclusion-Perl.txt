@@ -1,0 +1,10 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+Using regular expression like below, You can restrict User's input to intended actions only.
+if ($file =~ m/^[\w\s]+.html?$/ig){
+    Do Something;
+}
+
+Or make a whitelist about existing files, Then allow to use those files only.
+%%%%%%%%%%PRNT

@@ -1,0 +1,15 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+Or make a blacklist about some special characters, Then delete those characters or substitute those characters with safe character.
+Or make a whitelist about some special characters, Then allow to use those characters only.
+%%%%%%%%%%PRNT
+
+%%%%%%%%%%REGE
+()(request.getParameter\("[\w]+"\))%func_list2
+%%%%%%%%%%REGE
+
+%%%%%%%%%%LIST
+
+.replaceAll("\"[*]:/<>[|]&`\\[$]%;!", "")
+%%%%%%%%%%LIST

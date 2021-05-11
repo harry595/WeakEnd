@@ -1,0 +1,13 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below code and patch manually
+
+Write the code like below when make a SQL query
+
+const sql = 'SELECT * FROM table1 WHERE id = ?, password = ?';
+const params = [id, password];
+connect.query(sql, params, function(err, row) {
+    ...
+}
+
+Escaping user's input prevent SQL Injection
+%%%%%%%%%%PRNT

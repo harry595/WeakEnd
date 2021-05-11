@@ -10,9 +10,9 @@ class Profile(models.Model):
     gender = models.CharField(max_length=10, blank=True)
     purpose = models.CharField(max_length=200, blank=True)
     sub_url= models.CharField(max_length=200, null=True)
-    sub_first= models.DateTimeField(null=True)
-    sub_second= models.DateTimeField(null=True)
-    sub_third= models.DateTimeField(null=True)
+    sub_first= models.DateField(null=True)
+    sub_second= models.DateField(null=True)
+    sub_third= models.DateField(null=True)
 
 class Vulnlist(models.Model):
     vuln_id = models.AutoField(primary_key=True)

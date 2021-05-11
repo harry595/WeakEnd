@@ -1,0 +1,18 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+Make a blacklist about some special characters, Then delete those characters or substitute those characters with safe character.
+request.getParameter("userid").replaceAll("\"\*:/<>\|", "");
+
+Or make a whitelist about some special characters, Then allow to use those characters only.
+Or make a whitelist about existing files, Then allow to use those files only.
+%%%%%%%%%%PRNT
+
+%%%%%%%%%%REGE
+()(request.getParameter\("[\w]+"\))%func_list2
+%%%%%%%%%%REGE
+
+%%%%%%%%%%LIST
+
+.replaceAll("\"\*:/<>\|", "")
+%%%%%%%%%%LIST

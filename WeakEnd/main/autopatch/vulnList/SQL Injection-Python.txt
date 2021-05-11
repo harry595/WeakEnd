@@ -1,0 +1,16 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually
+
+# BAD EXAMPLES. DON'T DO THIS!
+cursor.execute("SELECT admin FROM users WHERE username = '" + username + '");
+cursor.execute("SELECT admin FROM users WHERE username = '%s' % username);
+cursor.execute("SELECT admin FROM users WHERE username = '{}'".format(username));
+cursor.execute(f"SELECT admin FROM users WHERE username = '{username}'");
+
+Each of these statements passes username from the client directly to the database, without performing any sort of check or validation.
+
+# SAFE EXAMPLES. DO THIS!
+cursor.execute("SELECT admin FROM users WHERE username = %s'", (username, ));
+cursor.execute("SELECT admin FROM users WHERE username = %(username)s", {'username': username});
+In these statements, username is passed as a named parameter. Now, the database will use the specified type and value of username when executing the query, offering protection from Python SQL injection.
+%%%%%%%%%%PRNT

@@ -1,0 +1,18 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+Using regular expression like below, You can restrict User's input to intended actions only.
+$target = preg_replace('[^\/\w-_.]', '', $_REQUEST[ 'ip' ]);
+
+Or make a whitelist about some special characters, Then allow to use those characters only.
+%%%%%%%%%%PRNT
+
+%%%%%%%%%%REGE
+\w(.*(\$_(GET|POST|REQUEST)\[\s*'.*'\s*\]).*);%func_list2
+%%%%%%%%%%REGE
+
+%%%%%%%%%%LIST
+preg_replace('[^\/\w-_.]', '', 
+)
+%%%%%%%%%%LIST
+

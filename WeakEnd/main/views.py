@@ -2,11 +2,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from datetime import datetime
+import datetime
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.dateparse import parse_date
-from datetime import timedelta
 from django.template import loader, RequestContext
 from collections import OrderedDict
 from django.contrib.auth.decorators import login_required
@@ -36,6 +35,8 @@ import time
 from .tasks import checkvuln
 from celery.result import AsyncResult
 from celery.states import state, PENDING, SUCCESS
+from dateutil.relativedelta import relativedelta
+from .autopatch.autopatch import vulnerability_patch
 
 # Create your views here.
 def index(request):
@@ -107,12 +108,33 @@ def changeUserInfo(request):
         return redirect('/')
     return render(request,'changeUserInfo.html')
 
-@login_required 
-def patch(request):
-    return render(request,'patch.html')
 
 @login_required 
 def subscribe(request):
+    if request.method == 'POST':
+        user = request.user
+        profile=user.profile
+
+        profile.sub_url = request.POST['url']
+        term = int(request.POST['term'])
+        num = int(request.POST['num'])
+
+        current=datetime.date.today()
+        # datetime term
+        if term == 1:
+            profile.sub_first = current + relativedelta(days=7*num)
+            profile.sub_second = current + relativedelta(days=2*7*num)
+            profile.sub_third = current + relativedelta(days=3*7*num)
+        elif term == 2:
+            profile.sub_first = current + relativedelta(months=num)
+            profile.sub_second = current + relativedelta(months=2*num)
+            profile.sub_third = current + relativedelta(months=3*num)
+        else:
+            profile.sub_first = current + relativedelta(years=num)
+            profile.sub_second = current + relativedelta(years=2*num)
+            profile.sub_third =current + relativedelta(years=3*num)
+        profile.save()
+        return render(request,'mypage.html')
     return render(request,'subscribe.html')
 
 
@@ -135,6 +157,23 @@ def vulngive(request):
     output_data=json_data[search_id][search_key]
     context = {'output_data':output_data}
     return HttpResponse(json.dumps(context), content_type="application/json")
+
+@csrf_exempt
+@login_required 
+def patching(request):
+    # get inform that clicked
+    VulnType = int(request.POST['VulnType'])
+    BackType = int(request.POST['BackType'])
+    beforecode = request.POST['beforecode']
+    patch_result=vulnerability_patch(BackType,VulnType,beforecode)
+    
+    # return value of json
+    context = {'patch_result':patch_result}
+    return HttpResponse(patch_result)
+
+@login_required 
+def patch(request):
+    return render(request,'patch.html')
 
 @login_required 
 def vulndetected(request,new_id):

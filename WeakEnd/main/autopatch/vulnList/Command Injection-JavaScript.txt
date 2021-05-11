@@ -1,0 +1,29 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+@Bad Code Example:
+  const file = req.query.file;
+  const command = `git log --oneline ${file}`;
+  exec(command, (err, output) => {
+    if (err) {
+      res.status(500).send(err);
+      return;
+    }
+  res.send(output);
+  });
+
+@Safe Code Example:
+  const file = req.query.file;
+  const command = `/usr/local/bin/git`;
+  const args = ["log", "--oneline", file];
+  execFile(command, args, (err, output) => {
+    if (err) {
+      res.status(500).send(err);
+      return;
+    }
+  res.send(output);
+  });
+
+Rather than make a command with single string, Divide command and arguments string each.
+This will prevent command injection attack.
+%%%%%%%%%%PRNT

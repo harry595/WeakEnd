@@ -1,0 +1,22 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+Using existing module to escape user's input
+address = shlex.quote(request.args.get("address"))
+
+Or make a blacklist about some special characters, Then delete those characters or substitute those characters with safe character.
+Or make a whitelist about some special characters, Then allow to use those characters only.
+%%%%%%%%%%PRNT
+
+%%%%%%%%%%FUNC
+import shlex
+%%%%%%%%%%FUNC
+
+%%%%%%%%%%REGE
+([\w]+\s*)=\s*(request.args.get\("[\w]+"\))%func_list2
+%%%%%%%%%%REGE
+
+%%%%%%%%%%LIST
+shlex.quote(
+)
+%%%%%%%%%%LIST

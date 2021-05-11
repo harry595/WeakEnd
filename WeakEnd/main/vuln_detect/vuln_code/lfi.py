@@ -5,7 +5,7 @@ import base64
 import json
 from urllib import parse
 import time
-cookies = {'PHPSESSID': 'n5p04ib16hs5q9o14bsdrutnr7', 'security': 'medium'}
+cookies = {'PHPSESSID': 'sssud7guilr98spot2phguh250', 'security': 'medium'}
 
 
 def make_GET_form(url: str):
@@ -96,6 +96,8 @@ def scan_type1(url: str, params: dict):
             key_list = list(dic.keys())
             for payload_name in key_list:
                 tmp = dic
+                if payload_name.lower() == 'submit':
+                    continue
                 for payload in data:
                     #scan with encode
                     if payload.startswith('%'):

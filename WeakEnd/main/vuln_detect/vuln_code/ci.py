@@ -2,7 +2,7 @@ import requests
 import os
 import re
 import time
-cookies = {'PHPSESSID': 'n5p04ib16hs5q9o14bsdrutnr7', 'security': 'low'}
+cookies = {'PHPSESSID': 'sssud7guilr98spot2phguh250', 'security': 'low'}
 
 
 def make_GET_form(url: str):
@@ -59,6 +59,7 @@ def scan_type1(url: str, params: dict):
     for items in params.values():
         target = url + items['action']
         method = items['method']
+ 
         dic = {}
         for ipt in items['inputs']:
             dic[ipt['name']] = ipt['value']
@@ -66,6 +67,9 @@ def scan_type1(url: str, params: dict):
         if method == 'post':
             key_list = list(dic.keys())
             for payload_name in key_list:
+                #submit은 continue
+                if payload_name.lower() == 'submit':
+                    continue
                 tmp = dic
                 for payload in data:
                     tmp[payload_name] = payload.strip()

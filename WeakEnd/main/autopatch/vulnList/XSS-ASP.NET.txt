@@ -1,0 +1,9 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+Use Razor MVC when display code at page.
+Don't use 'Html.Raw' method in front source code when use Razor MVC to display C# code to html code. 
+
+Check below for more information
+https://docs.microsoft.com/ko-kr/aspnet/core/security/cross-site-scripting?view=aspnetcore-5.0
+%%%%%%%%%%PRNT

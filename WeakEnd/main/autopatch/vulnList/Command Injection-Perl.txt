@@ -1,0 +1,19 @@
+%%%%%%%%%%PRNT
+PATCH FAILED: Read below and patch manually.
+
+When using system method to execute command, Seperate command and arguments like below. This will prevent Command Injection attack
+system ("cat", "/usr/stats/$username");
+
+Or make a blacklist about some special characters, Then delete those characters or substitute those characters with safe character.
+Or make a whitelist about some special characters, Then allow to use those characters only.
+
+more information : https://www.cgisecurity.com/lib/sips.html
+%%%%%%%%%%PRNT
+
+%%%%%%%%%%REGE
+system\("[\w]+([ ]+)[^"]+"\);%simple_sub
+%%%%%%%%%%REGE
+
+%%%%%%%%%%LIST
+", "
+%%%%%%%%%%LIST
