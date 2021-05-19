@@ -71,7 +71,8 @@
 			data : { 'VulnType':VulnType, 'BackType':BackType, 'beforecode':beforecode},
 			success: function(output_data){
 				//if data=GET method
-				$('#aftercode').html(output_data);
+				var d = document.getElementById('aftercode');
+				d.innerHTML = output_data;
 			}
 		})
 	})

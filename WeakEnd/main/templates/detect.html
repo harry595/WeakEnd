@@ -2,6 +2,11 @@
 {% block content %}
 {% load static %}
 <!-- Banner -->
+<div id="loading" style="display: none;">
+	<img src="{% static 'img/Loading.gif' %}"  alt="loading">	
+	<h3>Scanning URL ... <br>This operation takes up to 10 minutes.</h3>
+</div>
+
 <section style="margin-bottom: 10%;">
 	<header class="main">
 	<h1 style="text-align: center; margin-bottom: 2em;margin-top: 1em;">Vuln Detector</h1>
@@ -22,7 +27,7 @@
 				<option value="5">level 5</option>
 			</select>
 			</div>
-			<button id="detect" type="submit"><i class="fas fa-search"></i></button>
+			<button id="detect" type="submit" onclick="Loading()"><i class="fas fa-search"></i></button>
 		</form>
 	</section>
 	</header>
@@ -49,9 +54,12 @@
 	</div>
 	<br/>
 </section>
-{% endblock %}
 <script>
-$(document).ready(function() {
-    $('[data-toggle="popover"]').popover({container: "data-content"});
-});
+	$(document).ready(function() {
+	    $('[data-toggle="popover"]').popover({container: "data-content"});
+	});
+	function Loading(){
+		document.getElementById('loading').style.display='block';
+	}
 </script>
+{% endblock %}

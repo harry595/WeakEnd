@@ -23,8 +23,6 @@ app = Celery('tasks',  backend='rpc://', broker='pyamqp://guest:guest@localhost/
 def checkvuln(url,cookie,level,new_id):
     current_task.update_state(state='PROGRESS',meta={'process_percent': 0})
     result_data={}
-
-
     # zetanize + making input
     cookies = {'PHPSESSID': 'n5p04ib16hs5q9o14bsdrutnr7', 'security': 'low'}
     url='192.168.112.130_80'
@@ -34,7 +32,6 @@ def checkvuln(url,cookie,level,new_id):
     get_lists=[]
     for geturl in geturls:
         get_lists.append(["get",geturl.rstrip()])
-    print(get_lists)
 
     with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/'+url+'/'+url+'-forms-sorted.txt', 'r') as f:
         posturls=f.readlines()

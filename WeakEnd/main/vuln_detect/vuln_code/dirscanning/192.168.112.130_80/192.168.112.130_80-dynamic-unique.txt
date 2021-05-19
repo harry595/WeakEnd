@@ -1,7 +1,7 @@
-http://192.168.112.130/vulnerabilities/fi/?page=include.php
-http://192.168.112.130/instructions.php?doc=readme
-http://192.168.112.130/vulnerabilities/brute/?username=123&password=123&Login=Login#
-http://192.168.112.130/vulnerabilities/csrf/?password_current=qwd&password_new=qwd&password_conf=qwd&Change=Change#
-http://192.168.112.130/vulnerabilities/sqli/?id=qwe&Submit=Submit#
-http://192.168.112.130/vulnerabilities/sqli_blind/?id=qwd&Submit=Submit#
-http://192.168.112.130/vulnerabilities/xss_r/?name=qwe#
+http://172.30.1.57/vulnerabilities/fi/?page=include.php
+http://172.30.1.57/instructions.php?doc=readme
+http://172.30.1.57/vulnerabilities/brute/?username=123&password=123&Login=Login#
+http://172.30.1.57/vulnerabilities/csrf/?password_current=qwd&password_new=qwd&password_conf=qwd&Change=Change#
+http://172.30.1.57/vulnerabilities/sqli/?id=qwe&Submit=Submit#
+http://172.30.1.57/vulnerabilities/sqli_blind/?id=qwd&Submit=Submit#
+http://172.30.1.57/vulnerabilities/xss_r/?name=qwe#

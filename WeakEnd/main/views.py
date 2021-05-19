@@ -134,6 +134,7 @@ def subscribe(request):
             profile.sub_second = current + relativedelta(years=2*num)
             profile.sub_third =current + relativedelta(years=3*num)
         profile.save()
+
         return render(request,'mypage.html')
     return render(request,'subscribe.html')
 
@@ -166,7 +167,7 @@ def patching(request):
     BackType = int(request.POST['BackType'])
     beforecode = request.POST['beforecode']
     patch_result=vulnerability_patch(BackType,VulnType,beforecode)
-    
+    print(patch_result)
     # return value of json
     context = {'patch_result':patch_result}
     return HttpResponse(patch_result)
@@ -199,6 +200,7 @@ def vulndetected(request,new_id):
 
 @login_required 
 def vulndetecting(request):
+    time.sleep(20)
     url=request.GET["url"]
     cookie=request.GET["cookie"]
     level=request.GET["level"]
