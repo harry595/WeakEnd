@@ -200,18 +200,6 @@ def vulndetected(request,new_id):
 
 @login_required 
 def vulndetecting(request):
-    time.sleep(20)
-    url=request.GET["url"]
-    cookie=request.GET["cookie"]
-    level=request.GET["level"]
-    new_id=Vulnlist.objects.all().values('vuln_id').last()['vuln_id']+1
-    new_vuln = Vulnlist(
-        vuln_id=new_id,
-        user_id=request.user,
-        target_url=url
-    )
-    new_vuln.save()
-    
     # CHECK URL
     '''
     if not url.startswith("http"):
@@ -222,19 +210,49 @@ def vulndetecting(request):
     if res_rfi.status_code != 200:
         return render(request,'detect.html')        
     '''
-    
-    # insert finding subdomain code (blackwidow)
-    time.sleep(1)
-    # DO SOMETHING
-    url='192.168.112.130'
-    url+='_80'
-    #here
+    #추후에 post로 수정하자
+    url=request.GET["url"]
+    cookie=request.GET["cookie"]
+    level=request.GET["level"]
+    new_id=Vulnlist.objects.all().values('vuln_id').last()['vuln_id']+1
+    new_vuln = Vulnlist(
+        vuln_id=new_id,
+        user_id=request.user,
+        target_url=url
+    )
+    new_vuln.save()
 
-    detected_vuln=checkvuln.delay(url,cookie,level,new_id)
     f = open(os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json', 'w')
     f.write("{}")
     f.close()
-    return HttpResponseRedirect('/vulndetected/'+str(new_id)+'?task_id='+detected_vuln.id)
+
+    time.sleep(2)
+    
+    
+    # insert finding subdomain code (blackwidow)
+    # DO SOMETHING
+    # 파일 경로는 os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/'+user_id'/'+url+'/'+url+'-subdomains-sorted.txt'
+    time.sleep(1)
+    url='192.168.112.130'
+    url+='_80'
+    #here
+    #171=user_id
+    with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/171/'+url+'/'+url+'-subdomains-sorted.txt', "r") as f:
+        urllist = f.readlines()
+    urllist = [x.strip() for x in urllist] 
+    return render(request, 'detectsearch.html',{'urllist':urllist})
+    
+    
+
+
+@login_required 
+def detectsearch(request):
+    print(request.POST.getlist('urls[]'))
+    return render(request,'patch.html')
+    #url을 list형식으로 전달해서 취약점 전달 예정
+    #detected_vuln=checkvuln.delay(url,cookie,level,new_id)
+
+    #return HttpResponseRedirect('/vulndetected/'+str(new_id)+'?task_id='+detected_vuln.id)
 
 
 def signup(request):

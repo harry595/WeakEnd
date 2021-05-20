@@ -1,0 +1,2 @@
+http://172.30.1.57/vulnerabilities/sqli/?id=qwe&Submit=Submit#
+http://172.30.1.57/vulnerabilities/sqli_blind/?id=qwd&Submit=Submit#

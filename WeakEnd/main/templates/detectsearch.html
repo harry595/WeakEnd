@@ -1,0 +1,38 @@
+{% extends "base.html" %} 
+{% block content %}
+{% load static %}
+<style>
+	#vulnselect label{
+		font-size:20px;
+	}
+</style>
+<!-- Banner -->
+<section style="margin-bottom: 10%;">
+	<header class="main">
+	<h1 style="text-align: center; margin-bottom: 2em;margin-top: 1em;">Subdomain Search Result</h1>
+	<section id="search" class="alt" style="width: 60%; margin: 0 auto;">
+		<form id='vulnselect' action='/detectsearch/' method="POST" style="text-align: center;">
+			{% csrf_token %}
+			{% for url in urllist %}
+				<div>
+					<input type='checkbox' name='urls[]' value={{url}} id={{url}} />
+					<label for={{url}}>{{url}}</label>
+				</div>
+			{% endfor %}
+			<input type="submit" value="Find Vulnerability" class="special" />
+		</form>
+	
+	</section>
+	</header>
+</section>
+<section>
+	<h2 style="text-align: center;">How to use</h2>
+	<br/>
+	<div style="text-align: center;">
+		<h3>1. Check the Subdomain to test. <br> 2. Press the submit button. <br> <p style="color: red;">3. This task takes longer as many subdomains are checked.</p></h3>
+	</div>
+	<div style="text-align: center; font-size:20px; padding-top: 50px; padding-bottom: 50px;">
+		<a href="javascript:topFunction();"><i class="fas fa-arrow-alt-circle-up"> Back to top</i></a>
+	</div>
+</section>
+{% endblock %}
