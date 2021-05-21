@@ -221,13 +221,10 @@ def vulndetecting(request):
         target_url=url
     )
     new_vuln.save()
-
     f = open(os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json', 'w')
     f.write("{}")
     f.close()
-
     time.sleep(2)
-    
     
     # insert finding subdomain code (blackwidow)
     # DO SOMETHING
@@ -240,19 +237,24 @@ def vulndetecting(request):
     with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/171/'+url+'/'+url+'-subdomains-sorted.txt', "r") as f:
         urllist = f.readlines()
     urllist = [x.strip() for x in urllist] 
-    return render(request, 'detectsearch.html',{'urllist':urllist})
+    context={'urllist':urllist,'cookie':cookie,'level':level,'new_id':new_id }
+    return render(request, 'detectsearch.html',context)
     
     
 
 
 @login_required 
 def detectsearch(request):
-    print(request.POST.getlist('urls[]'))
-    return render(request,'patch.html')
-    #url을 list형식으로 전달해서 취약점 전달 예정
-    #detected_vuln=checkvuln.delay(url,cookie,level,new_id)
-
-    #return HttpResponseRedirect('/vulndetected/'+str(new_id)+'?task_id='+detected_vuln.id)
+    urls=request.POST.getlist('urls[]')
+    #hidden 형식으로 데이터 가져오기
+    cookie=request.POST["cookie"]
+    level=request.POST["level"]
+    new_id=request.POST["new_id"]
+    # 아래에서 선택한 서브 도메인들 리스트에 맞춰 black widow 돌리기
+    time.sleep(5)
+    # 여기까지 
+    detected_vuln=checkvuln.delay(urls,cookie,level,new_id)
+    return HttpResponseRedirect('/vulndetected/'+str(new_id)+'?task_id='+detected_vuln.id)
 
 
 def signup(request):

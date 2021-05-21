@@ -4,7 +4,8 @@ from urllib.parse import urlparse
 import requests, sys, os, atexit, optparse
 from http import cookies
 requests.packages.urllib3.disable_warnings()
-
+-
+#black widow 작업중
 
 def readlinks (url):
   try:

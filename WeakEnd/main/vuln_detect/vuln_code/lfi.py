@@ -5,7 +5,7 @@ import base64
 import json
 from urllib import parse
 import time
-cookies = {'PHPSESSID': 'cnav05h5ltgj1f5eqaorvq01v2', 'security': 'medium'}
+cookies = {'PHPSESSID': 'b9sco2fi5hf8u65hn5m9tbb855', 'security': 'medium'}
 
 
 def make_GET_form(url: str):

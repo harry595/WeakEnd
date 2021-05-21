@@ -1,1 +1,1 @@
-http://172.30.1.57/vulnerabilities/fi/
+http://172.30.1.18/vulnerabilities/fi/

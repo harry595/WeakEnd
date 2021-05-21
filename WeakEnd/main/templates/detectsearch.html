@@ -6,6 +6,10 @@
 		font-size:20px;
 	}
 </style>
+<div id="loading" style="display: none;">
+	<img src="{% static 'img/Loading.gif' %}"  alt="loading">	
+	<h3>Scanning URL ... <br>This operation takes up to 10 minutes.</h3>
+</div>
 <!-- Banner -->
 <section style="margin-bottom: 10%;">
 	<header class="main">
@@ -19,7 +23,12 @@
 					<label for={{url}}>{{url}}</label>
 				</div>
 			{% endfor %}
-			<input type="submit" value="Find Vulnerability" class="special" />
+			<br>
+			<br>
+			<input type="hidden" name='level' value={{level}} />
+			<input type="hidden" name='cookie' value={{cookie}} />
+			<input type="hidden" name='new_id' value={{new_id}} />
+			<button type="submit" onclick="Loading()">Find Vulnerability</button>
 		</form>
 	
 	</section>
@@ -35,4 +44,9 @@
 		<a href="javascript:topFunction();"><i class="fas fa-arrow-alt-circle-up"> Back to top</i></a>
 	</div>
 </section>
+<script>
+	function Loading(){
+		document.getElementById('loading').style.display='block';
+	}
+</script>
 {% endblock %}
