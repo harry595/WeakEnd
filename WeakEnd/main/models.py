@@ -18,4 +18,6 @@ class Vulnlist(models.Model):
     vuln_id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, db_column="user_id")
     target_url = models.CharField(max_length=200, blank=True)
+    cookie = models.CharField(max_length=200, blank=True)
+    level = models.IntegerField(blank=True, default=2)
     detect_date= models.DateField(auto_now=True)

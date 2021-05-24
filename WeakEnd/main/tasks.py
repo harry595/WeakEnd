@@ -27,9 +27,9 @@ def checkvuln(urls,cookie,level,new_id):
     result_data={}
     with open(current_path + '/detectedVuln/'+str(new_id)+'.json', 'w') as outfile:
         outfile.write("{}")
-
+    # cookies=cookie
     # zetanize + making input
-    cookies = {'PHPSESSID': 'vt91ig60vqh905pk6ldve9efl4', 'security': 'low'} #tmp
+    cookies = {'PHPSESSID': 'f9m2qbt7rdgt5lmbb08k82ako0', 'security': 'low'} #tmp
 
     # 여기서 들어온 url을 for문 돌리기 여기서 171은 new_id라고 보면됨 추후 수정
     for url in urls:

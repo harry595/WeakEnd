@@ -213,14 +213,13 @@ def vulndetecting(request):
     url=request.POST["url"]
     cookie=request.POST["cookie"]
     level=request.POST["level"]
-    print(url)
-    print(cookie)
-    print(level)
     new_id=Vulnlist.objects.all().values('vuln_id').last()['vuln_id']+1
     new_vuln = Vulnlist(
         vuln_id=new_id,
         user_id=request.user,
-        target_url=url
+        target_url=url,
+        cookie=cookie,
+        level=level
     )
     new_vuln.save()
     f = open(os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json', 'w')
@@ -239,7 +238,7 @@ def vulndetecting(request):
     with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/171/'+url+'/'+url+'-subdomains-sorted.txt', "r") as f:
         urllist = f.readlines()
     urllist = [x.strip() for x in urllist] 
-    context={'urllist':urllist,'cookie':cookie,'level':level,'new_id':new_id }
+    context={'urllist':urllist,'new_id':new_id }
     return render(request, 'detectsearch.html',context)
     
     
@@ -249,12 +248,10 @@ def vulndetecting(request):
 def detectsearch(request):
     urls=request.POST.getlist('urls[]')
     #hidden 형식으로 데이터 가져오기
-    cookie=request.POST["cookie"]
-    level=request.POST["level"]
     new_id=request.POST["new_id"]
-    print(cookie)
-    print(type(cookie))
-    print(level)
+    vulner=Vulnlist.objects.values().filter(vuln_id=new_id).last()
+    cookie=vulner['cookie']
+    level=vulner['level']
     # 아래에서 선택한 서브 도메인들 리스트에 맞춰 black widow 돌리기
     time.sleep(5)
     # 여기까지 
