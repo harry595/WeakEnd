@@ -210,10 +210,12 @@ def vulndetecting(request):
     if res_rfi.status_code != 200:
         return render(request,'detect.html')        
     '''
-    #추후에 post로 수정하자
-    url=request.GET["url"]
-    cookie=request.GET["cookie"]
-    level=request.GET["level"]
+    url=request.POST["url"]
+    cookie=request.POST["cookie"]
+    level=request.POST["level"]
+    print(url)
+    print(cookie)
+    print(level)
     new_id=Vulnlist.objects.all().values('vuln_id').last()['vuln_id']+1
     new_vuln = Vulnlist(
         vuln_id=new_id,
@@ -250,6 +252,9 @@ def detectsearch(request):
     cookie=request.POST["cookie"]
     level=request.POST["level"]
     new_id=request.POST["new_id"]
+    print(cookie)
+    print(type(cookie))
+    print(level)
     # 아래에서 선택한 서브 도메인들 리스트에 맞춰 black widow 돌리기
     time.sleep(5)
     # 여기까지 

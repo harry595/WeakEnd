@@ -1,2 +1,0 @@
-http://172.30.1.18/vulnerabilities/sqli/
-http://172.30.1.18/vulnerabilities/sqli_blind/

@@ -2,7 +2,7 @@ import requests
 import os
 import re
 
-cookies = {'PHPSESSID': 'b9sco2fi5hf8u65hn5m9tbb855', 'security': 'low'}
+cookies = {'PHPSESSID': 'vt91ig60vqh905pk6ldve9efl4', 'security': 'low'}
 
 
 def make_GET_form(url: str):

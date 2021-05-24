@@ -1,3 +1,3 @@
-http://172.30.1.18/instructions.php
-http://172.30.1.18/vulnerabilities/brute/
-http://172.30.1.18/vulnerabilities/csrf/
+http://192.168.112.130/instructions.php
+http://192.168.112.130/vulnerabilities/brute/
+http://192.168.112.130/vulnerabilities/csrf/

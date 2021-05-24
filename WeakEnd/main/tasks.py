@@ -29,7 +29,7 @@ def checkvuln(urls,cookie,level,new_id):
         outfile.write("{}")
 
     # zetanize + making input
-    cookies = {'PHPSESSID': 'b9sco2fi5hf8u65hn5m9tbb855', 'security': 'low'} #tmp
+    cookies = {'PHPSESSID': 'vt91ig60vqh905pk6ldve9efl4', 'security': 'low'} #tmp
 
     # 여기서 들어온 url을 for문 돌리기 여기서 171은 new_id라고 보면됨 추후 수정
     for url in urls:

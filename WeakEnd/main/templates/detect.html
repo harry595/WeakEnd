@@ -11,7 +11,8 @@
 	<header class="main">
 	<h1 style="text-align: center; margin-bottom: 2em;margin-top: 1em;">Vuln Detector</h1>
 	<section id="search" class="alt" style="width: 60%; margin: 0 auto;">
-		<form action="/vulndetecting">
+		<form action="/vulndetecting/" method="POST">
+			{% csrf_token %}
 			<input type="text" name="url" id="url" placeholder="Enter Your Target URL" />
 			<br>
 			<h2 style="float:left">option: </h2>
@@ -46,7 +47,7 @@
 	<h3 style="text-align: center;">How to use</h3>
 	<br/>
 	<div class="detectcontainer">
-		<div class="item2">1. Enter The Target URL.<br>2. Enter The Cookie of the site <br>ex) PHPSESSID=sssud7guilr98spot2phguh250 <br><a href="https://kb.iu.edu/d/ajfi" style="cursor:pointer"> ? how to view the cookie ? </a><br>3. Choose the Level of depth to traverse <br>3. Press the Search Button</div>
+		<div class="item2">1. Enter The Target URL.<br>2. Enter The Cookie of the site <br>ex) {'PHPSESSID': 'vt91ig60vqh905pk6ldve9efl4', 'security': 'low'} <br><a href="https://kb.iu.edu/d/ajfi" style="cursor:pointer"> ? how to view the cookie ? </a><br>3. Choose the Level of depth to traverse <br>3. Press the Search Button</div>
 	</div>
 	<br/><br/>
 	<div style="text-align: center; font-size:20px; padding-top: 50px; padding-bottom: 50px;">

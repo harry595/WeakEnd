@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 <!-- Banner -->
+<!--
 <style>
 	.progress {
 	 width:50%;
@@ -14,12 +15,24 @@
 	 text-align:right;
 	}
 </style>
-  
-<section>
+  -->
+<section style="padding: 4em 0 0 0;">
 	<header class="main">
-		<h1 style="text-align: center; margin-bottom: 1em;">Vuln Detected</h1>
-		<section style="margin: 0 5% 0 5%; height: 800px;">
+		<h1 style="text-align: center; margin-bottom: 0;">Vuln Detected</h1>
+			
+		{% if task_id != 0 %}
+		<div class="progress" style="float:right; margin-right: 90px;" >
+			<h3 style="float:left;">Progress Bar</h3>
+			<h3 id="percent" style="float:right"></h3>
+			<div class="bar"></div>
+		</div>
+	   {% endif %}
+
+		<section style="margin: 6% 5% 0 5%; height: 750px;">
 		<div style="width: 45%; position:relative; height: 700px; padding: 5px; margin-right: 10%; float:left; border: 1px black solid; border-radius: 0.375em;">
+			<a href="javascript:window.location.reload(true);" style="float: right; margin-right:5px; font-size:smaller; padding:4px 5px 4px 5px;">
+				<img src="{% static 'img/refresh3.png' %}" alt="" style="width:40px;"/>
+			</a>
 			<h2 style="text-align: center;">Vuln Lists</h2>
 			{% for key, value in outputs.items %}
 				{% for i in value %}
@@ -45,14 +58,8 @@
 		</section>
 		
 	</header>
-	{% if task_id != 0 %}
-	<div class="status"></div>
-    <div class="progress">
-    	<div class="bar"></div>
-    </div>
-	</div>
-   {% endif %}
 </section>
+<br><br>
 <section>
 	<h3 style="text-align: center;">How to use</h3>
 	<br/>
@@ -122,18 +129,15 @@
             csrfmiddlewaretoken: "{{csrf_token}}",
         },
         success: function(result) {
-					console.log("0000000000")
-					console.log(result)
 					console.log(result.process_percent)
-					console.log("0000000000")
                     if (result.process_percent == null || result.process_percent == undefined) {
                         willstop = 1;
                         jQuery('.bar').css({'width': 100 + '%'});
-                        jQuery('.bar').html(100 + '%');
-
+                        jQuery('#percent').html(100 + '%');
                        } else {
+						
                          jQuery('.bar').css({'width': result.process_percent + '%'});
-                         jQuery('.bar').html(result.process_percent + '%');
+                         jQuery('#percent').html(result.process_percent + '%');
                        };
                     }
       });
