@@ -1,21 +1,12 @@
 {% extends "base.html" %} 
 {% block content %}
 {% load static %}
-<!-- Banner -->
-<!--
 <style>
-	.progress {
-	 width:50%;
-	 background:yellow;
-	}
-	.bar {
-	 height:15px;
-	 width:0%;
-	 background:tomato;
-	 text-align:right;
+	.progress h3 {
+		margin: 0;
 	}
 </style>
-  -->
+<!-- Banner -->
 <section style="padding: 4em 0 0 0;">
 	<header class="main">
 		<h1 style="text-align: center; margin-bottom: 0;">Vuln Detected</h1>
@@ -24,6 +15,7 @@
 		<div class="progress" style="float:right; margin-right: 90px;" >
 			<h3 style="float:left;">Progress Bar</h3>
 			<h3 id="percent" style="float:right"></h3>
+			<br><br>
 			<div class="bar"></div>
 		</div>
 	   {% endif %}
@@ -43,6 +35,10 @@
 							<h3>Remote File Inclusion #{{forloop.counter}}</h3>
 						{% elif key == 'CI' %}
 							<h3>Command Injection #{{forloop.counter}}</h3>
+						{% elif key == 'SQLI' %}
+							<h3>SQL Injection #{{forloop.counter}}</h3>
+						{% elif key == 'XSS' %}
+							<h3>Cross-Site Scripting #{{forloop.counter}}</h3>
 						{% endif %}
 						<button class="search_button" id={{key}} value= {{forloop.counter0}}>View</button>
 					</div>
@@ -99,11 +95,13 @@
 				$("#patch_id").val(search_id);
 				$("#patch_button").show();
 				//if data=GET method
+				
+				var d = document.getElementById('aftercode');
 				if(data == null){
-					$('#aftercode').html("method : "+method+"\npayload: " + url );
+					d.innerHTML="method : "+method+"\npayload: " + url;
 				}
 				else{
-					$('#aftercode').html("method : "+method+"\naction URL: " + url + "\nparameter: "+ data);
+					d.innerHTML="method : "+method+"\naction URL: " + url + "\nparameter: "+ data;
 				}
 			}
 		})

@@ -249,13 +249,16 @@ def detectsearch(request):
     urls=request.POST.getlist('urls[]')
     #hidden 형식으로 데이터 가져오기
     new_id=request.POST["new_id"]
+
     vulner=Vulnlist.objects.values().filter(vuln_id=new_id).last()
-    cookie=vulner['cookie']
+    cookies=vulner['cookie']
     level=vulner['level']
+    cookies=cookies.replace("'",'\"')
+    cookies=json.loads(cookies)
     # 아래에서 선택한 서브 도메인들 리스트에 맞춰 black widow 돌리기
     time.sleep(5)
     # 여기까지 
-    detected_vuln=checkvuln.delay(urls,cookie,level,new_id)
+    detected_vuln=checkvuln.delay(urls,cookies,level,new_id)
     return HttpResponseRedirect('/vulndetected/'+str(new_id)+'?task_id='+detected_vuln.id)
 
 

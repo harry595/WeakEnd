@@ -1,13 +1,13 @@
+# CI patch clear
 import requests
 import os
 import re
 import time
-cookies = {'PHPSESSID': 'f9m2qbt7rdgt5lmbb08k82ako0', 'security': 'low'}
 
 
 def make_GET_form(url: str):
     dic = {}
-    dic['vuln'] = ' CI'
+    dic['vuln'] = 'CI'
     dic['method'] = 'GET'
     dic['url'] = url
     print("CI GET FIND" )
@@ -24,8 +24,7 @@ def make_POST_form(url: str, data: dict):
     return dic
 
 
-def get_request(data, dic, target):
-    global cookies
+def get_request(data, dic, target,cookies):
     key_list = list(dic.keys())
     for payload_name in key_list:
         tmp = dic
@@ -41,18 +40,15 @@ def get_request(data, dic, target):
             final_form = middle_form.replace('@@@@@@', payload.strip().replace(' ', '+'))
             try:
                 test_res = requests.get(final_form, cookies=cookies,verify=False)
-                print(final_form)
+                if check_success(test_res.text):
+                    return make_GET_form(final_form)
             except:
                 print("ERROR on CI" + target)
-                time.sleep(5)
-                test_res = requests.get(final_form, cookies=cookies,verify=False)
-            if check_success(test_res.text):
-                return make_GET_form(final_form)
+                time.sleep(2)
     return False
 
 
-def scan_type1(url: str, params: dict):
-    global cookies
+def scan_type1(url: str, params: dict,cookies):
     with open(os.path.dirname(os.path.realpath(__file__)) + '/ci.txt', "r") as f:
         data = f.readlines()
 
@@ -75,22 +71,20 @@ def scan_type1(url: str, params: dict):
                     tmp[payload_name] = payload.strip()
                     try:
                         test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
-                        print(target)
+                        if check_success(test_res.text):
+                            return make_POST_form(target, tmp)
                     except:
                         print("ERROR on CI " + target)
-                        time.sleep(5)
-                        test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
-                    if check_success(test_res.text):
-                        return make_POST_form(target, tmp)
+                        time.sleep(2)
         elif method == 'get':
-            return get_request(data, dic, target)
+            return get_request(data, dic, target,cookies)
         else:
             print('Error in ' + target + ', method type must be assigned')
             return False
     return False
 
 
-def scan_type2(url: str):
+def scan_type2(url: str,cookies):
     with open(os.path.dirname(os.path.realpath(__file__)) + '/ci.txt', "r") as f:
         data = f.readlines()
 
@@ -105,7 +99,7 @@ def scan_type2(url: str):
         else:
             dic[key] = params[i]
 
-    return get_request(data, dic, target)
+    return get_request(data, dic, target,cookies)
 
 
 def check_success(res):
@@ -128,11 +122,11 @@ def check_success(res):
     return False
 
 
-def ci_attack(arg1: str, arg2):
+def ci_attack(arg1: str, arg2,cookies):
     if arg1.startswith('http'):
-        return scan_type1(arg1, arg2)
+        return scan_type1(arg1, arg2,cookies)
     elif arg1 == 'get':
-        return scan_type2(arg2)
+        return scan_type2(arg2,cookies)
     else:
         print('Error in ci_attack')
         return False

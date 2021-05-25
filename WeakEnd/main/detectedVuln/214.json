@@ -1,0 +1,13 @@
+{
+    "SQLI": [
+        {
+            "method": "POST",
+            "url": "http://192.168.112.130/vulnerabilities/xss_s/",
+            "data": {
+                "txtName": "vulnch' or 1=0",
+                "btnSign": "Sign Guestbook",
+                "mtxMessage": "vulnch"
+            }
+        }
+    ]
+}

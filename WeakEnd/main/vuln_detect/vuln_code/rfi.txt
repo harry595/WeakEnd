@@ -1,0 +1,4 @@
+hTtP://tests.arachni-scanner.com/rfi.md5.txt
+hTtP://tests.arachni-scanner.com/rfi.md5.txt%00
+data://text/plain;base64,NzA1Y2Q1NTliMTZlNjk0NjgyNjIwN2MyMTk5YmQ4OTA=
+hTtp:%252f%252ftests.arachni-scanner.com%252frfi.md5.txt

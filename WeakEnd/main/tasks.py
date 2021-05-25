@@ -3,6 +3,9 @@ from celery import shared_task,current_task
 from celery import Celery
 from .vuln_detect.vuln_code.ci import ci_attack
 from .vuln_detect.vuln_code.lfi import lfi_attack
+from .vuln_detect.vuln_code.rfi import rfi_attack
+from .vuln_detect.vuln_code.sqli import sqli_attack
+from .vuln_detect.vuln_code.xss import xss_attack
 #from .vuln_detect.vuln_code.rfi import rfi_attack
 from .vuln_detect.find_url.form_out import zetanize
 import json
@@ -20,16 +23,17 @@ from urllib.parse import urlparse
 app = Celery('tasks',  backend='rpc://', broker='pyamqp://guest:guest@localhost//')
 
 @shared_task
-def checkvuln(urls,cookie,level,new_id):
+def checkvuln(urls,cookies,level,new_id):
 
     current_task.update_state(state='PROGRESS',meta={'process_percent': 0})
     current_path=os.path.dirname(os.path.realpath(__file__))
     result_data={}
     with open(current_path + '/detectedVuln/'+str(new_id)+'.json', 'w') as outfile:
-        outfile.write("{}")
-    # cookies=cookie
-    # zetanize + making input
-    cookies = {'PHPSESSID': 'f9m2qbt7rdgt5lmbb08k82ako0', 'security': 'low'} #tmp
+        outfile.write("{}")\
+
+    #progressbar percentage calculate
+    taskcal=100/len(urls)/4
+    taskflag=0
 
     # 여기서 들어온 url을 for문 돌리기 여기서 171은 new_id라고 보면됨 추후 수정
     for url in urls:
@@ -38,9 +42,11 @@ def checkvuln(urls,cookie,level,new_id):
         get_lists=[]
         for geturl in geturls:
             get_lists.append(["get",geturl.rstrip()])
+
         with open(current_path + '/vuln_detect/vuln_code/dirscanning/171/'+url+'_80/'+url+'_80-forms-sorted.txt', 'r') as f:
             posturls=f.readlines()
         zetanize_lists=[]
+
         for posturl in posturls:
             try:
                 print(posturl)
@@ -54,38 +60,77 @@ def checkvuln(urls,cookie,level,new_id):
                 print('error on '+posturl)
                 time.sleep(2)
                 continue
-
+        taskflag+=1
+        current_task.update_state(state='PROGRESS',meta={'process_percent': taskflag*taskcal})
         #end zetanize
         print(zetanize_lists)
         vuln_list=[]
 
+        #GeT attack (dynamic URL)
         for get_list in get_lists:
-            print("-------------------------")
-            print(get_list)
-            ci_result=ci_attack(get_list[0],get_list[1])
+            #ci attack
+            '''
+            ci_result=ci_attack(get_list[0],get_list[1],cookies)
             if(ci_result!=None and ci_result!=False):
                 vuln_list.append(ci_result)
 
-            #lfi_result=lfi_attack(get_list[0],get_list[1])
-            #if(lfi_result!=None and lfi_result!=False):
-            #    vuln_list.append(lfi_result)
+
+            #lfi_attack
+            sqli_result=sqli_attack(get_list[0],get_list[1],cookies)
+            if(sqli_result!=None and sqli_result!=False):
+                vuln_list.append(sqli_result)
+
+            #xss_attack
+            xss_result=xss_attack(get_list[0],get_list[1],cookies)
+            if(xss_result!=None and xss_result!=False):
+                vuln_list.append(xss_result)
+            '''
+            #lfi_attack
+            lfi_result=lfi_attack(get_list[0],get_list[1],cookies)
+            if(lfi_result!=None and lfi_result!=False):
+                vuln_list.append(lfi_result)
+
+            #rfi_attack
+            rfi_result=rfi_attack(get_list[0],get_list[1],cookies)
+            if(rfi_result!=None and rfi_result!=False):
+                vuln_list.append(rfi_result)
+
+        taskflag+=1
+        current_task.update_state(state='PROGRESS',meta={'process_percent': taskflag*taskcal})
 
         for post_list in zetanize_lists:
-            print("-------------------------")
-            print(post_list)
-            ci_result=ci_attack(post_list[0],post_list[1])
+            #ci attack
+            '''
+            ci_result=ci_attack(post_list[0],post_list[1],cookies)
             if(ci_result!=None and ci_result!=False):
                 vuln_list.append(ci_result)
-            #lfi_result=lfi_attack(post_list[0],post_list[1])
-            #if(lfi_result!=None and lfi_result!=False):
-            #    vuln_list.append(lfi_result)
+
+            #lfi_attack
+            lfi_result=lfi_attack(post_list[0],post_list[1],cookies)
+            if(lfi_result!=None and lfi_result!=False):
+                vuln_list.append(lfi_result)
+
+
+            #xss_attack
+            xss_result=xss_attack(post_list[0],post_list[1],cookies)
+            if(xss_result!=None and xss_result!=False):
+                vuln_list.append(xss_result)
+            '''
+            #lfi_attack
+            sqli_result=sqli_attack(post_list[0],post_list[1],cookies)
+            if(sqli_result!=None and sqli_result!=False):
+                vuln_list.append(sqli_result)
+            #rfi_attack
+            rfi_result=rfi_attack(post_list[0],post_list[1],cookies)
+            if(rfi_result!=None and rfi_result!=False):
+                vuln_list.append(rfi_result)
+
+        taskflag+=1
+        current_task.update_state(state='PROGRESS',meta={'process_percent': taskflag*taskcal})
 
         #vuln_list.append(rfi_attack('http://192.168.112.130/vulnerabilities/fi/?page=include.php'))
-        print(vuln_list)
         with open(current_path + '/detectedVuln/'+str(new_id)+'.json', 'r') as infile:
             result_data = json.load(infile)
-        print("SDFGAREG")
-        print(result_data)
 
         for vuln_element in vuln_list:
             if vuln_element != [] :
@@ -103,9 +148,12 @@ def checkvuln(urls,cookie,level,new_id):
                         "url": vuln_element['url'],
                         "data":vuln_element['data']
                     })
-        print("!@#")
-        print(result_data)
+                    
         with open(current_path + '/detectedVuln/'+str(new_id)+'.json', 'w') as outfile:
             json.dump(result_data, outfile, indent=4)
+        
+        taskflag+=1
+        current_task.update_state(state='PROGRESS',meta={'process_percent': taskflag*taskcal})
 
+    current_task.update_state(state='PROGRESS',meta={'process_percent': 100})
     return True
