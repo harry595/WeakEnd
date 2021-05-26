@@ -37,6 +37,7 @@ from celery.result import AsyncResult
 from celery.states import state, PENDING, SUCCESS
 from dateutil.relativedelta import relativedelta
 from .autopatch.autopatch import vulnerability_patch
+requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
 # Create your views here.
 def index(request):
@@ -68,7 +69,7 @@ def directory(request):
     if request.method == 'POST':
         session = requests.Session() 
         session.verify = False
-        url = request.POST["url"]
+        url = request.POST["url"]+"/"
         result=[]
         if url == "":
             return render(request,'directory.html')
@@ -76,11 +77,14 @@ def directory(request):
             f = open(os.path.dirname(os.path.realpath(__file__)) + '/dataset/dir_scan_list.txt', "r")
             while True:
                 data = f.readline()
-                r = session.get(url+data)
-                if r.status_code == 200:
-                    print(url+data)
-                    result.append(r.url)
-                if not data: break
+                try:
+                    r = session.get(url+data)
+                    if r.status_code == 200:
+                        print(url+data)
+                        result.append(r.url)
+                    if not data: break
+                except:
+                    pass
             f.close()
         print(result)
         return render(request,'directoryresult.html',{'result':result})

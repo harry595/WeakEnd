@@ -63,13 +63,13 @@ def checkvuln(urls,cookies,level,new_id):
         taskflag+=1
         current_task.update_state(state='PROGRESS',meta={'process_percent': taskflag*taskcal})
         #end zetanize
-        print(zetanize_lists)
+        print(get_lists)
         vuln_list=[]
 
         #GeT attack (dynamic URL)
         for get_list in get_lists:
             #ci attack
-            '''
+            
             ci_result=ci_attack(get_list[0],get_list[1],cookies)
             if(ci_result!=None and ci_result!=False):
                 vuln_list.append(ci_result)
@@ -84,15 +84,17 @@ def checkvuln(urls,cookies,level,new_id):
             if(lfi_result!=None and lfi_result!=False):
                 vuln_list.append(lfi_result)
 
+            #sqli_attack
+            #sqli_result=sqli_attack(get_list[0],get_list[1],cookies)
+            #if(sqli_result!=None and sqli_result!=False):
+            #    vuln_list.append(sqli_result)
+            
             #rfi_attack
+            print("Attacking...")
             rfi_result=rfi_attack(get_list[0],get_list[1],cookies)
+            print("qwe...")
             if(rfi_result!=None and rfi_result!=False):
                 vuln_list.append(rfi_result)
-            '''
-            #sqli_attack
-            sqli_result=sqli_attack(get_list[0],get_list[1],cookies)
-            if(sqli_result!=None and sqli_result!=False):
-                vuln_list.append(sqli_result)
 
 
         taskflag+=1
@@ -100,7 +102,7 @@ def checkvuln(urls,cookies,level,new_id):
 
         for post_list in zetanize_lists:
             #ci attack
-            '''
+            
             ci_result=ci_attack(post_list[0],post_list[1],cookies)
             if(ci_result!=None and ci_result!=False):
                 vuln_list.append(ci_result)
@@ -119,11 +121,11 @@ def checkvuln(urls,cookies,level,new_id):
             rfi_result=rfi_attack(post_list[0],post_list[1],cookies)
             if(rfi_result!=None and rfi_result!=False):
                 vuln_list.append(rfi_result)
-            '''
+            
             #lfi_attack
-            sqli_result=sqli_attack(post_list[0],post_list[1],cookies)
-            if(sqli_result!=None and sqli_result!=False):
-                vuln_list.append(sqli_result)
+            #sqli_result=sqli_attack(post_list[0],post_list[1],cookies)
+            #if(sqli_result!=None and sqli_result!=False):
+            #    vuln_list.append(sqli_result)
 
         taskflag+=1
         current_task.update_state(state='PROGRESS',meta={'process_percent': taskflag*taskcal})

@@ -269,7 +269,7 @@ def scan_type1(url: str, params: dict, cookies):
                     for bool_pay in bool_data:
                         try:
                             true_payload, false_payload = bool_pay.split('\t')
-                            check_list = {"root","admin","ubuntu","SQL Server","Microsoft SQL Server","Oracle","Postre SQL", "MSSQL", "Microsoft JET Database Engine", "ORA-00933:","PSQLException"}
+                            check_list = {"ubuntu","SQL Server","Microsoft SQL Server","Oracle","MYSQL","Postre SQL", "MSSQL", "Microsoft JET Database Engine", "ORA-00933:","PSQLException"}
                             if true_payload.startswith('admin'):
                                 break
                         

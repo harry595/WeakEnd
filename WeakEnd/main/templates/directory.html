@@ -1,6 +1,10 @@
 {% extends "base.html" %} 
 {% block content %}
 {% load static %}
+<div id="loading" style="display: none;">
+	<img src="{% static 'img/Loading.gif' %}"  alt="loading">	
+	<h3>Scanning URL ... <br>This operation takes up to 10 minutes.</h3>
+</div>
 <!-- Banner -->
 <section style="margin-bottom: 10%;">
 	<header class="main">
@@ -9,7 +13,7 @@
 		<form method="post">
 			{% csrf_token %}
 			<input type="text" name="url" id="url" placeholder="Enter Your Target URL" />
-			<button id="detect" type="submit"><i class="fas fa-search"></i></button>
+			<button id="detect" type="submit" onclick="Loading()"><i class="fas fa-search"></i></button>
 		</form>
 	</section>
 	</header>
@@ -54,4 +58,12 @@
 		<a href="javascript:topFunction();"><i class="fas fa-arrow-alt-circle-up"> Back to top</i></a>
 	</div>
 </section>
+<script>
+	$(document).ready(function() {
+	    $('[data-toggle="popover"]').popover({container: "data-content"});
+	});
+	function Loading(){
+		document.getElementById('loading').style.display='block';
+	}
+</script>
 {% endblock %}
