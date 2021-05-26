@@ -1,0 +1,9 @@
+http://econ.ajou.ac.kr:80/econ/community/community03.jsp?mode=list
+http://econ.ajou.ac.kr:80/econ/community/community03.jsp?mode=view&article_no=216671&board_wrapper=%2Fecon%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=396
+http://econ.ajou.ac.kr:80/econ/community/community03.jsp?mode=view&article_no=218701?mode=list&board_wrapper=%2Fecon%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=396
+http://econ.ajou.ac.kr:80/econ/community/community03.jsp?search:search_category:category=290
+http://econ.ajou.ac.kr:80/econ/professor/professor01.jsp?include=view&article_no=198811035&board_no=402?mode=list&board_wrapper=%2Fecon%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=402
+http://econ.ajou.ac.kr:80/econ/professor/professor01.jsp?include=view&article_no=198811035&board_wrapper=%2Fecon%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=402
+http://econ.ajou.ac.kr:80/econ/professor/professor01.jsp?mode=list&board_no=402
+http://econ.ajou.ac.kr:80/econ/professor/professor02.jsp?include=view&article_no=197911008&board_wrapper=%2Fecon%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=857
+http://econ.ajou.ac.kr:80/econ/professor/professor02.jsp?mode=list&board_no=857

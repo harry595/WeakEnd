@@ -1,0 +1,5 @@
+http://faculty.ajou.ac.kr:80/_custom/ajou/_common/app/sso/sso_login.jsp
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02.jsp
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02_01.jsp
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02_02.jsp
+http://faculty.ajou.ac.kr:80/faculty/online/online01.jsp

@@ -1,0 +1,13 @@
+http://ell.ajou.ac.kr:80/english/board/board01.jsp?mode=list
+http://ell.ajou.ac.kr:80/english/board/board01.jsp?mode=view&article_no=221725&board_wrapper=%2Fenglish%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=229
+http://ell.ajou.ac.kr:80/english/board/board01.jsp?search:search_category:category=290
+http://ell.ajou.ac.kr:80/english/community/community03.jsp?mode=list
+http://ell.ajou.ac.kr:80/english/community/community03.jsp?mode=view&article_no=190547&board_wrapper=%2Fenglish%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=173
+http://ell.ajou.ac.kr:80/english/professor/professor01.jsp?include=view&article_no=199311052&board_no=353?mode=list&board_wrapper=%2Fenglish%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=353
+http://ell.ajou.ac.kr:80/english/professor/professor01.jsp?include=view&article_no=199311052&board_wrapper=%2Fenglish%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=353
+http://ell.ajou.ac.kr:80/english/professor/professor01.jsp?mode=list&board_no=353
+http://ell.ajou.ac.kr:80/english/professor/professor02.jsp?include=view&article_no=198911013&board_wrapper=%2Fenglish%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=824
+http://ell.ajou.ac.kr:80/english/professor/professor02.jsp?mode=list&board_no=824
+http://ell.ajou.ac.kr:80/english/sub/sub04.jsp?mode=list
+http://ell.ajou.ac.kr:80/english/sub/sub05.jsp?mode=list
+http://ell.ajou.ac.kr:80/english/sub/sub05.jsp?mode=view&article_no=218205&board_wrapper=%2Fenglish%2Fsub%2Fsub05.jsp&pager.offset=0&board_no=1878

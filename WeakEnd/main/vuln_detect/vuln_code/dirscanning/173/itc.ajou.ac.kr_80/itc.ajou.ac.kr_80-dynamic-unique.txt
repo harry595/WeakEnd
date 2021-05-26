@@ -1,0 +1,16 @@
+http://itc.ajou.ac.kr/itc/community/community03.jsp?mode=list
+http://itc.ajou.ac.kr/itc/community/community03.jsp?mode=view&article_no=121413&board_wrapper=%2Fitc%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=660
+http://itc.ajou.ac.kr:80/itc/admission/admission06.jsp?mode=list
+http://itc.ajou.ac.kr:80/itc/admission/admission06.jsp?mode=view&article_no=38353&board_wrapper=%2Fitc%2Fadmission%2Fadmission06.jsp&pager.offset=0&board_no=1155
+http://itc.ajou.ac.kr:80/itc/community/community01.jsp?mode=list
+http://itc.ajou.ac.kr:80/itc/community/community01.jsp?mode=view&article_no=221101&board_wrapper=%2Fitc%2Fcommunity%2Fcommunity01.jsp&pager.offset=0&board_no=657
+http://itc.ajou.ac.kr:80/itc/community/community01.jsp?mode=view&article_no=221275?mode=list&board_wrapper=%2Fitc%2Fcommunity%2Fcommunity01.jsp&pager.offset=0&board_no=657
+http://itc.ajou.ac.kr:80/itc/community/community01.jsp?search:search_category:category=290
+http://itc.ajou.ac.kr:80/itc/community/community02.jsp?mode=list
+http://itc.ajou.ac.kr:80/itc/community/community02.jsp?mode=view&article_no=139930&board_wrapper=%2Fitc%2Fcommunity%2Fcommunity02.jsp&pager.offset=0&board_no=659
+http://itc.ajou.ac.kr:80/itc/dongmun/dongmun03.jsp?mode=list
+http://itc.ajou.ac.kr:80/itc/dongmun/dongmun03.jsp?mode=view&article_no=132157&board_wrapper=%2Fitc%2Fdongmun%2Fdongmun03.jsp&pager.offset=0&board_no=1228
+http://itc.ajou.ac.kr:80/itc/faculty/faculty.jsp?include=view&article_no=198911011&board_wrapper=%2Fitc%2Ffaculty%2Ffaculty.jsp&pager.offset=0&board_no=658
+http://itc.ajou.ac.kr:80/itc/faculty/faculty.jsp?mode=list&board_no=658
+http://itc.ajou.ac.kr:80/itc/wonwoo/wonwoo03.jsp?mode=list
+http://itc.ajou.ac.kr:80/itc/wonwoo/wonwoo03.jsp?mode=view&article_no=121413&board_wrapper=%2Fitc%2Fwonwoo%2Fwonwoo03.jsp&pager.offset=0&board_no=660

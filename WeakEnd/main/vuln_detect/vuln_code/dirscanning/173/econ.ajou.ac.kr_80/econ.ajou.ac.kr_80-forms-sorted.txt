@@ -1,0 +1,15 @@
+http://econ.ajou.ac.kr:80
+http://econ.ajou.ac.kr:80/_custom/ajou/_common/app/sso/sso_login.jsp
+http://econ.ajou.ac.kr:80/econ/community/community01.jsp
+http://econ.ajou.ac.kr:80/econ/community/community02.jsp
+http://econ.ajou.ac.kr:80/econ/community/community03.jsp
+http://econ.ajou.ac.kr:80/econ/edu/edu01.jsp
+http://econ.ajou.ac.kr:80/econ/edu/edu03.jsp
+http://econ.ajou.ac.kr:80/econ/edu/edu04.jsp
+http://econ.ajou.ac.kr:80/econ/index.jsp
+http://econ.ajou.ac.kr:80/econ/intro/intro01.jsp
+http://econ.ajou.ac.kr:80/econ/intro/intro02.jsp
+http://econ.ajou.ac.kr:80/econ/intro/intro04.jsp
+http://econ.ajou.ac.kr:80/econ/professor/professor01.jsp
+http://econ.ajou.ac.kr:80/econ/professor/professor02.jsp
+http://econ.ajou.ac.kr:80/econ/sitemap.jsp

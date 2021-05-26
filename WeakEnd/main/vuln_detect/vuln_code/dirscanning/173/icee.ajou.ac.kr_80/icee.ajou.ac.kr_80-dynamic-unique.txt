@@ -1,0 +1,8 @@
+http://icee.ajou.ac.kr:80/icee/community/data.jsp?mode=list
+http://icee.ajou.ac.kr:80/icee/community/data.jsp?mode=view&article_no=212043&board_wrapper=%2Ficee%2Fcommunity%2Fdata.jsp&pager.offset=0&board_no=1248
+http://icee.ajou.ac.kr:80/icee/community/gallery.jsp?mode=list
+http://icee.ajou.ac.kr:80/icee/community/notice.jsp?mode=list
+http://icee.ajou.ac.kr:80/icee/community/notice.jsp?mode=view&article_no=214502&board_wrapper=%2Ficee%2Fcommunity%2Fnotice.jsp&pager.offset=0&board_no=1244
+http://icee.ajou.ac.kr:80/icee/community/notice.jsp?mode=view&article_no=220805?mode=list&board_wrapper=%2Ficee%2Fcommunity%2Fnotice.jsp&pager.offset=0&board_no=1244
+http://icee.ajou.ac.kr:80/icee/community/promotion.jsp?mode=list
+http://icee.ajou.ac.kr:80/icee/community/promotion.jsp?mode=view&article_no=220976&board_wrapper=%2Ficee%2Fcommunity%2Fpromotion.jsp&pager.offset=0&board_no=1817

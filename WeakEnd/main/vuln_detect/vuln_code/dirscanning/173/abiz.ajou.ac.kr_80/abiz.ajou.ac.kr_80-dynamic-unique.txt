@@ -1,0 +1,16 @@
+http://abiz.ajou.ac.kr:80/abiz/board/board01.jsp?mode=list
+http://abiz.ajou.ac.kr:80/abiz/board/board01.jsp?mode=view&article_no=206403&board_wrapper=%2Fabiz%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=329
+http://abiz.ajou.ac.kr:80/abiz/board/board01.jsp?search:search_category:category=290
+http://abiz.ajou.ac.kr:80/abiz/board/board02.jsp?mode=list
+http://abiz.ajou.ac.kr:80/abiz/community/community03.jsp?mode=list
+http://abiz.ajou.ac.kr:80/abiz/professor/professor01.jsp?include=view&article_no=199011050&board_no=330?mode=list&board_wrapper=%2Fabiz%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=330
+http://abiz.ajou.ac.kr:80/abiz/professor/professor01.jsp?include=view&article_no=199011050&board_wrapper=%2Fabiz%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=330
+http://abiz.ajou.ac.kr:80/abiz/professor/professor01.jsp?mode=list&board_no=330
+http://abiz.ajou.ac.kr:80/abiz/professor/professor02.jsp?include=view&article_no=197611005&board_wrapper=%2Fabiz%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=1626
+http://abiz.ajou.ac.kr:80/abiz/professor/professor02.jsp?mode=list&board_no=1626
+http://abiz.ajou.ac.kr:80/biz/community/community01.jsp?mode=list
+http://abiz.ajou.ac.kr:80/biz/community/community01.jsp?mode=view&article_no=221084&board_wrapper=%2Fbiz%2Fcommunity%2Fcommunity01.jsp&pager.offset=0&board_no=222
+http://abiz.ajou.ac.kr:80/biz/community/community01.jsp?mode=view&article_no=221398?mode=list&board_wrapper=%2Fbiz%2Fcommunity%2Fcommunity01.jsp&pager.offset=0&board_no=222
+http://abiz.ajou.ac.kr:80/biz/community/community01.jsp?search:search_category:category=290
+http://twitter.com/home?status=%5B%EA%B2%BD%EC%98%81%EB%8C%80%ED%95%99%5D+%EA%B2%BD%EC%98%81%EB%8C%80+%EC%9E%A5%ED%95%99%EC%83%9D+%EC%84%A0%EB%B0%9C+%EC%8B%9C+%EC%A7%80%EB%8F%84%EA%B5%90%EC%88%98%EB%8B%98%EA%B3%BC%EC%9D%98+%EC%83%81%EB%8B%B4+%EC%9D%98%EB%AC%B4+%28%ED%95%84%EB%8F%85%29:http%3A%2F%2Fabiz.ajou.ac.kr%2Fbiz%2Fcommunity%2Fcommunity01.jsp%3Fboard_no%3D222%26amp%3Bmode%3Dview%26amp%3Barticle_no%3D221760
+http://www.facebook.com/sharer.php?s=100&p[url]=http%3A%2F%2Fabiz.ajou.ac.kr%2Fbiz%2Fcommunity%2Fcommunity01.jsp%3Fboard_no%3D222%26amp%3Bmode%3Dview%26amp%3Barticle_no%3D221398&p[images][0]=&p[title]=%5B%EA%B2%BD%EC%98%81%EB%8C%80%ED%95%99%5D+2021%ED%95%99%EB%85%84%EB%8F%84+1%ED%95%99%EA%B8%B0+%EB%8C%80%EB%A9%B4+%EC%A4%91%EA%B0%84%EA%B3%A0%EC%82%AC+%EB%B0%A9%EC%97%AD%ED%99%9C%EB%8F%99+%EA%B7%BC%EB%A1%9C%ED%95%99%EC%83%9D+%EB%AA%A8%EC%A7%91+%EC%95%88%EB%82%B4

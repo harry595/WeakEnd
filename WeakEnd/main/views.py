@@ -176,27 +176,6 @@ def patching(request):
 def patch(request):
     return render(request,'patch.html')
 
-@login_required 
-def vulndetected(request,new_id):
-    #user check
-    try:
-        task_id=request.GET['task_id']
-    except:
-        task_id=0
-    check_user=Vulnlist.objects.values().filter(vuln_id=new_id).last()['user_id_id']
-    if(check_user!=request.user.id):
-        return redirect('/')
-    #json file create
-    file_path = os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json'
-    with open(file_path, "r") as json_file:
-        json_data = json.load(json_file)
-    # make form to jinja ex) {'LFI':2,'RFI':1,'CI':1}
-    outputs={}
-    forjinja='0'*100
-    for vuln_keys in json_data.keys():
-        outputs[vuln_keys]=forjinja[0:len(json_data[vuln_keys])]
-    print(outputs)
-    return render(request,'vulndetected.html',{'outputs':outputs,'new_id':new_id,'task_id':task_id})
 
 @login_required 
 def vulndetecting(request):
@@ -231,11 +210,11 @@ def vulndetecting(request):
     # DO SOMETHING
     # 파일 경로는 os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/'+user_id'/'+url+'/'+url+'-subdomains-sorted.txt'
     time.sleep(1)
-    url='192.168.112.130'
+    url='ajou.ac.kr'
     url+='_80'
     #here
-    #171=user_id
-    with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/171/'+url+'/'+url+'-subdomains-sorted.txt', "r") as f:
+    #173=user_id
+    with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/173/'+url+'/'+url+'-subdomains-sorted.txt', "r") as f:
         urllist = f.readlines()
     urllist = [x.strip() for x in urllist] 
     context={'urllist':urllist,'new_id':new_id }
@@ -254,6 +233,8 @@ def detectsearch(request):
     cookies=vulner['cookie']
     level=vulner['level']
     cookies=cookies.replace("'",'\"')
+    if cookies == "":
+        cookies="{}"
     cookies=json.loads(cookies)
     # 아래에서 선택한 서브 도메인들 리스트에 맞춰 black widow 돌리기
     time.sleep(5)
@@ -261,6 +242,27 @@ def detectsearch(request):
     detected_vuln=checkvuln.delay(urls,cookies,level,new_id)
     return HttpResponseRedirect('/vulndetected/'+str(new_id)+'?task_id='+detected_vuln.id)
 
+@login_required 
+def vulndetected(request,new_id):
+    #user check
+    try:
+        task_id=request.GET['task_id']
+    except:
+        task_id=0
+    check_user=Vulnlist.objects.values().filter(vuln_id=new_id).last()['user_id_id']
+    if(check_user!=request.user.id):
+        return redirect('/')
+    #json file create
+    file_path = os.path.dirname(os.path.realpath(__file__)) + '/detectedVuln/'+str(new_id)+'.json'
+    with open(file_path, "r") as json_file:
+        json_data = json.load(json_file)
+    # make form to jinja ex) {'LFI':2,'RFI':1,'CI':1}
+    outputs={}
+    forjinja='0'*100
+    for vuln_keys in json_data.keys():
+        outputs[vuln_keys]=forjinja[0:len(json_data[vuln_keys])]
+    print(outputs)
+    return render(request,'vulndetected.html',{'outputs':outputs,'new_id':new_id,'task_id':task_id})
 
 def signup(request):
     if request.method == 'POST':

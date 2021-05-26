@@ -1,0 +1,13 @@
+http://biology.ajou.ac.kr:80/biolog/board/board01.jsp?mode=list
+http://biology.ajou.ac.kr:80/biolog/board/board01.jsp?mode=view&article_no=219515&board_wrapper=%2Fbiolog%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=328
+http://biology.ajou.ac.kr:80/biolog/board/board01.jsp?mode=view&article_no=219516?mode=list&board_wrapper=%2Fbiolog%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=328
+http://biology.ajou.ac.kr:80/biolog/board/board01.jsp?search:search_category:category=290
+http://biology.ajou.ac.kr:80/biolog/board/board02.jsp?mode=list
+http://biology.ajou.ac.kr:80/biolog/board/board02.jsp?mode=view&article_no=31488&board_wrapper=%2Fbiolog%2Fboard%2Fboard02.jsp&pager.offset=0&board_no=154
+http://biology.ajou.ac.kr:80/biolog/board/board03.jsp?mode=list
+http://biology.ajou.ac.kr:80/biolog/board/board03.jsp?mode=view&article_no=219837&board_wrapper=%2Fbiolog%2Fboard%2Fboard03.jsp&pager.offset=0&board_no=155
+http://biology.ajou.ac.kr:80/biolog/board/community03.jsp?mode=list
+http://biology.ajou.ac.kr:80/biolog/board/community03.jsp?mode=view&article_no=106026&board_wrapper=%2Fbiolog%2Fboard%2Fcommunity03.jsp&pager.offset=0&board_no=156
+http://biology.ajou.ac.kr:80/biolog/professor/professor01.jsp?include=view&article_no=199011047&board_no=327?mode=list&board_wrapper=%2Fbiolog%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=327
+http://biology.ajou.ac.kr:80/biolog/professor/professor01.jsp?include=view&article_no=199011047&board_wrapper=%2Fbiolog%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=327
+http://biology.ajou.ac.kr:80/biolog/professor/professor01.jsp?mode=list&board_no=327

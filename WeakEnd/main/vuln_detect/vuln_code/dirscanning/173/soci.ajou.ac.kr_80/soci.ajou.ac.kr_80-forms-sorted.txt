@@ -1,0 +1,15 @@
+http://soci.ajou.ac.kr:80
+http://soci.ajou.ac.kr:80/_custom/ajou/_common/app/sso/sso_login.jsp
+http://soci.ajou.ac.kr:80/soci/community/community01.jsp
+http://soci.ajou.ac.kr:80/soci/community/community02.jsp
+http://soci.ajou.ac.kr:80/soci/community/community03.jsp
+http://soci.ajou.ac.kr:80/soci/edu/edu01.jsp
+http://soci.ajou.ac.kr:80/soci/edu/edu03.jsp
+http://soci.ajou.ac.kr:80/soci/edu/edu04.jsp
+http://soci.ajou.ac.kr:80/soci/index.jsp
+http://soci.ajou.ac.kr:80/soci/intro/intro01.jsp
+http://soci.ajou.ac.kr:80/soci/intro/intro02.jsp
+http://soci.ajou.ac.kr:80/soci/intro/intro04.jsp
+http://soci.ajou.ac.kr:80/soci/professor/professor01.jsp
+http://soci.ajou.ac.kr:80/soci/professor/professor02.jsp
+http://soci.ajou.ac.kr:80/soci/sitemap.jsp

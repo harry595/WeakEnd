@@ -1,0 +1,15 @@
+http://globalpharm.ajou.ac.kr:80/globalpharm/admission/admission02.jsp?mode=list
+http://globalpharm.ajou.ac.kr:80/globalpharm/admission/admission02.jsp?mode=view&article_no=103024&board_wrapper=%2Fglobalpharm%2Fadmission%2Fadmission02.jsp&pager.offset=0&board_no=1335
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board01.jsp?mode=list
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board01.jsp?mode=view&article_no=220521&board_wrapper=%2Fglobalpharm%2Fcommunity%2Fboard01.jsp&pager.offset=0&board_no=1208
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board01.jsp?mode=view&article_no=220880?mode=list&board_wrapper=%2Fglobalpharm%2Fcommunity%2Fboard01.jsp&pager.offset=0&board_no=1208
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board02.jsp?mode=list
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board02.jsp?mode=view&article_no=206352&board_wrapper=%2Fglobalpharm%2Fcommunity%2Fboard02.jsp&pager.offset=0&board_no=1314
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board02.jsp?mode=view&article_no=212078?mode=list&board_wrapper=%2Fglobalpharm%2Fcommunity%2Fboard02.jsp&pager.offset=0&board_no=1314
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board02.jsp?search:search_category:category=290
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board03.jsp?mode=list
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board03.jsp?mode=view&article_no=123469&board_wrapper=%2Fglobalpharm%2Fcommunity%2Fboard03.jsp&pager.offset=0&board_no=1311
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board05.jsp?mode=list
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board05.jsp?mode=view&article_no=220882&board_wrapper=%2Fglobalpharm%2Fcommunity%2Fboard05.jsp&pager.offset=0&board_no=1312
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board06.jsp?mode=list
+http://globalpharm.ajou.ac.kr:80/globalpharm/community/board06.jsp?mode=view&article_no=179186&board_wrapper=%2Fglobalpharm%2Fcommunity%2Fboard06.jsp&pager.offset=0&board_no=1419

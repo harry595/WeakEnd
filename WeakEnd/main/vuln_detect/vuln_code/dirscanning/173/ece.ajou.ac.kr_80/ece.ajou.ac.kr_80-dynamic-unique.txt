@@ -1,0 +1,16 @@
+http://ece.ajou.ac.kr:80/ece/board/board01.jsp?mode=list
+http://ece.ajou.ac.kr:80/ece/board/board01.jsp?mode=view&article_no=221764&board_wrapper=%2Fece%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=286
+http://ece.ajou.ac.kr:80/ece/board/board01.jsp?mode=view&article_no=221797?mode=list&board_wrapper=%2Fece%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=286
+http://ece.ajou.ac.kr:80/ece/board/board01.jsp?search:search_category:category=290
+http://ece.ajou.ac.kr:80/ece/board/board03.jsp?mode=list
+http://ece.ajou.ac.kr:80/ece/board/board04.jsp?mode=list
+http://ece.ajou.ac.kr:80/ece/board/board04.jsp?mode=view&article_no=100756&board_wrapper=%2Fece%2Fboard%2Fboard04.jsp&pager.offset=0&board_no=128
+http://ece.ajou.ac.kr:80/ece/community/community03.jsp?mode=list
+http://ece.ajou.ac.kr:80/ece/community/community03.jsp?mode=view&article_no=103303&board_wrapper=%2Fece%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=129
+http://ece.ajou.ac.kr:80/ece/grad/grad04.jsp?mode=list
+http://ece.ajou.ac.kr:80/ece/grad/grad04.jsp?mode=view&article_no=212313&board_wrapper=%2Fece%2Fgrad%2Fgrad04.jsp&pager.offset=0&board_no=1825
+http://ece.ajou.ac.kr:80/ece/professor/professor01.jsp?include=view&article_no=198911011&board_no=283?mode=list&board_wrapper=%2Fece%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=283
+http://ece.ajou.ac.kr:80/ece/professor/professor01.jsp?include=view&article_no=198911011&board_wrapper=%2Fece%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=283
+http://ece.ajou.ac.kr:80/ece/professor/professor01.jsp?mode=list&board_no=283
+http://ece.ajou.ac.kr:80/ece/professor/professor02.jsp?include=view&article_no=197411017&board_wrapper=%2Fece%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=1048
+http://ece.ajou.ac.kr:80/ece/professor/professor02.jsp?mode=list&board_no=1048

@@ -1,0 +1,1 @@
+http://cge.ajou.ac.kr:80/main/main.action

@@ -1,0 +1,11 @@
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02.jsp?mode=list
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02.jsp?mode=view&article_no=212597&board_wrapper=%2Ffaculty%2Fannounce%2Fannounce02.jsp&pager.offset=0&board_no=1090
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02.jsp?mode=view&article_no=219508?mode=list&board_wrapper=%2Ffaculty%2Fannounce%2Fannounce02.jsp&pager.offset=0&board_no=1090
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02_01.jsp?mode=list
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02_01.jsp?mode=view&article_no=219887&board_wrapper=%2Ffaculty%2Fannounce%2Fannounce02_01.jsp&pager.offset=0&board_no=1742
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02_01.jsp?mode=view&article_no=220427?mode=list&board_wrapper=%2Ffaculty%2Fannounce%2Fannounce02_01.jsp&pager.offset=0&board_no=1742
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02_02.jsp?mode=list
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02_02.jsp?mode=view&article_no=206939&board_wrapper=%2Ffaculty%2Fannounce%2Fannounce02_02.jsp&pager.offset=0&board_no=1743
+http://faculty.ajou.ac.kr:80/faculty/announce/announce02_02.jsp?mode=view&article_no=219503?mode=list&board_wrapper=%2Ffaculty%2Fannounce%2Fannounce02_02.jsp&pager.offset=0&board_no=1743
+http://faculty.ajou.ac.kr:80/faculty/online/online01.jsp?mode=list
+http://faculty.ajou.ac.kr:80/faculty/online/online01.jsp?mode=view&article_no=137319&board_wrapper=%2Ffaculty%2Fonline%2Fonline01.jsp&pager.offset=0&board_no=1534

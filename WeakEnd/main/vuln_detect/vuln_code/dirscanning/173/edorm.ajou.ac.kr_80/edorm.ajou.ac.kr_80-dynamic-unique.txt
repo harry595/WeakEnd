@@ -1,0 +1,5 @@
+http://edorm.ajou.ac.kr:80/edorm/board/board01.jsp?mode=list
+http://edorm.ajou.ac.kr:80/edorm/board/board01.jsp?mode=view&article_no=218755&board_wrapper=%2Fedorm%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=783
+http://edorm.ajou.ac.kr:80/edorm/board/board01.jsp?mode=view&article_no=220782?mode=list&board_wrapper=%2Fedorm%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=783
+http://edorm.ajou.ac.kr:80/edorm/board/board03.jsp?mode=list
+http://edorm.ajou.ac.kr:80/edorm/board/board03.jsp?mode=view&article_no=147348&board_wrapper=%2Fedorm%2Fboard%2Fboard03.jsp&pager.offset=0&board_no=788

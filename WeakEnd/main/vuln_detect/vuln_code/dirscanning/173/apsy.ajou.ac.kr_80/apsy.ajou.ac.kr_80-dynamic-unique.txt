@@ -1,0 +1,10 @@
+http://apsy.ajou.ac.kr:80/apsy/community/community03.jsp?mode=list
+http://apsy.ajou.ac.kr:80/apsy/community/community04.jsp?mode=list
+http://apsy.ajou.ac.kr:80/apsy/community/community04.jsp?mode=view&article_no=209459&board_wrapper=%2Fapsy%2Fcommunity%2Fcommunity04.jsp&pager.offset=0&board_no=398
+http://apsy.ajou.ac.kr:80/apsy/community/community04.jsp?mode=view&article_no=211494?mode=list&board_wrapper=%2Fapsy%2Fcommunity%2Fcommunity04.jsp&pager.offset=0&board_no=398
+http://apsy.ajou.ac.kr:80/apsy/community/community04.jsp?search:search_category:category=290
+http://apsy.ajou.ac.kr:80/apsy/professor/professor01.jsp?include=view&article_no=199311006&board_no=381?mode=list&board_wrapper=%2Fapsy%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=381
+http://apsy.ajou.ac.kr:80/apsy/professor/professor01.jsp?include=view&article_no=199311006&board_wrapper=%2Fapsy%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=381
+http://apsy.ajou.ac.kr:80/apsy/professor/professor01.jsp?mode=list&board_no=381
+http://apsy.ajou.ac.kr:80/apsy/professor/professor02.jsp?include=view&article_no=200311086&board_wrapper=%2Fapsy%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=859
+http://apsy.ajou.ac.kr:80/apsy/professor/professor02.jsp?mode=list&board_no=859

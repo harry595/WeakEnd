@@ -1,0 +1,12 @@
+http://dorm.ajou.ac.kr/dorm/board/board01.jsp?mode=view&article_no=136605&board_wrapper=%2Fdorm%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=774
+http://dorm.ajou.ac.kr:80/dorm/board/board01.jsp?mode=list
+http://dorm.ajou.ac.kr:80/dorm/board/board01.jsp?mode=view&article_no=221181&board_wrapper=%2Fdorm%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=774
+http://dorm.ajou.ac.kr:80/dorm/board/board01.jsp?mode=view&article_no=221489?mode=list&board_wrapper=%2Fdorm%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=774
+http://dorm.ajou.ac.kr:80/dorm/board/board01.jsp?search:search_category:category=290
+http://dorm.ajou.ac.kr:80/dorm/board/board02.jsp?mode=list
+http://dorm.ajou.ac.kr:80/dorm/board/board02.jsp?mode=view&article_no=188382&board_wrapper=%2Fdorm%2Fboard%2Fboard02.jsp&pager.offset=0&board_no=773
+http://dorm.ajou.ac.kr:80/dorm/board/board03.jsp?mode=list
+http://dorm.ajou.ac.kr:80/dorm/board/board03.jsp?mode=view&article_no=221707&board_wrapper=%2Fdorm%2Fboard%2Fboard03.jsp&pager.offset=0&board_no=771
+http://dorm.ajou.ac.kr:80/dorm/board/board03.jsp?mode=view&article_no=221936?mode=list&board_wrapper=%2Fdorm%2Fboard%2Fboard03.jsp&pager.offset=0&board_no=771
+http://dorm.ajou.ac.kr:80/dorm/board/board05.jsp?mode=list
+http://dorm.ajou.ac.kr:80/dorm/board/board05.jsp?mode=view&article_no=117174&board_wrapper=%2Fdorm%2Fboard%2Fboard05.jsp&pager.offset=0&board_no=770

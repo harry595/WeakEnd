@@ -1,0 +1,15 @@
+http://isa.ajou.ac.kr:80/isa/community/community02.jsp?mode=list
+http://isa.ajou.ac.kr:80/isa/community/community02.jsp?mode=view&article_no=58798&board_wrapper=%2Fisa%2Fcommunity%2Fcommunity02.jsp&pager.offset=0&board_no=185
+http://isa.ajou.ac.kr:80/isa/community/community03.jsp?mode=list
+http://isa.ajou.ac.kr:80/isa/community/community03.jsp?mode=view&article_no=217963&board_wrapper=%2Fisa%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=416
+http://isa.ajou.ac.kr:80/isa/community/community03.jsp?mode=view&article_no=219431?mode=list&board_wrapper=%2Fisa%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=416
+http://isa.ajou.ac.kr:80/isa/community/community03.jsp?search:search_category:category=290
+http://isa.ajou.ac.kr:80/isa/community/community04.jsp?mode=list
+http://isa.ajou.ac.kr:80/isa/community/community04.jsp?mode=view&article_no=120284&board_wrapper=%2Fisa%2Fcommunity%2Fcommunity04.jsp&pager.offset=0&board_no=1382
+http://isa.ajou.ac.kr:80/isa/community/community05_01.jsp?mode=list
+http://isa.ajou.ac.kr:80/isa/community/community05_01.jsp?mode=view&article_no=198197&board_wrapper=%2Fisa%2Fcommunity%2Fcommunity05_01.jsp&pager.offset=0&board_no=1386
+http://isa.ajou.ac.kr:80/isa/community/community06.jsp?mode=list
+http://isa.ajou.ac.kr:80/isa/community/community06.jsp?mode=view&article_no=102968&board_wrapper=%2Fisa%2Fcommunity%2Fcommunity06.jsp&pager.offset=0&board_no=1414
+http://isa.ajou.ac.kr:80/isa/professor/professor01.jsp?include=view&article_no=199211017&board_no=415?mode=list&board_wrapper=%2Fisa%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=415
+http://isa.ajou.ac.kr:80/isa/professor/professor01.jsp?include=view&article_no=199211017&board_wrapper=%2Fisa%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=415
+http://isa.ajou.ac.kr:80/isa/professor/professor01.jsp?mode=list&board_no=415

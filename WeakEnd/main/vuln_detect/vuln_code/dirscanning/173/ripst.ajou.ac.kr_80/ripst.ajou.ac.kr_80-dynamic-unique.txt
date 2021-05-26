@@ -1,0 +1,3 @@
+http://ripst.ajou.ac.kr:80/ripst/board/01.jsp?mode=list
+http://ripst.ajou.ac.kr:80/ripst/board/01.jsp?mode=view&article_no=146885&board_wrapper=%2Fripst%2Fboard%2F01.jsp&pager.offset=0&board_no=1509
+http://ripst.ajou.ac.kr:80/ripst/board/02.jsp?mode=list

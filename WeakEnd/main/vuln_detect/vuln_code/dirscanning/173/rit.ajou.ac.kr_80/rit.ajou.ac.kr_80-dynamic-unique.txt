@@ -1,0 +1,11 @@
+http://rit.ajou.ac.kr:80/rit/board/board01.jsp?mode=list
+http://rit.ajou.ac.kr:80/rit/board/board01.jsp?mode=view&article_no=124837&board_wrapper=%2Frit%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=1482
+http://rit.ajou.ac.kr:80/rit/board/board02.jsp?mode=list
+http://rit.ajou.ac.kr:80/rit/board/board02.jsp?mode=view&article_no=120907&board_wrapper=%2Frit%2Fboard%2Fboard02.jsp&pager.offset=0&board_no=1483
+http://rit.ajou.ac.kr:80/rit/faculty.jsp?include=view&article_no=200311008&board_wrapper=%2Frit%2Ffaculty.jsp&pager.offset=0&board_no=1481
+http://rit.ajou.ac.kr:80/rit/faculty.jsp?mode=list&board_no=1481
+http://rit.ajou.ac.kr:80/rit/outcome.jsp?mode=list
+http://rit.ajou.ac.kr:80/rit/paper/board03.jsp?mode=list
+http://rit.ajou.ac.kr:80/rit/paper/board03.jsp?mode=view&article_no=124102&board_wrapper=%2Frit%2Fpaper%2Fboard03.jsp&pager.offset=0&board_no=1494
+http://rit.ajou.ac.kr:80/rit/patent/board04.jsp?mode=list
+http://rit.ajou.ac.kr:80/rit/patent/board04.jsp?mode=view&article_no=182637&board_wrapper=%2Frit%2Fpatent%2Fboard04.jsp&pager.offset=0&board_no=1495

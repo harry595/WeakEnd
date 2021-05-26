@@ -1,0 +1,11 @@
+http://pol.ajou.ac.kr:80/pol/community/community03.jsp?mode=list
+http://pol.ajou.ac.kr:80/pol/community/community03.jsp?mode=view&article_no=90384&board_wrapper=%2Fpol%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=184
+http://pol.ajou.ac.kr:80/pol/community/community04.jsp?mode=list
+http://pol.ajou.ac.kr:80/pol/community/community04.jsp?mode=view&article_no=126130&board_wrapper=%2Fpol%2Fcommunity%2Fcommunity04.jsp&pager.offset=0&board_no=400
+http://pol.ajou.ac.kr:80/pol/community/community04.jsp?mode=view&article_no=137092?mode=list&board_wrapper=%2Fpol%2Fcommunity%2Fcommunity04.jsp&pager.offset=0&board_no=400
+http://pol.ajou.ac.kr:80/pol/community/community04.jsp?search:search_category:category=290
+http://pol.ajou.ac.kr:80/pol/professor/professor01.jsp?include=view&article_no=199411149&board_no=383?mode=list&board_wrapper=%2Fpol%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=383
+http://pol.ajou.ac.kr:80/pol/professor/professor01.jsp?include=view&article_no=199411149&board_wrapper=%2Fpol%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=383
+http://pol.ajou.ac.kr:80/pol/professor/professor01.jsp?mode=list&board_no=383
+http://pol.ajou.ac.kr:80/pol/professor/professor02.jsp?include=view&article_no=199111023&board_wrapper=%2Fpol%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=860
+http://pol.ajou.ac.kr:80/pol/professor/professor02.jsp?mode=list&board_no=860

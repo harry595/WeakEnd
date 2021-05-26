@@ -8,6 +8,11 @@
 ' union select 1,2,3,4,5,6,7,8#
 ' union select 1,2,3,4,5,6,7,8,9#
 ' union select 1,2,3,4,5,6,7,8,9,10#
+' union select 1,2,3,4,5,6,7,8,9,10,11#
+' union select 1,2,3,4,5,6,7,8,9,10,11,12#
+' union select 1,2,3,4,5,6,7,8,9,10,11,12,13#
+' union select 1,2,3,4,5,6,7,8,9,10,11,12,13,14#
+' union select 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15#
  union select 1
  union select 1,2
  union select 1,2,3
@@ -18,6 +23,11 @@
  union select 1,2,3,4,5,6,7,8
  union select 1,2,3,4,5,6,7,8,9
  union select 1,2,3,4,5,6,7,8,9,10
+ union select 1,2,3,4,5,6,7,8,9,10,11
+ union select 1,2,3,4,5,6,7,8,9,10,11,12
+ union select 1,2,3,4,5,6,7,8,9,10,11,12,13
+ union select 1,2,3,4,5,6,7,8,9,10,11,12,13,14
+ union select 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
  UNION ALL SELECT 1#
  UNION ALL SELECT 1,2#
  UNION ALL SELECT 1,2,3#
@@ -28,3 +38,8 @@
  UNION ALL SELECT 1,2,3,4,5,6,7,8#
  UNION ALL SELECT 1,2,3,4,5,6,7,8,9#
  UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10#
+ UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11#
+ UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12#
+ UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13#
+ UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14#
+ UNION ALL SELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15#

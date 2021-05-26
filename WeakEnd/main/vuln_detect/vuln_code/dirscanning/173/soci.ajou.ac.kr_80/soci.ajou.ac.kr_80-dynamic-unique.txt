@@ -1,0 +1,9 @@
+http://soci.ajou.ac.kr:80/soci/community/community03.jsp?mode=list
+http://soci.ajou.ac.kr:80/soci/community/community03.jsp?mode=view&article_no=70446&board_wrapper=%2Fsoci%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=399
+http://soci.ajou.ac.kr:80/soci/community/community03.jsp?mode=view&article_no=71601?mode=list&board_wrapper=%2Fsoci%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=399
+http://soci.ajou.ac.kr:80/soci/community/community03.jsp?search:search_category:category=290
+http://soci.ajou.ac.kr:80/soci/professor/professor01.jsp?include=view&article_no=199211016&board_no=382?mode=list&board_wrapper=%2Fsoci%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=382
+http://soci.ajou.ac.kr:80/soci/professor/professor01.jsp?include=view&article_no=199211016&board_wrapper=%2Fsoci%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=382
+http://soci.ajou.ac.kr:80/soci/professor/professor01.jsp?mode=list&board_no=382
+http://soci.ajou.ac.kr:80/soci/professor/professor02.jsp?include=view&article_no=199011051&board_wrapper=%2Fsoci%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=827
+http://soci.ajou.ac.kr:80/soci/professor/professor02.jsp?mode=list&board_no=827

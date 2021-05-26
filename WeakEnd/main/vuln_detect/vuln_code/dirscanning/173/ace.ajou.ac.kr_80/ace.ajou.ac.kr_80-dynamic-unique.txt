@@ -1,0 +1,13 @@
+http://ace.ajou.ac.kr:80/ace/community/community01.jsp?mode=list
+http://ace.ajou.ac.kr:80/ace/community/community01.jsp?mode=view&article_no=220616&board_wrapper=%2Face%2Fcommunity%2Fcommunity01.jsp&pager.offset=0&board_no=1467
+http://ace.ajou.ac.kr:80/ace/community/community01_03.jsp?mode=view&article_no=221794?mode=list&board_wrapper=%2Face%2Fcommunity%2Fcommunity01_03.jsp&pager.offset=0&board_no=1467
+http://ace.ajou.ac.kr:80/ace/community/community03.jsp?mode=list
+http://ace.ajou.ac.kr:80/ace/community/community03.jsp?mode=view&article_no=218900&board_wrapper=%2Face%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=1733
+http://ace.ajou.ac.kr:80/ace/community/community05.jsp?mode=list
+http://ace.ajou.ac.kr:80/ace/community/community05.jsp?mode=view&article_no=197784&board_wrapper=%2Face%2Fcommunity%2Fcommunity05.jsp&pager.offset=0&board_no=713
+http://ace.ajou.ac.kr:80/ace/program/ace03.jsp?mode=list
+http://ace.ajou.ac.kr:80/ace/program/ace03.jsp?mode=view&article_no=21193&board_wrapper=%2Face%2Fprogram%2Face03.jsp&pager.offset=0&board_no=829
+http://ace.ajou.ac.kr:80/ace/program/ace04.jsp?mode=list
+http://ace.ajou.ac.kr:80/ace/program/ace04.jsp?mode=view&article_no=24782&board_wrapper=%2Face%2Fprogram%2Face04.jsp&pager.offset=0&board_no=712
+http://ace.ajou.ac.kr:80/ace/special/bussiness03.jsp?mode=list
+http://ace.ajou.ac.kr:80/ace/special/bussiness03.jsp?mode=view&article_no=218900&board_wrapper=%2Face%2Fspecial%2Fbussiness03.jsp&pager.offset=0&board_no=1733

@@ -1,0 +1,3 @@
+http://cmcm.ajou.ac.kr:80/booking/booking_step1.php
+http://cmcm.ajou.ac.kr:80/booking/list.php
+http://cmcm.ajou.ac.kr:80/content/company_map.php

@@ -1,0 +1,5 @@
+chegrad.ajou.ac.kr
+iegrad.ajou.ac.kr
+mdc-grad.ajou.ac.kr
+megrad.ajou.ac.kr
+urbangrad.ajou.ac.kr

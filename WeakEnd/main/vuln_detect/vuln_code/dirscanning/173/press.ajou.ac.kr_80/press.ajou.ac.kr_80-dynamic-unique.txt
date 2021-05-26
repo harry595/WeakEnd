@@ -1,0 +1,11 @@
+http://press.ajou.ac.kr/news/articleList.html?sc_section_code=S1N1&view_type=sm
+http://press.ajou.ac.kr/news/articleList.html?sc_sub_section_code=S2N1&view_type=sm
+http://press.ajou.ac.kr:80/bbs/list.html?table=bbs_20&idxno=288/./list.html?page=1&total=1&sc_area=&sc_word=&table=bbs_20
+http://press.ajou.ac.kr:80/bbs/list.html?table=bbs_20/./list.html?page=1&total=1&sc_area=&sc_word=&table=bbs_20
+http://press.ajou.ac.kr:80/member/index.html/memberAgree.html?kind=kids
+http://press.ajou.ac.kr:80/news/articleList.html?sc_section_code=S1N5&view_type=sm/./articleList.html?page=1&total=70&sc_section_code=S1N5&sc_sub_section_code=&sc_serial_code=&sc_area=&sc_level=&sc_article_type=&sc_view_level=&sc_sdate=&sc_edate=&sc_serial_number=&sc_word=&sc_word2=&sc_andor=&sc_order_by=E&view_type=sm
+http://press.ajou.ac.kr:80/news/articleList.html?sc_sub_section_code=S2N10&view_type=sm/./articleList.html?page=1&total=8&sc_section_code=&sc_sub_section_code=S2N10&sc_serial_code=&sc_area=&sc_level=&sc_article_type=&sc_view_level=&sc_sdate=&sc_edate=&sc_serial_number=&sc_word=&sc_word2=&sc_andor=&sc_order_by=E&view_type=sm
+http://press.ajou.ac.kr:80/news/articleView.html?idxno=1215/articleList.html?sc_area=I&sc_word=yncho00
+http://twitter.com/home?status=%27%ED%99%94%EC%84%B1%27+%EC%9E%85%EB%AC%B8%EC%9E%90%EB%93%A4%EC%9D%84+%EC%9C%84%ED%95%9C+%EC%88%98%EC%9B%90%ED%99%94%EC%84%B1+%EB%AA%85%EC%86%8C+http%3A%2F%2Fpress.ajou.ac.kr%2Fnews%2FarticleView.html%3Fidxno%3D2334
+http://www.facebook.com/sharer.php?u=http%3A%2F%2Fpress.ajou.ac.kr%2Fnews%2FarticleView.html%3Fidxno%3D1215&t=Travel+to+France
+http://www.google.com/bookmarks/mark?op=add&title=%27%ED%99%94%EC%84%B1%27+%EC%9E%85%EB%AC%B8%EC%9E%90%EB%93%A4%EC%9D%84+%EC%9C%84%ED%95%9C+%EC%88%98%EC%9B%90%ED%99%94%EC%84%B1+%EB%AA%85%EC%86%8C&bkmk=http://press.ajou.ac.kr/news/articleView.html?idxno=2334

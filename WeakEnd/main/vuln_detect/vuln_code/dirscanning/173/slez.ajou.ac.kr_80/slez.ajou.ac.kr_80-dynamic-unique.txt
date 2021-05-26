@@ -1,0 +1,7 @@
+http://slez.ajou.ac.kr:80/slez/community/community03.jsp?mode=list
+http://slez.ajou.ac.kr:80/slez/community/community03.jsp?mode=view&article_no=68511&board_wrapper=%2Fslez%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=401
+http://slez.ajou.ac.kr:80/slez/community/community03.jsp?mode=view&article_no=69091?mode=list&board_wrapper=%2Fslez%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=401
+http://slez.ajou.ac.kr:80/slez/community/community03.jsp?search:search_category:category=290
+http://slez.ajou.ac.kr:80/slez/professor/professor01.jsp?include=view&article_no=200711113&board_no=404?mode=list&board_wrapper=%2Fslez%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=404
+http://slez.ajou.ac.kr:80/slez/professor/professor01.jsp?include=view&article_no=200711113&board_wrapper=%2Fslez%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=404
+http://slez.ajou.ac.kr:80/slez/professor/professor01.jsp?mode=list&board_no=404

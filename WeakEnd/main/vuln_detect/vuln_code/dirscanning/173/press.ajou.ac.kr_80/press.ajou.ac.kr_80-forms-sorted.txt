@@ -1,0 +1,12 @@
+http://press.ajou.ac.kr
+http://press.ajou.ac.kr/admin/adminLoginForm.html
+http://press.ajou.ac.kr/com/ad.html
+http://press.ajou.ac.kr/com/bp.html
+http://press.ajou.ac.kr/com/com-1.html
+http://press.ajou.ac.kr/com/emailno.html
+http://press.ajou.ac.kr/com/jb.html
+http://press.ajou.ac.kr/com/privacy.html
+http://press.ajou.ac.kr/com/teen.html
+http://press.ajou.ac.kr:80
+http://press.ajou.ac.kr:80/com/com-1.html
+http://press.ajou.ac.kr:80/member/login.html

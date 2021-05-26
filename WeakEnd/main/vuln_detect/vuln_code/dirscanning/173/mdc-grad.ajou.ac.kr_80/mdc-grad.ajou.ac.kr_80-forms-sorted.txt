@@ -1,0 +1,6 @@
+http://mdc-grad.ajou.ac.kr:80/_custom/ajou/_common/app/sso/sso_login.jsp
+http://mdc-grad.ajou.ac.kr:80/mdc-grad/board/03.jsp
+http://mdc-grad.ajou.ac.kr:80/mdc-grad/board/04.jsp
+http://mdc-grad.ajou.ac.kr:80/mdc-grad/board/notice.jsp
+http://mdc-grad.ajou.ac.kr:80/mdc-grad/board/press.jsp
+http://mdc-grad.ajou.ac.kr:80/mdc-grad/member/faculty.jsp

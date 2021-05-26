@@ -1,0 +1,17 @@
+http://archives.ajou.ac.kr/archives/use/use_03.jsp
+http://archives.ajou.ac.kr:80
+http://archives.ajou.ac.kr:80/_custom/ajou/_common/app/sso/sso_login.jsp
+http://archives.ajou.ac.kr:80/archives/board/notice_01.jsp
+http://archives.ajou.ac.kr:80/archives/board/notice_02.jsp
+http://archives.ajou.ac.kr:80/archives/board/notice_03.jsp
+http://archives.ajou.ac.kr:80/archives/exhibit/exhibit_01.jsp
+http://archives.ajou.ac.kr:80/archives/exhibit/exhibit_05.jsp
+http://archives.ajou.ac.kr:80/archives/exhibit/exhibit_06.jsp
+http://archives.ajou.ac.kr:80/archives/exhibit/exhibit_08.jsp
+http://archives.ajou.ac.kr:80/archives/exhibit/photo01.jsp
+http://archives.ajou.ac.kr:80/archives/index.jsp
+http://archives.ajou.ac.kr:80/archives/intro/01.jsp
+http://archives.ajou.ac.kr:80/archives/intro/02.jsp
+http://archives.ajou.ac.kr:80/archives/use/use_01.jsp
+http://archives.ajou.ac.kr:80/archives/use/use_02.jsp
+http://archives.ajou.ac.kr:80/archives/use/use_03.jsp

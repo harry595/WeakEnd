@@ -1,0 +1,12 @@
+http://cie.ajou.ac.kr/cie/board/guide.jsp?mode=list&pager.offset=0&board_no=1908
+http://cie.ajou.ac.kr/cie/board/undguide.jsp?mode=list
+http://cie.ajou.ac.kr/cie/board/undguide.jsp?mode=view&article_no=221425&board_wrapper=%2Fcie%2Fboard%2Fundguide.jsp&pager.offset=0&board_no=1907
+http://cie.ajou.ac.kr:80/cie/board/01.jsp?mode=list
+http://cie.ajou.ac.kr:80/cie/board/01.jsp?mode=view&article_no=214077?mode=list&board_wrapper=%2Fcie%2Fboard%2F01.jsp&pager.offset=0&board_no=1114
+http://cie.ajou.ac.kr:80/cie/board/01.jsp?mode=view&article_no=218413&board_wrapper=%2Fcie%2Fboard%2F01.jsp&pager.offset=0&board_no=1114
+http://cie.ajou.ac.kr:80/cie/board/02.jsp?mode=list
+http://cie.ajou.ac.kr:80/cie/board/03.jsp?mode=list
+http://cie.ajou.ac.kr:80/cie/board/down.jsp?mode=list
+http://cie.ajou.ac.kr:80/cie/board/down.jsp?mode=view&article_no=209679&board_wrapper=%2Fcie%2Fboard%2Fdown.jsp&pager.offset=0&board_no=1635
+http://cie.ajou.ac.kr:80/cie/board/faq.jsp?mode=list
+http://cie.ajou.ac.kr:80/cie/board/faq.jsp?mode=view&article_no=34210&board_wrapper=%2Fcie%2Fboard%2Ffaq.jsp&pager.offset=0&board_no=1117

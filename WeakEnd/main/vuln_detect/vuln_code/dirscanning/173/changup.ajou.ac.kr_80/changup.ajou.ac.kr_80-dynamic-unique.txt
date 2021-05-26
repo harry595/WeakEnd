@@ -1,0 +1,2 @@
+http://sub/sub04_04.php?mode=view&idx=58&sk=&sw=&offset=&category=
+sub/sub04_04.php?mode=view&idx=58&sk=&sw=&offset=&category=

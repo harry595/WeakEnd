@@ -1,0 +1,8 @@
+http://apcc1721.ajou.ac.kr/apcc1721/board/board01.jsp?mode=list
+http://apcc1721.ajou.ac.kr/apcc1721/board/board01.jsp?mode=view&article_no=198015&board_wrapper=%2Fapcc1721%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=1215
+http://apcc1721.ajou.ac.kr:80/apcc1721/board/board01.jsp?mode=list
+http://apcc1721.ajou.ac.kr:80/apcc1721/board/board01.jsp?mode=view&article_no=198015&board_wrapper=%2Fapcc1721%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=1215
+http://apcc1721.ajou.ac.kr:80/apcc1721/board/board01.jsp?mode=view&article_no=198015?mode=list&board_wrapper=%2Fapcc1721%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=1215
+http://apcc1721.ajou.ac.kr:80/apcc1721/board/board02.jsp?vmode=week&defparam:date=2021-05-25
+http://apcc1721.ajou.ac.kr:80/apcc1721/board/board04.jsp?mode=list
+http://apcc1721.ajou.ac.kr:80/apcc1721/board/board04.jsp?mode=view&article_no=69216&board_wrapper=%2Fapcc1721%2Fboard%2Fboard04.jsp&pager.offset=0&board_no=1212

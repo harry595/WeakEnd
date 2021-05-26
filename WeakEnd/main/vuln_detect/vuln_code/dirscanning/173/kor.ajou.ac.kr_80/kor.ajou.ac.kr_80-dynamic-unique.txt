@@ -1,0 +1,10 @@
+http://kor.ajou.ac.kr:80/kor/board/board01.jsp?mode=list
+http://kor.ajou.ac.kr:80/kor/board/board01.jsp?mode=view&article_no=221725&board_wrapper=%2Fkor%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=229
+http://kor.ajou.ac.kr:80/kor/board/board01.jsp?search:search_category:category=290
+http://kor.ajou.ac.kr:80/kor/community/community03.jsp?mode=list
+http://kor.ajou.ac.kr:80/kor/community/community03.jsp?mode=view&article_no=190550&board_wrapper=%2Fkor%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=170
+http://kor.ajou.ac.kr:80/kor/professor/professor01.jsp?include=view&article_no=200211018&board_no=343?mode=list&board_wrapper=%2Fkor%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=343
+http://kor.ajou.ac.kr:80/kor/professor/professor01.jsp?include=view&article_no=200211018&board_wrapper=%2Fkor%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=343
+http://kor.ajou.ac.kr:80/kor/professor/professor01.jsp?mode=list&board_no=343
+http://kor.ajou.ac.kr:80/kor/professor/professor02.jsp?include=view&article_no=198411003&board_wrapper=%2Fkor%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=823
+http://kor.ajou.ac.kr:80/kor/professor/professor02.jsp?mode=list&board_no=823

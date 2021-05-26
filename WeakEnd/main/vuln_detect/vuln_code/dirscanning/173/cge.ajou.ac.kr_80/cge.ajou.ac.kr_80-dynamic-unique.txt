@@ -1,0 +1,3 @@
+http://cge.ajou.ac.kr:80/main/contents/class/index.action?q=3072c89d91725dda7ff8382021fc06b3e65fd3a8e635c8a6ffe5c7e8d7387b57?q=3072c89d91725dda7ff8382021fc06b3e65fd3a8e635c8a6ffe5c7e8d7387b57
+https://cge.ajou.ac.kr/main/board/list.action?q=733804cef785a83fa7662351a95b98a662c90c2683ee84833a2bf9dd6d0c0327
+https://cge.ajou.ac.kr/main/board/read.action?q=d8864a36fa85c201f66d1c40ec4a6a412a056318859588d86780480bb55f513fa958aca48d924bbd706709825a7d72550b3e039777d9e29facbe4d97c725cbbf

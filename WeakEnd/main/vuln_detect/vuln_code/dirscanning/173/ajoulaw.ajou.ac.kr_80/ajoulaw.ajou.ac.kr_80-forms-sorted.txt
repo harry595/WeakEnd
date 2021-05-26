@@ -1,0 +1,17 @@
+http://ajoulaw.ajou.ac.kr:80
+http://ajoulaw.ajou.ac.kr:80/_custom/ajou/_common/app/sso/sso_login.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/board.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/news.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/notice.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/questions.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/counseling/online.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/intro/intro01.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/intro/intro02.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/intro/intro03.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/intro/intro04.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/intro/intro05.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/intro/intro06.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/sitemap.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/work/work01.jsp
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/work/work02.jsp

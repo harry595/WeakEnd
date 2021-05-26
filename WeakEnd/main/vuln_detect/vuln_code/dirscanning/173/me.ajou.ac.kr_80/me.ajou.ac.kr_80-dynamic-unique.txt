@@ -1,0 +1,14 @@
+http://me.ajou.ac.kr:80/me/board/board00.jsp?mode=list
+http://me.ajou.ac.kr:80/me/board/board01.jsp?mode=list
+http://me.ajou.ac.kr:80/me/board/board01.jsp?mode=view&article_no=221259&board_wrapper=%2Fme%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=268
+http://me.ajou.ac.kr:80/me/board/board01.jsp?mode=view&article_no=221336?mode=list&board_wrapper=%2Fme%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=268
+http://me.ajou.ac.kr:80/me/board/board01.jsp?search:search_category:category=290
+http://me.ajou.ac.kr:80/me/board/board05.jsp?mode=list
+http://me.ajou.ac.kr:80/me/board/board05.jsp?mode=view&article_no=111573&board_wrapper=%2Fme%2Fboard%2Fboard05.jsp&pager.offset=0&board_no=63
+http://me.ajou.ac.kr:80/me/data/data01.jsp?mode=list
+http://me.ajou.ac.kr:80/me/data/data01.jsp?mode=view&article_no=146367&board_wrapper=%2Fme%2Fdata%2Fdata01.jsp&pager.offset=0&board_no=66
+http://me.ajou.ac.kr:80/me/professor/pro01.jsp?include=view&article_no=198911012&board_no=55?mode=list&board_wrapper=%2Fme%2Fprofessor%2Fpro01.jsp&pager.offset=0&board_no=55
+http://me.ajou.ac.kr:80/me/professor/pro01.jsp?include=view&article_no=198911012&board_wrapper=%2Fme%2Fprofessor%2Fpro01.jsp&pager.offset=0&board_no=55
+http://me.ajou.ac.kr:80/me/professor/pro01.jsp?mode=list&board_no=55
+http://me.ajou.ac.kr:80/me/professor/pro03.jsp?include=view&article_no=197911005&board_wrapper=%2Fme%2Fprofessor%2Fpro03.jsp&pager.offset=0&board_no=267
+http://me.ajou.ac.kr:80/me/professor/pro03.jsp?mode=list&board_no=267

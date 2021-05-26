@@ -1,0 +1,1 @@
+http://lincplus.ajou.ac.kr:80/sso/

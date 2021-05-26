@@ -1,0 +1,16 @@
+http://pol.ajou.ac.kr:80
+http://pol.ajou.ac.kr:80/_custom/ajou/_common/app/sso/sso_login.jsp
+http://pol.ajou.ac.kr:80/pol/community/community01.jsp
+http://pol.ajou.ac.kr:80/pol/community/community02.jsp
+http://pol.ajou.ac.kr:80/pol/community/community03.jsp
+http://pol.ajou.ac.kr:80/pol/community/community04.jsp
+http://pol.ajou.ac.kr:80/pol/edu/edu01.jsp
+http://pol.ajou.ac.kr:80/pol/edu/edu03.jsp
+http://pol.ajou.ac.kr:80/pol/edu/edu04.jsp
+http://pol.ajou.ac.kr:80/pol/index.jsp
+http://pol.ajou.ac.kr:80/pol/intro/intro01.jsp
+http://pol.ajou.ac.kr:80/pol/intro/intro02.jsp
+http://pol.ajou.ac.kr:80/pol/intro/intro04.jsp
+http://pol.ajou.ac.kr:80/pol/professor/professor01.jsp
+http://pol.ajou.ac.kr:80/pol/professor/professor02.jsp
+http://pol.ajou.ac.kr:80/pol/sitemap.jsp

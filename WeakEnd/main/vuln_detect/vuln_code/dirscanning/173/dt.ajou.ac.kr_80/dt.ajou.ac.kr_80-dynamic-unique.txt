@@ -1,0 +1,8 @@
+http://dt.ajou.ac.kr:80/dt/board/board01.jsp?mode=list
+http://dt.ajou.ac.kr:80/dt/board/board01.jsp?mode=view&article_no=220333&board_wrapper=%2Fdt%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=1107
+http://dt.ajou.ac.kr:80/dt/etc/etc01.jsp?mode=list
+http://dt.ajou.ac.kr:80/dt/etc/etc01.jsp?mode=view&article_no=121402&board_wrapper=%2Fdt%2Fetc%2Fetc01.jsp&pager.offset=0&board_no=1108
+http://dt.ajou.ac.kr:80/dt/people/ppl01.jsp?include=view&article_no=199911004&board_wrapper=%2Fdt%2Fpeople%2Fppl01.jsp&pager.offset=0&board_no=1106
+http://dt.ajou.ac.kr:80/dt/people/ppl01.jsp?mode=list&board_no=1106
+http://dt.ajou.ac.kr:80/dt/research/research05.jsp?mode=list
+http://dt.ajou.ac.kr:80/dt/research/research05.jsp?mode=view&article_no=183353&board_wrapper=%2Fdt%2Fresearch%2Fresearch05.jsp&pager.offset=0&board_no=1659

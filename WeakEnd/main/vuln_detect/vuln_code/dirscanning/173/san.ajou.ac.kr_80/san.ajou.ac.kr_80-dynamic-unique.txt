@@ -1,0 +1,17 @@
+http://san.ajou.ac.kr/san/board/bbs.jsp?mode=view&article_no=74335&board_wrapper=%2Fsan%2Fboard%2Fbbs.jsp&pager.offset=0&board_no=592
+http://san.ajou.ac.kr:80/san/aboutus/aboutus05.jsp?mode=list
+http://san.ajou.ac.kr:80/san/aboutus/aboutus05.jsp?mode=view&article_no=187818&board_wrapper=%2Fsan%2Faboutus%2Faboutus05.jsp&pager.offset=0&board_no=1698
+http://san.ajou.ac.kr:80/san/admission/04.jsp?mode=list
+http://san.ajou.ac.kr:80/san/board/bbs.jsp?mode=list
+http://san.ajou.ac.kr:80/san/board/bbs.jsp?mode=view&article_no=192161&board_wrapper=%2Fsan%2Fboard%2Fbbs.jsp&pager.offset=0&board_no=592
+http://san.ajou.ac.kr:80/san/board/bbs.jsp?mode=view&article_no=193489?mode=list&board_wrapper=%2Fsan%2Fboard%2Fbbs.jsp&pager.offset=0&board_no=592
+http://san.ajou.ac.kr:80/san/board/notice.jsp?mode=list
+http://san.ajou.ac.kr:80/san/board/notice.jsp?mode=view&article_no=220907&board_wrapper=%2Fsan%2Fboard%2Fnotice.jsp&pager.offset=0&board_no=582
+http://san.ajou.ac.kr:80/san/board/notice.jsp?mode=view&article_no=221580?mode=list&board_wrapper=%2Fsan%2Fboard%2Fnotice.jsp&pager.offset=0&board_no=582
+http://san.ajou.ac.kr:80/san/board/notice.jsp?search:search_category:category=290
+http://san.ajou.ac.kr:80/san/board/photo.jsp?mode=list
+http://san.ajou.ac.kr:80/san/board/photo.jsp?mode=view&article_no=214424&board_wrapper=%2Fsan%2Fboard%2Fphoto.jsp&pager.offset=0&board_no=594
+http://san.ajou.ac.kr:80/san/board/qna.jsp?mode=list
+http://san.ajou.ac.kr:80/san/board/qna.jsp?mode=view&article_no=129337&board_wrapper=%2Fsan%2Fboard%2Fqna.jsp&pager.offset=0&board_no=593
+http://san.ajou.ac.kr:80/san/specialcourse/sc05.jsp?mode=list
+http://san.ajou.ac.kr:80/san/specialcourse/sc05.jsp?mode=view&article_no=40306&board_wrapper=%2Fsan%2Fspecialcourse%2Fsc05.jsp&pager.offset=0&board_no=576

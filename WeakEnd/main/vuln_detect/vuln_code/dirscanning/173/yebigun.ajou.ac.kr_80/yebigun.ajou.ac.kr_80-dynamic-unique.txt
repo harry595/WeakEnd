@@ -1,0 +1,15 @@
+http://yebigun.ajou.ac.kr:80/yebigun/community/community01.jsp?mode=list
+http://yebigun.ajou.ac.kr:80/yebigun/community/community01.jsp?mode=view&article_no=101131&board_wrapper=%2Fyebigun%2Fcommunity%2Fcommunity01.jsp&pager.offset=0&board_no=1269
+http://yebigun.ajou.ac.kr:80/yebigun/community/community02.jsp?mode=list
+http://yebigun.ajou.ac.kr:80/yebigun/community/community02.jsp?mode=view&article_no=112961&board_wrapper=%2Fyebigun%2Fcommunity%2Fcommunity02.jsp&pager.offset=0&board_no=1273
+http://yebigun.ajou.ac.kr:80/yebigun/community/community03.jsp?mode=list
+http://yebigun.ajou.ac.kr:80/yebigun/community/community03.jsp?mode=view&article_no=184071&board_wrapper=%2Fyebigun%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=1268
+http://yebigun.ajou.ac.kr:80/yebigun/data/data02.jsp?mode=list
+http://yebigun.ajou.ac.kr:80/yebigun/data/data02.jsp?mode=view&article_no=106089&board_wrapper=%2Fyebigun%2Fdata%2Fdata02.jsp&pager.offset=0&board_no=1270
+http://yebigun.ajou.ac.kr:80/yebigun/data/data03.jsp?mode=list
+http://yebigun.ajou.ac.kr:80/yebigun/data/data03.jsp?mode=view&article_no=109995&board_wrapper=%2Fyebigun%2Fdata%2Fdata03.jsp&pager.offset=0&board_no=1450
+http://yebigun.ajou.ac.kr:80/yebigun/data/data03.jsp?mode=view&article_no=114396?mode=list&board_wrapper=%2Fyebigun%2Fdata%2Fdata03.jsp&pager.offset=0&board_no=1450
+http://yebigun.ajou.ac.kr:80/yebigun/data/photo01.jsp?mode=list
+http://yebigun.ajou.ac.kr:80/yebigun/notice/notice01.jsp?mode=list
+http://yebigun.ajou.ac.kr:80/yebigun/notice/notice01.jsp?mode=view&article_no=213246&board_wrapper=%2Fyebigun%2Fnotice%2Fnotice01.jsp&pager.offset=0&board_no=1267
+http://yebigun.ajou.ac.kr:80/yebigun/notice/notice01.jsp?mode=view&article_no=219426?mode=list&board_wrapper=%2Fyebigun%2Fnotice%2Fnotice01.jsp&pager.offset=0&board_no=1267

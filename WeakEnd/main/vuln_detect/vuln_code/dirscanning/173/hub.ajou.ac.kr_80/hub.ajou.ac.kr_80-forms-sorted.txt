@@ -1,0 +1,11 @@
+http://hub.ajou.ac.kr:80
+http://hub.ajou.ac.kr:80/activity/a/m/getActList.do
+http://hub.ajou.ac.kr:80/careerDesign/a/m/getCareerDesignList.do;
+http://hub.ajou.ac.kr:80/careerQuest/a/m/getCareerQuest.do;
+http://hub.ajou.ac.kr:80/deptInfo/a/m/getdeptInfo.do;
+http://hub.ajou.ac.kr:80/employCns/a/m/getEmployCnsApplyIntro.do
+http://hub.ajou.ac.kr:80/myRoadmap/a/m/getMyRoadmap.do;
+http://hub.ajou.ac.kr:80/ncrProgramAppl/a/m/goProgramApplList.do
+http://hub.ajou.ac.kr:80/notice/a/m/getBoardList.do
+http://hub.ajou.ac.kr:80/researchInfo/a/n/getResearchInfo.do
+https://hub.ajou.ac.kr:443/clientMain/a/t/main.do

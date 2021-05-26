@@ -1,0 +1,7 @@
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/board.jsp?mode=list
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/board.jsp?mode=view&article_no=87891&board_wrapper=%2Fajoulaw%2Fboard%2Fboard.jsp&pager.offset=0&board_no=1237
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/news.jsp?mode=list
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/notice.jsp?mode=list
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/notice.jsp?mode=view&article_no=75195&board_wrapper=%2Fajoulaw%2Fboard%2Fnotice.jsp&pager.offset=0&board_no=1234
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/notice.jsp?mode=view&article_no=75195?mode=list&board_wrapper=%2Fajoulaw%2Fboard%2Fnotice.jsp&pager.offset=0&board_no=1234
+http://ajoulaw.ajou.ac.kr:80/ajoulaw/board/questions.jsp?mode=list

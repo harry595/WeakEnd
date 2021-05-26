@@ -1,0 +1,15 @@
+http://rit.ajou.ac.kr:80
+http://rit.ajou.ac.kr:80/_custom/ajou/_common/app/sso/sso_login.jsp
+http://rit.ajou.ac.kr:80/rit/board/board01.jsp
+http://rit.ajou.ac.kr:80/rit/board/board02.jsp
+http://rit.ajou.ac.kr:80/rit/faculty.jsp
+http://rit.ajou.ac.kr:80/rit/index.jsp
+http://rit.ajou.ac.kr:80/rit/intro/intro01.jsp
+http://rit.ajou.ac.kr:80/rit/intro/intro02.jsp
+http://rit.ajou.ac.kr:80/rit/intro/intro03.jsp
+http://rit.ajou.ac.kr:80/rit/intro/intro04.jsp
+http://rit.ajou.ac.kr:80/rit/lab.jsp
+http://rit.ajou.ac.kr:80/rit/outcome.jsp
+http://rit.ajou.ac.kr:80/rit/paper/board03.jsp
+http://rit.ajou.ac.kr:80/rit/patent/board04.jsp
+http://rit.ajou.ac.kr:80/rit/sitemap.jsp

@@ -1,0 +1,14 @@
+http://archives.ajou.ac.kr/archives/board/notice_01.jsp?mode=view&article_no=198217&board_wrapper=%2Farchives%2Fboard%2Fnotice_01.jsp&pager.offset=0&board_no=1703
+http://archives.ajou.ac.kr/archives/board/notice_02.jsp?mode=view&article_no=221520&board_wrapper=%2Farchives%2Fboard%2Fnotice_02.jsp&pager.offset=0&board_no=1716
+http://archives.ajou.ac.kr/archives/exhibit/exhibit_06.jsp?mode=view&article_no=202157&board_wrapper=%2Farchives%2Fexhibit%2Fexhibit_06.jsp&pager.offset=0&board_no=1760
+http://archives.ajou.ac.kr:80/archives/board/notice_01.jsp?mode=list
+http://archives.ajou.ac.kr:80/archives/board/notice_01.jsp?mode=view&article_no=198217&board_wrapper=%2Farchives%2Fboard%2Fnotice_01.jsp&pager.offset=0&board_no=1703
+http://archives.ajou.ac.kr:80/archives/board/notice_01.jsp?mode=view&article_no=204483
+http://archives.ajou.ac.kr:80/archives/board/notice_02.jsp?mode=list
+http://archives.ajou.ac.kr:80/archives/board/notice_02.jsp?mode=view&article_no=208730?mode=list&board_wrapper=%2Farchives%2Fboard%2Fnotice_02.jsp&pager.offset=0&board_no=1716
+http://archives.ajou.ac.kr:80/archives/board/notice_02.jsp?mode=view&article_no=210326&board_wrapper=%2Farchives%2Fboard%2Fnotice_02.jsp&pager.offset=0&board_no=1716
+http://archives.ajou.ac.kr:80/archives/exhibit/exhibit_06.jsp?mode=list
+http://archives.ajou.ac.kr:80/archives/exhibit/exhibit_06.jsp?mode=view&article_no=204041&board_wrapper=%2Farchives%2Fexhibit%2Fexhibit_06.jsp&pager.offset=0&board_no=1760
+http://archives.ajou.ac.kr:80/archives/exhibit/photo01.jsp?mode=list
+http://archives.ajou.ac.kr:80/archives/exhibit/photo01.jsp?mode=view&article_no=204524&board_wrapper=%2Farchives%2Fexhibit%2Fphoto01.jsp&pager.offset=0&board_no=1762
+http://archives.ajou.ac.kr:80/archives/index.jsp/archives/board/notice_01.jsp?mode=view&article_no=204483

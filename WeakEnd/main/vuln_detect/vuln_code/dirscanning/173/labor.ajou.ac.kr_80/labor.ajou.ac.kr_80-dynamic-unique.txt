@@ -1,0 +1,9 @@
+http://labor.ajou.ac.kr/?m=30013&s=30022&mode=view&cate=2&idx=11867
+http://labor.ajou.ac.kr/?m=30015&s=30025&mode=view&idx=648&rIdx=1999999473&thread=A
+http://labor.ajou.ac.kr:80/?m=2&s=5?m=2&s=6&mode=checkPW2
+http://labor.ajou.ac.kr:80/?m=30011?m=2&s=6&mode=checkPW2
+http://labor.ajou.ac.kr:80/?m=30013&s=30022&cate=1?m=2&s=6&mode=checkPW2
+http://labor.ajou.ac.kr:80/?m=30013&s=30022&mode=view&cate=1&idx=11860?m=2&s=6&mode=checkPW2
+http://labor.ajou.ac.kr:80/?m=30015&s=30025&mode=view&idx=646&rIdx=1999999475&thread=A?m=2&s=6&mode=checkPW2
+http://labor.ajou.ac.kr:80?m=2&s=6&mode=checkPW2
+http://labor.ajou.ac.kr:80?m=30011&s=30016

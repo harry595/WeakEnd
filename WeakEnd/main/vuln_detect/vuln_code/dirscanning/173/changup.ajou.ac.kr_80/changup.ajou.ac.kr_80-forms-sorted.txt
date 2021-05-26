@@ -1,0 +1,9 @@
+http://changup.ajou.ac.kr:80
+http://changup.ajou.ac.kr:80/index.php
+http://changup.ajou.ac.kr:80/sub/sub01_01.php
+http://changup.ajou.ac.kr:80/sub/sub02_01.php
+http://changup.ajou.ac.kr:80/sub/sub02_02.php
+http://changup.ajou.ac.kr:80/sub/sub02_03.php
+http://changup.ajou.ac.kr:80/sub/sub02_04.php
+http://changup.ajou.ac.kr:80/sub/sub02_05.php
+http://changup.ajou.ac.kr:80/sub/sub03_01.php

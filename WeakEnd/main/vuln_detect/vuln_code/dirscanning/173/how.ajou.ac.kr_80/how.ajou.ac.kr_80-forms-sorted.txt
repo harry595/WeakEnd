@@ -1,0 +1,8 @@
+http://how.ajou.ac.kr:80
+http://how.ajou.ac.kr:80/student/board/notice/index.do
+http://how.ajou.ac.kr:80/student/content/stdcom/index.do
+http://how.ajou.ac.kr:80/student/educate/agreement/index.do
+http://how.ajou.ac.kr:80/student/manage/history/index.do
+http://how.ajou.ac.kr:80/student/manage/regedit/index.do
+http://how.ajou.ac.kr:80/student/predu/index.do
+http://how.ajou.ac.kr:80/student/report/weekly/index.do

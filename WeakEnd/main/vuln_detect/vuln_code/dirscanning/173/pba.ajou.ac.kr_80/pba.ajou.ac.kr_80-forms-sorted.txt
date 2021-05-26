@@ -1,0 +1,15 @@
+http://pba.ajou.ac.kr:80
+http://pba.ajou.ac.kr:80/_custom/ajou/_common/app/sso/sso_login.jsp
+http://pba.ajou.ac.kr:80/pba/community/community01.jsp
+http://pba.ajou.ac.kr:80/pba/community/community02.jsp
+http://pba.ajou.ac.kr:80/pba/community/community03.jsp
+http://pba.ajou.ac.kr:80/pba/edu/edu01.jsp
+http://pba.ajou.ac.kr:80/pba/edu/edu03.jsp
+http://pba.ajou.ac.kr:80/pba/edu/edu04.jsp
+http://pba.ajou.ac.kr:80/pba/index.jsp
+http://pba.ajou.ac.kr:80/pba/intro/intro01.jsp
+http://pba.ajou.ac.kr:80/pba/intro/intro02.jsp
+http://pba.ajou.ac.kr:80/pba/intro/intro04.jsp
+http://pba.ajou.ac.kr:80/pba/professor/professor01.jsp
+http://pba.ajou.ac.kr:80/pba/professor/professor02.jsp
+http://pba.ajou.ac.kr:80/pba/sitemap.jsp

@@ -1,0 +1,14 @@
+http://ise.ajou.ac.kr:80/ise/amon/class.jsp?mode=list
+http://ise.ajou.ac.kr:80/ise/amon/class.jsp?mode=view&article_no=213505&board_wrapper=%2Fise%2Famon%2Fclass.jsp&pager.offset=0&board_no=1788
+http://ise.ajou.ac.kr:80/ise/amon/students.jsp?mode=list
+http://ise.ajou.ac.kr:80/ise/amon/students.jsp?mode=view&article_no=204677&board_wrapper=%2Fise%2Famon%2Fstudents.jsp&pager.offset=0&board_no=1789
+http://ise.ajou.ac.kr:80/ise/amon/support.jsp?mode=list
+http://ise.ajou.ac.kr:80/ise/board/faq.jsp?mode=list
+http://ise.ajou.ac.kr:80/ise/board/faq.jsp?mode=view&article_no=117787&board_wrapper=%2Fise%2Fboard%2Ffaq.jsp&pager.offset=0&board_no=1479
+http://ise.ajou.ac.kr:80/ise/board/notice.jsp?mode=list
+http://ise.ajou.ac.kr:80/ise/board/notice.jsp?mode=view&article_no=221095&board_wrapper=%2Fise%2Fboard%2Fnotice.jsp&pager.offset=0&board_no=1478
+http://ise.ajou.ac.kr:80/ise/board/notice.jsp?mode=view&article_no=221121?mode=list&board_wrapper=%2Fise%2Fboard%2Fnotice.jsp&pager.offset=0&board_no=1478
+http://ise.ajou.ac.kr:80/ise/board/qna.jsp?mode=list
+http://ise.ajou.ac.kr:80/ise/faculty01.jsp?include=view&article_no=200411023&board_no=1477?mode=list&board_wrapper=%2Fise%2Ffaculty01.jsp&pager.offset=0&board_no=1477
+http://ise.ajou.ac.kr:80/ise/faculty01.jsp?include=view&article_no=200411023&board_wrapper=%2Fise%2Ffaculty01.jsp&pager.offset=0&board_no=1477
+http://ise.ajou.ac.kr:80/ise/faculty01.jsp?mode=list&board_no=1477

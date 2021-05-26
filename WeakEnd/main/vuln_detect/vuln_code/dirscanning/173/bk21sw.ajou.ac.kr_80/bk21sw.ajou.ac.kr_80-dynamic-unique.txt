@@ -1,0 +1,10 @@
+http://bk21sw.ajou.ac.kr:80/bk21sw/board/community01.jsp?mode=list
+http://bk21sw.ajou.ac.kr:80/bk21sw/board/community01.jsp?mode=view&article_no=133683&board_wrapper=%2Fbk21sw%2Fboard%2Fcommunity01.jsp&pager.offset=0&board_no=1073
+http://bk21sw.ajou.ac.kr:80/bk21sw/board/community02.jsp?mode=list
+http://bk21sw.ajou.ac.kr:80/bk21sw/board/community03.jsp?mode=list
+http://bk21sw.ajou.ac.kr:80/bk21sw/etc/sub01.jsp?mode=list
+http://bk21sw.ajou.ac.kr:80/bk21sw/etc/sub01.jsp?mode=view&article_no=182432&board_wrapper=%2Fbk21sw%2Fetc%2Fsub01.jsp&pager.offset=0&board_no=1660
+http://bk21sw.ajou.ac.kr:80/bk21sw/etc/sub02.jsp?mode=list
+http://bk21sw.ajou.ac.kr:80/bk21sw/etc/sub02.jsp?mode=view&article_no=70833&board_wrapper=%2Fbk21sw%2Fetc%2Fsub02.jsp&pager.offset=0&board_no=1089
+http://bk21sw.ajou.ac.kr:80/bk21sw/people/edu01.jsp?include=view&article_no=200111083&board_wrapper=%2Fbk21sw%2Fpeople%2Fedu01.jsp&pager.offset=0&board_no=1079
+http://bk21sw.ajou.ac.kr:80/bk21sw/people/edu01.jsp?mode=list&board_no=1079

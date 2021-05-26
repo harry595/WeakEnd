@@ -1,0 +1,15 @@
+http://mdc.ajou.ac.kr:80/mdc/board/board01.jsp?mode=list
+http://mdc.ajou.ac.kr:80/mdc/board/board01.jsp?mode=view&article_no=220326?mode=list&board_wrapper=%2Fmdc%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=1227
+http://mdc.ajou.ac.kr:80/mdc/board/board02.jsp?mode=list
+http://mdc.ajou.ac.kr:80/mdc/board/board02.jsp?mode=view&article_no=191217&board_wrapper=%2Fmdc%2Fboard%2Fboard02.jsp&pager.offset=0&board_no=1226
+http://mdc.ajou.ac.kr:80/mdc/board/board02.jsp?mode=view&article_no=196052?mode=list&board_wrapper=%2Fmdc%2Fboard%2Fboard02.jsp&pager.offset=0&board_no=1226
+http://mdc.ajou.ac.kr:80/mdc/board/board03.jsp?mode=list
+http://mdc.ajou.ac.kr:80/mdc/board/board03.jsp?mode=view&article_no=184583&board_wrapper=%2Fmdc%2Fboard%2Fboard03.jsp&pager.offset=0&board_no=1225
+http://mdc.ajou.ac.kr:80/mdc/board/board05.jsp?mode=list
+http://mdc.ajou.ac.kr:80/mdc/board/board05.jsp?mode=view&article_no=218462&board_wrapper=%2Fmdc%2Fboard%2Fboard05.jsp&pager.offset=0&board_no=1381
+http://mdc.ajou.ac.kr:80/mdc/board/board05.jsp?mode=view&article_no=218898?mode=list&board_wrapper=%2Fmdc%2Fboard%2Fboard05.jsp&pager.offset=0&board_no=1381
+http://mdc.ajou.ac.kr:80/mdc/community/community03.jsp?mode=list
+http://mdc.ajou.ac.kr:80/mdc/community/community04.jsp?mode=list
+http://mdc.ajou.ac.kr:80/mdc/professor/professor01.jsp?include=view&article_no=198311021&board_no=1224?mode=list&board_wrapper=%2Fmdc%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=1224
+http://mdc.ajou.ac.kr:80/mdc/professor/professor01.jsp?include=view&article_no=198311021&board_wrapper=%2Fmdc%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=1224
+http://mdc.ajou.ac.kr:80/mdc/professor/professor01.jsp?mode=list&board_no=1224

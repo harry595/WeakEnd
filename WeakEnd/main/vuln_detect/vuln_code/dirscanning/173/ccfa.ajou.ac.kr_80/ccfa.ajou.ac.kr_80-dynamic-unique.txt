@@ -1,0 +1,10 @@
+http://ccfa.ajou.ac.kr:80/ccpf/activity/activity01.jsp?mode=list
+http://ccfa.ajou.ac.kr:80/ccpf/activity/activity02.jsp?mode=list
+http://ccfa.ajou.ac.kr:80/ccpf/activity/activity03.jsp?mode=list
+http://ccfa.ajou.ac.kr:80/ccpf/community/community01.jsp?mode=list
+http://ccfa.ajou.ac.kr:80/ccpf/community/community01.jsp?mode=view&article_no=204549&board_wrapper=%2Fccpf%2Fcommunity%2Fcommunity01.jsp&pager.offset=0&board_no=736
+http://ccfa.ajou.ac.kr:80/ccpf/community/community01.jsp?mode=view&article_no=217746?mode=list&board_wrapper=%2Fccpf%2Fcommunity%2Fcommunity01.jsp&pager.offset=0&board_no=736
+http://ccfa.ajou.ac.kr:80/ccpf/community/community01.jsp?search:search_category:category=290
+http://ccfa.ajou.ac.kr:80/ccpf/community/community02.jsp?mode=list
+http://ccfa.ajou.ac.kr:80/ccpf/professor/professor01.jsp?include=view&article_no=199311055&board_wrapper=%2Fccpf%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=735
+http://ccfa.ajou.ac.kr:80/ccpf/professor/professor01.jsp?mode=list&board_no=735

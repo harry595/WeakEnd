@@ -1,0 +1,6 @@
+http://mobile.ajou.ac.kr:80/mobile/board/community01.jsp?mode=list
+http://mobile.ajou.ac.kr:80/mobile/board/community01.jsp?mode=view&article_no=133690&board_wrapper=%2Fmobile%2Fboard%2Fcommunity01.jsp&pager.offset=0&board_no=1083
+http://mobile.ajou.ac.kr:80/mobile/data/data01.jsp?mode=list
+http://mobile.ajou.ac.kr:80/mobile/data/data01.jsp?mode=view&article_no=182435&board_wrapper=%2Fmobile%2Fdata%2Fdata01.jsp&pager.offset=0&board_no=1222
+http://mobile.ajou.ac.kr:80/mobile/people/people01.jsp?include=view&article_no=200511030&board_wrapper=%2Fmobile%2Fpeople%2Fpeople01.jsp&pager.offset=0&board_no=1085
+http://mobile.ajou.ac.kr:80/mobile/people/people01.jsp?mode=list&board_no=1085

@@ -1,0 +1,11 @@
+http://history.ajou.ac.kr:80/history/board/board01.jsp?mode=list
+http://history.ajou.ac.kr:80/history/board/board01.jsp?mode=view&article_no=221725&board_wrapper=%2Fhistory%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=229
+http://history.ajou.ac.kr:80/history/board/board01.jsp?mode=view&article_no=221726?mode=list&board_wrapper=%2Fhistory%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=229
+http://history.ajou.ac.kr:80/history/board/board01.jsp?search:search_category:category=290
+http://history.ajou.ac.kr:80/history/community/community03.jsp?mode=list
+http://history.ajou.ac.kr:80/history/community/community03.jsp?mode=view&article_no=100607&board_wrapper=%2Fhistory%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=179
+http://history.ajou.ac.kr:80/history/professor/professor01.jsp?include=view&article_no=199511011&board_no=360?mode=list&board_wrapper=%2Fhistory%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=360
+http://history.ajou.ac.kr:80/history/professor/professor01.jsp?include=view&article_no=199511011&board_wrapper=%2Fhistory%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=360
+http://history.ajou.ac.kr:80/history/professor/professor01.jsp?mode=list&board_no=360
+http://history.ajou.ac.kr:80/history/professor/professor02.jsp?include=view&article_no=199211014&board_wrapper=%2Fhistory%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=826
+http://history.ajou.ac.kr:80/history/professor/professor02.jsp?mode=list&board_no=826

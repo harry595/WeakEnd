@@ -1,0 +1,15 @@
+http://gsis.ajou.ac.kr:80/gsis/BulletinBoard/career_notice.jsp?mode=list
+http://gsis.ajou.ac.kr:80/gsis/BulletinBoard/career_notice.jsp?mode=view&article_no=194187&board_wrapper=%2Fgsis%2FBulletinBoard%2Fcareer_notice.jsp&pager.offset=0&board_no=1180
+http://gsis.ajou.ac.kr:80/gsis/BulletinBoard/career_notice.jsp?mode=view&article_no=201986?mode=list&board_wrapper=%2Fgsis%2FBulletinBoard%2Fcareer_notice.jsp&pager.offset=0&board_no=1180
+http://gsis.ajou.ac.kr:80/gsis/BulletinBoard/notice.jsp?mode=list
+http://gsis.ajou.ac.kr:80/gsis/BulletinBoard/notice.jsp?mode=view&article_no=216408&board_wrapper=%2Fgsis%2FBulletinBoard%2Fnotice.jsp&pager.offset=0&board_no=600
+http://gsis.ajou.ac.kr:80/gsis/BulletinBoard/notice.jsp?mode=view&article_no=216760?mode=list&board_wrapper=%2Fgsis%2FBulletinBoard%2Fnotice.jsp&pager.offset=0&board_no=600
+http://gsis.ajou.ac.kr:80/gsis/Introduction/Faculty.jsp?include=view&article_no=198811035&board_wrapper=%2Fgsis%2FIntroduction%2FFaculty.jsp&pager.offset=0&board_no=595
+http://gsis.ajou.ac.kr:80/gsis/Introduction/Faculty.jsp?mode=list&board_no=595
+http://gsis.ajou.ac.kr:80/gsis/Introduction/alliance_exchange.jsp?mode=list
+http://gsis.ajou.ac.kr:80/gsis/Introduction/alliance_notice.jsp?mode=list
+http://gsis.ajou.ac.kr:80/gsis/Introduction/alliance_share.jsp?mode=list
+http://gsis.ajou.ac.kr:80/gsis/Students/Industrial_Site.jsp?mode=list
+http://gsis.ajou.ac.kr:80/gsis/Students/Industrial_Site.jsp?mode=view&article_no=182028&board_wrapper=%2Fgsis%2FStudents%2FIndustrial_Site.jsp&pager.offset=0&board_no=599
+http://gsis.ajou.ac.kr:80/gsis/Students/Special_Lectures.jsp?mode=list
+http://gsis.ajou.ac.kr:80/gsis/Students/Special_Lectures.jsp?mode=view&article_no=182024&board_wrapper=%2Fgsis%2FStudents%2FSpecial_Lectures.jsp&pager.offset=0&board_no=598

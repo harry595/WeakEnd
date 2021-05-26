@@ -1,0 +1,12 @@
+http://culture.ajou.ac.kr:80/culture/board/board01.jsp?mode=list
+http://culture.ajou.ac.kr:80/culture/board/board01.jsp?mode=view&article_no=221725&board_wrapper=%2Fculture%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=229
+http://culture.ajou.ac.kr:80/culture/board/board01.jsp?mode=view&article_no=221726?mode=list&board_wrapper=%2Fculture%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=229
+http://culture.ajou.ac.kr:80/culture/board/board01.jsp?search:search_category:category=290
+http://culture.ajou.ac.kr:80/culture/community/community04.jsp?mode=list
+http://culture.ajou.ac.kr:80/culture/community/community04.jsp?mode=view&article_no=190556&board_wrapper=%2Fculture%2Fcommunity%2Fcommunity04.jsp&pager.offset=0&board_no=182
+http://culture.ajou.ac.kr:80/culture/professor/professor01.jsp?include=view&article_no=201011024&board_no=374?mode=list&board_wrapper=%2Fculture%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=374
+http://culture.ajou.ac.kr:80/culture/professor/professor01.jsp?include=view&article_no=201011024&board_wrapper=%2Fculture%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=374
+http://culture.ajou.ac.kr:80/culture/professor/professor01.jsp?mode=list&board_no=374
+http://culture.ajou.ac.kr:80/culture/sub/sub03.jsp?mode=list
+http://culture.ajou.ac.kr:80/culture/sub/sub05.jsp?mode=list
+http://culture.ajou.ac.kr:80/culture/sub/sub05.jsp?mode=view&article_no=72878&board_wrapper=%2Fculture%2Fsub%2Fsub05.jsp&pager.offset=0&board_no=1230

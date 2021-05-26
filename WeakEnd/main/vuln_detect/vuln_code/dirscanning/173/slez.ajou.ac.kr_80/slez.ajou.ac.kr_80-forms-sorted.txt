@@ -1,0 +1,13 @@
+http://slez.ajou.ac.kr:80
+http://slez.ajou.ac.kr:80/_custom/ajou/_common/app/sso/sso_login.jsp
+http://slez.ajou.ac.kr:80/slez/community/community02.jsp
+http://slez.ajou.ac.kr:80/slez/community/community03.jsp
+http://slez.ajou.ac.kr:80/slez/edu/edu01.jsp
+http://slez.ajou.ac.kr:80/slez/edu/edu03.jsp
+http://slez.ajou.ac.kr:80/slez/edu/edu04.jsp
+http://slez.ajou.ac.kr:80/slez/index.jsp
+http://slez.ajou.ac.kr:80/slez/intro/intro01.jsp
+http://slez.ajou.ac.kr:80/slez/intro/intro02.jsp
+http://slez.ajou.ac.kr:80/slez/intro/intro04.jsp
+http://slez.ajou.ac.kr:80/slez/professor/professor01.jsp
+http://slez.ajou.ac.kr:80/slez/sitemap.jsp

@@ -1,0 +1,9 @@
+http://pba.ajou.ac.kr:80/pba/community/community03.jsp?mode=list
+http://pba.ajou.ac.kr:80/pba/community/community03.jsp?mode=view&article_no=146299&board_wrapper=%2Fpba%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=397
+http://pba.ajou.ac.kr:80/pba/community/community03.jsp?mode=view&article_no=146300?mode=list&board_wrapper=%2Fpba%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=397
+http://pba.ajou.ac.kr:80/pba/community/community03.jsp?search:search_category:category=290
+http://pba.ajou.ac.kr:80/pba/professor/professor01.jsp?include=view&article_no=199511013&board_no=403?mode=list&board_wrapper=%2Fpba%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=403
+http://pba.ajou.ac.kr:80/pba/professor/professor01.jsp?include=view&article_no=199511013&board_wrapper=%2Fpba%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=403
+http://pba.ajou.ac.kr:80/pba/professor/professor01.jsp?mode=list&board_no=403
+http://pba.ajou.ac.kr:80/pba/professor/professor02.jsp?include=view&article_no=198711041&board_wrapper=%2Fpba%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=858
+http://pba.ajou.ac.kr:80/pba/professor/professor02.jsp?mode=list&board_no=858

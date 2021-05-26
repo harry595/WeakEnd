@@ -1,0 +1,15 @@
+http://chembio.ajou.ac.kr:80/chembio/board/board01.jsp?mode=list
+http://chembio.ajou.ac.kr:80/chembio/board/board01.jsp?mode=view&article_no=219595&board_wrapper=%2Fchembio%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=280
+http://chembio.ajou.ac.kr:80/chembio/board/board01.jsp?mode=view&article_no=219763?mode=list&board_wrapper=%2Fchembio%2Fboard%2Fboard01.jsp&pager.offset=0&board_no=280
+http://chembio.ajou.ac.kr:80/chembio/board/board01.jsp?search:search_category:category=290
+http://chembio.ajou.ac.kr:80/chembio/board/board02.jsp?mode=list
+http://chembio.ajou.ac.kr:80/chembio/board/board02.jsp?mode=view&article_no=18774&board_wrapper=%2Fchembio%2Fboard%2Fboard02.jsp&pager.offset=0&board_no=91
+http://chembio.ajou.ac.kr:80/chembio/board/board03.jsp?mode=list
+http://chembio.ajou.ac.kr:80/chembio/board/board03.jsp?mode=view&article_no=192168&board_wrapper=%2Fchembio%2Fboard%2Fboard03.jsp&pager.offset=0&board_no=92
+http://chembio.ajou.ac.kr:80/chembio/community/community03.jsp?mode=list
+http://chembio.ajou.ac.kr:80/chembio/community/community03.jsp?mode=view&article_no=21744&board_wrapper=%2Fchembio%2Fcommunity%2Fcommunity03.jsp&pager.offset=0&board_no=95
+http://chembio.ajou.ac.kr:80/chembio/professor/professor01.jsp?include=view&article_no=199411004&board_no=281?mode=list&board_wrapper=%2Fchembio%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=281
+http://chembio.ajou.ac.kr:80/chembio/professor/professor01.jsp?include=view&article_no=199411004&board_wrapper=%2Fchembio%2Fprofessor%2Fprofessor01.jsp&pager.offset=0&board_no=281
+http://chembio.ajou.ac.kr:80/chembio/professor/professor01.jsp?mode=list&board_no=281
+http://chembio.ajou.ac.kr:80/chembio/professor/professor02.jsp?include=view&article_no=197411016&board_wrapper=%2Fchembio%2Fprofessor%2Fprofessor02.jsp&pager.offset=0&board_no=282
+http://chembio.ajou.ac.kr:80/chembio/professor/professor02.jsp?mode=list&board_no=282
