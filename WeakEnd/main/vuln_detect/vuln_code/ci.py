@@ -27,7 +27,7 @@ def make_POST_form(url: str, data: dict):
 def get_request(data, dic, target,cookies):
     key_list = list(dic.keys())
     for payload_name in key_list:
-        tmp = dic
+        tmp = dic.copy()
         tmp[payload_name] = '@@@@@@'
         middle_form = target
         key_list_tmp = list(tmp.keys())
@@ -37,7 +37,7 @@ def get_request(data, dic, target,cookies):
             else:
                 middle_form = middle_form + '&' + key + '=' + tmp[key]
         for payload in data:
-            final_form = middle_form.replace('@@@@@@', payload.strip().replace(' ', '+'))
+            final_form = middle_form.replace('@@@@@@', payload.strip())
             try:
                 test_res = requests.get(final_form, cookies=cookies,verify=False)
                 if check_success(test_res.text):
@@ -66,7 +66,7 @@ def scan_type1(url: str, params: dict,cookies):
                 #submit은 continue
                 if payload_name.lower() == 'submit':
                     continue
-                tmp = dic
+                tmp = dic.copy()
                 for payload in data:
                     tmp[payload_name] = payload.strip()
                     try:
@@ -88,7 +88,7 @@ def scan_type2(url: str,cookies):
     with open(os.path.dirname(os.path.realpath(__file__)) + '/ci.txt', "r") as f:
         data = f.readlines()
 
-    params = re.split('=&?', url)
+    params = re.split('[=&?]', url)
     target = params[0]
     del (params[0])
     key = ''

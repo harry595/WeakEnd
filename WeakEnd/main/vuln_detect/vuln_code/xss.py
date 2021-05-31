@@ -24,7 +24,7 @@ def make_POST_form(url: str, data: dict):
 def get_request(data, dic, target, cookies):
     key_list = list(dic.keys())
     for payload_name in key_list:
-        tmp = dic
+        tmp = dic.copy()
         tmp[payload_name] = '@@@@@@'
         middle_form = target
         key_list_tmp = list(tmp.keys())
@@ -36,7 +36,7 @@ def get_request(data, dic, target, cookies):
         for payload in data:
             final_form = middle_form.replace('@@@@@@', payload.strip())
             try:
-                test_res = requests.get(final_form, cookies=cookies)
+                test_res = requests.get(final_form, cookies=cookies,verify=False)
                 if check_success(test_res.text, payload.strip()):
                     return make_GET_form(final_form)
             except:
@@ -59,11 +59,11 @@ def scan_type1(url: str, params: dict, cookies):
         if method == 'post':
             key_list = list(dic.keys())
             for payload_name in key_list:
-                tmp = dic
+                tmp = dic.copy()
                 for payload in data:
                     tmp[payload_name] = payload.strip()
                     try:
-                        test_res = requests.post(target, data=tmp, cookies=cookies)
+                        test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
                         if check_success(test_res.text, payload.strip()):
                             return make_POST_form(target, tmp)
                     except:
@@ -94,27 +94,26 @@ def scan_type2(url: str, cookies):
 
     return get_request(data, dic, target, cookies)
 
-
 def check_success(res, payload):
     # 문자열로 처리 된 경우 탐지 실패
-    if re.search(r'\'<.*alert.*(1|XSS).*>\'', res):
+    if re.search(r'\'[\s]*<[^<\n]*(alert|prompt).{1,5}(1|XSS)[^>\n]*>[\s]*\'', res):
         return False
-    if re.search(r'"""<.*alert.*(1|XSS).*>"""', res):
+    if re.search(r'"""[\s]*<[^<\n]*(alert|prompt).{1,5}(1|XSS)[^>\n]*>[\s]*"""', res):
         return False
-    if re.search(r'"<.*alert.*(1|XSS).*>"', res):
+    if re.search(r'"[\s]*<[^<\n]*(alert|prompt).{1,5}(1|XSS)[^>\n]*>[\s]*"', res):
         return False
-    if re.search(r'<!--<.*alert.*(1|XSS).*>-->', res):
+    if re.search(r'<!--[\s]*<[^<\n]*(alert|prompt).{1,5}(1|XSS)[^>\n]*>[\s]*-->', res):
+        return False
+    if re.search(r'([\s]*<[^<\n]*(alert|prompt).{1,5}(1|XSS)[^>\n]*>[\s]*)', res):
         return False
     # 페이로드에 알람 코드가 존재하면 탐지 성공
-    if re.search(r'<.*alert.*(1|XSS).*>', res):
+    if re.search(r'[^=]<[^<\n\\]*(alert|prompt).{1,5}(1|XSS)[^>\n\\]*>', res):
         return True
     # 응답으로 온 코드에 사용한 페이로드가 그대로 존재하면 탐지 성공 반환
     if payload in res:
         return True
     # 응답으로 온 코드에 사용한 페이로드가 없으면 실패 반환
     return False
-
-
 
 def xss_attack(arg1: str, arg2, cookies):
     # arg1이 URL, arg2가 사전형 파라미터인 경우 탐지 수행 및 결과 반환

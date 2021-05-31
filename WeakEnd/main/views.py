@@ -38,7 +38,6 @@ from celery.states import state, PENDING, SUCCESS
 from dateutil.relativedelta import relativedelta
 from .autopatch.autopatch import vulnerability_patch
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
-
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -69,23 +68,23 @@ def directory(request):
     if request.method == 'POST':
         session = requests.Session() 
         session.verify = False
-        url = request.POST["url"]+"/"
+        url = request.POST["url"]
         result=[]
         if url == "":
             return render(request,'directory.html')
         else:
-            f = open(os.path.dirname(os.path.realpath(__file__)) + '/dataset/dir_scan_list.txt', "r")
-            while True:
-                data = f.readline()
+            with open(os.path.dirname(os.path.realpath(__file__)) + '/dataset/dir_scan_list.txt', "r") as f:
+                urls=f.readlines()
+            for num,data in enumerate(urls):
+                if(num%1000 ==0):
+                    print(num)
                 try:
-                    r = session.get(url+data)
-                    if r.status_code == 200:
-                        print(url+data)
+                    r = session.get(url+data.rstrip())
+                    if r.status_code == 200 or r.status_code == 302 :
+                        print(url+data.rstrip())
                         result.append(r.url)
-                    if not data: break
                 except:
                     pass
-            f.close()
         print(result)
         return render(request,'directoryresult.html',{'result':result})
     return render(request,'directory.html')
@@ -214,11 +213,11 @@ def vulndetecting(request):
     # DO SOMETHING
     # 파일 경로는 os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/'+user_id'/'+url+'/'+url+'-subdomains-sorted.txt'
     time.sleep(1)
-    url='ajou.ac.kr'
+    url='192.168.112.130'
     url+='_80'
     #here
-    #173=user_id
-    with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/173/'+url+'/'+url+'-subdomains-sorted.txt', "r") as f:
+    #171=user_id
+    with open(os.path.dirname(os.path.realpath(__file__)) + '/vuln_detect/vuln_code/dirscanning/171/'+url+'/'+url+'-subdomains-sorted.txt', "r") as f:
         urllist = f.readlines()
     urllist = [x.strip() for x in urllist] 
     context={'urllist':urllist,'new_id':new_id }
@@ -315,7 +314,8 @@ def progress(request):
             data = 'No task_id in the request'
     else:
         data = 'This is not an ajax request'
-
+    print(task.result)
+    print(task.state)
     json_data = json.dumps(data)
     print(json_data)
     return HttpResponse(json_data, content_type='application/json')

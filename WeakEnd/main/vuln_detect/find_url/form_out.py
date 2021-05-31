@@ -37,8 +37,24 @@ def zetanize(response):  ####form parser
                 inpName = d(e(inpName.group(1)))
                 inpType = d(e(inpType.group(1)) )if inpType else ''
                 inpValue = d(e(inpValue.group(1))) if inpValue else 'vulnch'
-                if inpValue =='': 
+                if inpValue =='':
                     inpValue='vulnch'
+                if inpType.lower() == 'submit' and inpValue == '':
+                    inpValue = 'Submit Query'
+                inpDict = {
+                'name' : inpName,
+                'type' : inpType,
+                'value' : inpValue
+                }
+                forms[num]['inputs'].append(inpDict)
+        inputs = re.findall(r'(?i)(?s)<select.*?</select>', match)
+        for inp in inputs:
+            inpName = re.search(r'(?i)name=[\'"](.*?)[\'"]', inp)
+            if inpName:
+                inpType = re.search(r'(?i)type=[\'"](.*?)[\'"]', inp)
+                inpValue = re.findall(r'(?i)value=[\'"](.*?)[\'"]', inp)[1]
+                inpName = d(e(inpName.group(1)))
+                inpType = d(e(inpType.group(1)) )if inpType else ''
                 if inpType.lower() == 'submit' and inpValue == '':
                     inpValue = 'Submit Query'
                 inpDict = {

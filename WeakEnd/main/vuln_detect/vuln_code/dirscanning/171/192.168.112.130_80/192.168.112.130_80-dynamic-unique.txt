@@ -1,2 +1,2 @@
-http://192.168.112.130/instructions.php?doc=readme
-http://192.168.112.130/vulnerabilities/brute/?username=123&password=123&Login=Login#
+http://172.30.1.60/instructions.php?doc=readme
+http://172.30.1.60/vulnerabilities/brute/?username=123&password=123&Login=Login#

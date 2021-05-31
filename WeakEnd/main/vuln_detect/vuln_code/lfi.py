@@ -30,7 +30,7 @@ def get_request(data, dic, target, cookies):
 
     key_list = list(dic.keys())
     for payload_name in key_list:
-        tmp = dic
+        tmp = dic.copy()
         tmp[payload_name] = '@@@@@@'
         middle_form = target
         key_list_tmp = list(tmp.keys())
@@ -44,7 +44,7 @@ def get_request(data, dic, target, cookies):
             if payload.startswith('%'):
                 final_form = middle_form.replace('@@@@@@', payload.strip())
                 try:
-                    test_res = requests.get(final_form, cookies=cookies)
+                    test_res = requests.get(final_form, cookies=cookies,verify=False)
                     if check_success(test_res.text):
                         return make_GET_form(final_form)
                 except:
@@ -54,7 +54,7 @@ def get_request(data, dic, target, cookies):
                 for i in range(0,2):
                     final_form = middle_form.replace('@@@@@@', (deeper*i)+payload.strip())
                     try:
-                        test_res = requests.get(final_form, cookies=cookies)
+                        test_res = requests.get(final_form, cookies=cookies,verify=False)
                         if check_success(test_res.text):
                             return make_GET_form(final_form)
                     except:
@@ -63,7 +63,7 @@ def get_request(data, dic, target, cookies):
                 #scan with php filter
                 final_form = middle_form.replace('@@@@@@', php_filter + payload.strip())
                 try:
-                    test_res = requests.get(final_form, cookies=cookies)
+                    test_res = requests.get(final_form, cookies=cookies,verify=False)
                     if check_success(test_res.text):
                         return make_GET_form(final_form)
                 except:
@@ -90,13 +90,13 @@ def scan_type1(url: str, params: dict, cookies):
         if method == 'post':
             key_list = list(dic.keys())
             for payload_name in key_list:
-                tmp = dic
+                tmp = dic.copy()
                 for payload in data:
                     #scan with encode
                     if payload.startswith('%'):
                         tmp[payload_name] = payload.strip()
                         try:
-                            test_res = requests.post(target, data=tmp, cookies=cookies)
+                            test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
                             if check_success(test_res.text):
                                 return make_POST_form(target, tmp)
                         except:
@@ -106,7 +106,7 @@ def scan_type1(url: str, params: dict, cookies):
                         for j in range(0,2):
                             tmp[payload_name] = (deeper*j)+payload.strip()
                             try:
-                                test_res = requests.post(target, data=tmp, cookies=cookies)
+                                test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
                                 if check_success(test_res.text):
                                     return make_POST_form(target, tmp)
                             except:
@@ -115,7 +115,7 @@ def scan_type1(url: str, params: dict, cookies):
                         #scan with php filter
                         tmp[payload_name] = php_filter+payload.strip()
                         try:
-                            test_res = requests.post(target, data=tmp, cookies=cookies)
+                            test_res = requests.post(target, data=tmp, cookies=cookies,verify=False)
                             if check_success(test_res.text):
                                 return make_POST_form(target, tmp)
                         except:
@@ -149,7 +149,7 @@ def scan_type2(url: str, cookies):
 
 
 def check_success(res):
-    word_list = ['root:','sbin','nologin','DB_NAME','daemon:','DOCUMENT_ROOT=','PATH=','HTTP_USER_AGENT','HTTP_ACCEPT_ENCODING=','users:x','GET /','HTTP/1.1','HTTP/1.0','apache_port=','cpanel/logs/access','allow_login_autocomplete','database_prefix=','emailusersbandwidth','adminuser=']
+    word_list = ['root:','sbin','nologin','DB_NAME','daemon:','DOCUMENT_ROOT=','PATH=','HTTP_USER_AGENT','HTTP_ACCEPT_ENCODING=','users:x','apache_port=','cpanel/logs/access','allow_login_autocomplete','database_prefix=','emailusersbandwidth','adminuser=']
     for wrd in word_list:
         if re.search(wrd, res):
             return True
